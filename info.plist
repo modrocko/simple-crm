@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.toddsgotapen.simple-crm</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>83D4CD86-AFCE-4379-8CD7-03C43D128678</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2CDBAC8-6AB7-4F55-814A-9AC99F9A102C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8A500D23-4715-4736-8743-E11A08563D28</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C43BF98B-6221-4598-A1A0-E307E9217FCD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F98EE783-8286-4763-B6F5-A34D6D520C03</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF54581A-7BF8-496A-AD23-84474CFAA601</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Todd Clarke</string>
+	<key>description</key>
+	<string>The mpost simple CRM ever created</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Simple CRM</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>{var:list_contacts}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/list_contacts.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>List all contacts from the files on disk</string>
+				<key>title</key>
+				<string>List contacts</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F98EE783-8286-4763-B6F5-A34D6D520C03</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>open "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FF54581A-7BF8-496A-AD23-84474CFAA601</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/add_contact.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C43BF98B-6221-4598-A1A0-E307E9217FCD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>{var:add_contact}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/specify_contact.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Start typing to add new contact</string>
+				<key>title</key>
+				<string>Add new contact</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8A500D23-4715-4736-8743-E11A08563D28</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:run_util}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>import json
+import sys
+
+query = sys.argv[1].lower() if len(sys.argv) &gt; 1 else ""
+
+items = [
+    {"title": "Open workflow folder", "arg": "open_workflow"},
+    {"title": "Open data folder", "arg": "open_data"},
+    {"title": "Export contacts", "arg": "export_contacts"},
+    {"title": "Import contacts", "arg": "import_contacts"}
+]
+
+filtered = [item for item in items if query in item["title"].lower()]
+
+print(json.dumps({"items": filtered}))
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Various utilities for this workflow</string>
+				<key>title</key>
+				<string>Run utility command</string>
+				<key>type</key>
+				<integer>9</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>83D4CD86-AFCE-4379-8CD7-03C43D128678</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+
+if [ "$1" = "open_workflow" ]; then
+	open "$alfred_workflow_directory"
+
+elif [ "$1" = "open_data" ]; then
+	open "$alfred_workflow_data"
+
+else
+	python3 scripts/${1}.py
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B2CDBAC8-6AB7-4F55-814A-9AC99F9A102C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>83D4CD86-AFCE-4379-8CD7-03C43D128678</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>invoke utils</string>
+			<key>xpos</key>
+			<real>215</real>
+			<key>ypos</key>
+			<real>605</real>
+		</dict>
+		<key>8A500D23-4715-4736-8743-E11A08563D28</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>specify contact</string>
+			<key>xpos</key>
+			<real>210</real>
+			<key>ypos</key>
+			<real>435</real>
+		</dict>
+		<key>B2CDBAC8-6AB7-4F55-814A-9AC99F9A102C</key>
+		<dict>
+			<key>note</key>
+			<string>run utils</string>
+			<key>xpos</key>
+			<real>455</real>
+			<key>ypos</key>
+			<real>605</real>
+		</dict>
+		<key>C43BF98B-6221-4598-A1A0-E307E9217FCD</key>
+		<dict>
+			<key>note</key>
+			<string>add contact</string>
+			<key>xpos</key>
+			<real>455</real>
+			<key>ypos</key>
+			<real>435</real>
+		</dict>
+		<key>F98EE783-8286-4763-B6F5-A34D6D520C03</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>list contacts</string>
+			<key>xpos</key>
+			<real>205</real>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
+		<key>FF54581A-7BF8-496A-AD23-84474CFAA601</key>
+		<dict>
+			<key>note</key>
+			<string>open contact file</string>
+			<key>xpos</key>
+			<real>455</real>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>~/Documents/simple-crm</string>
+				<key>filtermode</key>
+				<integer>0</integer>
+				<key>placeholder</key>
+				<string>~/Documents/simple-crm</string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>This is where your CRM files will live.</string>
+			<key>label</key>
+			<string>CRM path</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>contact_folder</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Company, Lead Status, Lead Source, Email, Phone, Website</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Fields to display in subtitle when listing contacts</string>
+			<key>label</key>
+			<string>Display fields</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>display_fields</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Name, Company, Email, Phone, Website, Tags, Lead Status, Lead Source, Note, Log</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>All fields for creating new contacts (used for importing csv file too)</string>
+			<key>label</key>
+			<string>All fields</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>file_template</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Name, Company, Email, Phone, Website</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Specify the fields to export all contacts into a .csv file</string>
+			<key>label</key>
+			<string>Export fields</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>export_fields</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Name, Company, Lead Status, Email, Phone, Tags</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Fields to populate when adding a new contact</string>
+			<key>label</key>
+			<string>New contact fields</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>add_fields</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>~/Downloads/crm_export.csv</string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string>~/Downloads/crm_export.csv</string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>Folder &amp; filename for exported csv file</string>
+			<key>label</key>
+			<string>Export path</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>export_path</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>~/Downloads/crm_import.csv</string>
+				<key>filtermode</key>
+				<integer>0</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>Choose path &amp; file of import file</string>
+			<key>label</key>
+			<string>Import path</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>import_path</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>.txt</string>
+				<key>placeholder</key>
+				<string>.txt</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Specify the file extension to use for contact files (ex: .txt , .md, etc)</string>
+			<key>label</key>
+			<string>File extension</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>file_extension</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>crml</string>
+				<key>placeholder</key>
+				<string>crml</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>List &amp; search all contacts</string>
+			<key>label</key>
+			<string>List contacts</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>list_contacts</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>crma</string>
+				<key>placeholder</key>
+				<string>crma</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Add a new contact &amp; resulting file to the CRM</string>
+			<key>label</key>
+			<string>Add a contact</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>add_contact</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>:crmu</string>
+				<key>placeholder</key>
+				<string>:crmu</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Run a utility command</string>
+			<key>label</key>
+			<string>Utility command</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>run_util</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>{
+  "@won": "won.png",
+  "@waiting": "waiting.png",
+  "@deciding": "deciding.png",
+  "@active": "active.png",
+  "@ping": "ping.png",
+  "@loss": "loss.png",
+  "@notes": "notes.png"
+}</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>9</integer>
+			</dict>
+			<key>description</key>
+			<string>Associate tags with icons to make everything look 'nice.' Add or change as you like.</string>
+			<key>label</key>
+			<string>Custom tag icons</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>tag_icons</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string></string>
+	<key>webaddress</key>
+	<string>toddsgotapen.com</string>
+</dict>
+</plist>

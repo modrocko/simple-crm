@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contact_folder</key>
+	<string>~/Documents/00 now/my crm</string>
+	<key>display_fields</key>
+	<string>Company, Lead Status, Email, Phone, Tags</string>
+	<key>export_fields</key>
+	<string>Name, Company, Email, Phone, Website, Lead status</string>
+	<key>file_extension</key>
+	<string>.md</string>
+	<key>file_template</key>
+	<string>Name, Company, Email, Phone, Website, Tags, Lead Status, Lead Source, Lead Thread, Questionnaire, Note, Log</string>
+</dict>
+</plist>
