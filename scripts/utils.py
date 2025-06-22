@@ -41,7 +41,6 @@ _icon_map = None
 def get_icon_for_tag(*strings):
     global _icon_map
     if _icon_map is None:
-        # load tag_icons from env var
         try:
             _icon_map = json.loads(os.environ["tag_icons"])
         except Exception:
@@ -50,12 +49,10 @@ def get_icon_for_tag(*strings):
     for string in strings:
         if not isinstance(string, str):
             continue
-        for keyword, filename in _icon_map.items():
-            if keyword in string:
-                icon_path = os.path.join(os.path.dirname(__file__), "..", "icons", filename)
-                return { "path": os.path.abspath(icon_path) }
+        for word in string.split():
+            for keyword, filename in _icon_map.items():
+                if keyword == word:
+                    icon_path = os.path.join(os.path.dirname(__file__), "..", "icons", filename)
+                    return { "path": os.path.abspath(icon_path) }
 
     return ""
-
-
-

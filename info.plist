@@ -8,6 +8,29 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>189F166B-CDC9-45AD-8F62-9A8B1BE9FFA8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A4280409-DA48-4C05-8A73-5688E2A9F94A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F98EE783-8286-4763-B6F5-A34D6D520C03</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>83D4CD86-AFCE-4379-8CD7-03C43D128678</key>
 		<array>
 			<dict>
@@ -38,6 +61,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>37FDEA91-828D-4FF0-9E41-05B2AE1DAED8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>FF54581A-7BF8-496A-AD23-84474CFAA601</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -58,6 +91,90 @@
 	<string>Simple CRM</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/remove_saved_search.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A4280409-DA48-4C05-8A73-5688E2A9F94A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/save_search.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>37FDEA91-828D-4FF0-9E41-05B2AE1DAED8</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/env python3
+
+import os
+import sys
+import subprocess
+
+# Skip if action is meant for save_search
+if os.environ.get("action") == "save_search":
+    sys.exit(0)
+
+# Open the file if input exists
+path = sys.argv[1] if len(sys.argv) &gt; 0 else ""
+if path and os.path.exists(path):
+    subprocess.run(["open", path])</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FF54581A-7BF8-496A-AD23-84474CFAA601</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -111,25 +228,53 @@ python3 scripts/list_contacts.py "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
 				<key>escaping</key>
-				<integer>68</integer>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:saved_search}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
 				<key>script</key>
-				<string>open "$1"</string>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/list_saved_searches.py "$1"
+</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
+				<key>subtext</key>
+				<string>Run a previously saved search query</string>
+				<key>title</key>
+				<string>Run a saved search</string>
 				<key>type</key>
 				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>FF54581A-7BF8-496A-AD23-84474CFAA601</string>
+			<string>189F166B-CDC9-45AD-8F62-9A8B1BE9FFA8</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -307,6 +452,26 @@ fi</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>189F166B-CDC9-45AD-8F62-9A8B1BE9FFA8</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>list saved searches</string>
+			<key>xpos</key>
+			<real>110</real>
+			<key>ypos</key>
+			<real>340</real>
+		</dict>
+		<key>37FDEA91-828D-4FF0-9E41-05B2AE1DAED8</key>
+		<dict>
+			<key>note</key>
+			<string>save search</string>
+			<key>xpos</key>
+			<real>585</real>
+			<key>ypos</key>
+			<real>175</real>
+		</dict>
 		<key>83D4CD86-AFCE-4379-8CD7-03C43D128678</key>
 		<dict>
 			<key>colorindex</key>
@@ -314,9 +479,9 @@ fi</string>
 			<key>note</key>
 			<string>invoke utils</string>
 			<key>xpos</key>
-			<real>215</real>
+			<real>345</real>
 			<key>ypos</key>
-			<real>605</real>
+			<real>665</real>
 		</dict>
 		<key>8A500D23-4715-4736-8743-E11A08563D28</key>
 		<dict>
@@ -325,27 +490,36 @@ fi</string>
 			<key>note</key>
 			<string>specify contact</string>
 			<key>xpos</key>
-			<real>210</real>
+			<real>340</real>
 			<key>ypos</key>
-			<real>435</real>
+			<real>495</real>
+		</dict>
+		<key>A4280409-DA48-4C05-8A73-5688E2A9F94A</key>
+		<dict>
+			<key>note</key>
+			<string>removed saved search</string>
+			<key>xpos</key>
+			<real>580</real>
+			<key>ypos</key>
+			<real>15</real>
 		</dict>
 		<key>B2CDBAC8-6AB7-4F55-814A-9AC99F9A102C</key>
 		<dict>
 			<key>note</key>
 			<string>run utils</string>
 			<key>xpos</key>
-			<real>455</real>
+			<real>585</real>
 			<key>ypos</key>
-			<real>605</real>
+			<real>665</real>
 		</dict>
 		<key>C43BF98B-6221-4598-A1A0-E307E9217FCD</key>
 		<dict>
 			<key>note</key>
 			<string>add contact</string>
 			<key>xpos</key>
-			<real>455</real>
+			<real>585</real>
 			<key>ypos</key>
-			<real>435</real>
+			<real>495</real>
 		</dict>
 		<key>F98EE783-8286-4763-B6F5-A34D6D520C03</key>
 		<dict>
@@ -354,18 +528,18 @@ fi</string>
 			<key>note</key>
 			<string>list contacts</string>
 			<key>xpos</key>
-			<real>205</real>
+			<real>340</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>340</real>
 		</dict>
 		<key>FF54581A-7BF8-496A-AD23-84474CFAA601</key>
 		<dict>
 			<key>note</key>
 			<string>open contact file</string>
 			<key>xpos</key>
-			<real>455</real>
+			<real>585</real>
 			<key>ypos</key>
-			<real>280</real>
+			<real>340</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -584,6 +758,27 @@ fi</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string>crmss</string>
+				<key>placeholder</key>
+				<string>crmss</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Save a search to run later on</string>
+			<key>label</key>
+			<string>Saved search</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>saved_search</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>:crmu</string>
 				<key>placeholder</key>
 				<string>:crmu</string>
@@ -606,13 +801,12 @@ fi</string>
 			<dict>
 				<key>default</key>
 				<string>{
-  "@won": "won.png",
   "@waiting": "waiting.png",
+  "@ping": "ping.png",
+  "@won": "won.png",
   "@deciding": "deciding.png",
   "@active": "active.png",
-  "@ping": "ping.png",
-  "@loss": "loss.png",
-  "@notes": "notes.png"
+  "@loss": "loss.png"
 }</string>
 				<key>required</key>
 				<false/>
@@ -629,6 +823,27 @@ fi</string>
 			<string>textarea</string>
 			<key>variable</key>
 			<string>tag_icons</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>7</string>
+				<key>placeholder</key>
+				<string>7</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Max number of row count for saved search results (new rows will replace oldest rows)</string>
+			<key>label</key>
+			<string>Saved search count</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>saved_search_count</string>
 		</dict>
 	</array>
 	<key>version</key>

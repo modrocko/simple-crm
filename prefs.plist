@@ -5,9 +5,9 @@
 	<key>contact_folder</key>
 	<string>~/Documents/00 now/my crm</string>
 	<key>display_fields</key>
-	<string>Company, Lead Status, Email, Phone, Tags</string>
+	<string>Company, Tags, Email, Phone, Lead Status</string>
 	<key>export_fields</key>
-	<string>Name, Company, Email, Phone, Website, Lead status</string>
+	<string>Name, Company, Email, Phone, Website, Lead Status, Tags</string>
 	<key>file_extension</key>
 	<string>.md</string>
 	<key>file_template</key>

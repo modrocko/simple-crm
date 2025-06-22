@@ -16,13 +16,12 @@ items.append({
     "title": "Add new contact",
     "subtitle": subtitle,
     "arg": query,
+    "variables": {"open_file": "false"},
     "mods": {
         "cmd": {
             "arg": query,
             "subtitle": "⌘ Save & open contact file",
-            "variables": {
-                "open_file": "true"
-            }
+            "variables": {"open_file": "true"}
         }
     }
 })

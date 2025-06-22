@@ -4,11 +4,14 @@ import os
 import json
 import re
 import sys
+import utils
 
 # === ENV VARS ===
 folder = os.environ["contact_folder"]
 ext = os.environ.get("file_extension", ".md").strip()
 query = sys.argv[1].strip().lower() if len(sys.argv) > 0 else ""
+
+raw_query = query
 
 # === DETECT OR MODE ===
 is_or = ":or" in query
@@ -26,6 +29,17 @@ def get_field(field, content):
     return ""
 
 items = []
+if raw_query:
+    items.append({
+            "title": "Save this search",
+            "subtitle": "↵ to Save this search",
+            "arg": raw_query,
+            "icon": { "path": "save.png" },
+            "variables": {
+                "action": "save_search"
+            }
+        })
+
 
 # === If folder not found ===
 if not os.path.exists(folder):
@@ -61,11 +75,13 @@ else:
                 )
 
                 if match:
+                    icon = utils.get_icon_for_tag(fields.get("Tags", ""))
                     matched = True
                     items.append({
-                        "title": name or filename,
+                        "title": name,
                         "subtitle": subtitle,
-                        "arg": path
+                        "arg": path,
+                        "icon": icon
                     })
         except Exception as e:
             items.append({
