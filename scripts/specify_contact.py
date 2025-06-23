@@ -6,13 +6,24 @@ import sys
 
 query = sys.argv[1].strip()
 
-# Get display_fields from env var
+# Get display fields from env var
 fields = os.environ["add_fields"]
 field_list = [f.strip() for f in fields.split(",") if f.strip()]
-subtitle = "Format: " + " | ".join(field_list)
 
-items = []
-items.append({
+# Count how many fields user has filled
+active_index = query.count("|")
+
+# Capitalize the current field
+parts = []
+for i, field in enumerate(field_list):
+    if i == active_index:
+        parts.append(field.upper())
+    else:
+        parts.append(field)
+
+subtitle = " | ".join(parts)
+
+items = [{
     "title": "Add new contact",
     "subtitle": subtitle,
     "arg": query,
@@ -24,5 +35,6 @@ items.append({
             "variables": {"open_file": "true"}
         }
     }
-})
+}]
+
 print(json.dumps({ "items": items }))
