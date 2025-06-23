@@ -8,8 +8,8 @@ import subprocess
 folder = os.environ["contact_folder"]
 ext = os.environ.get("file_extension", ".md").strip()
 export_fields = [f.strip() for f in os.environ.get("export_fields", "").split(",") if f.strip()]
-workflow_name = os.environ.get("alfred_workflow_name", "Export")
-export_path = os.environ.get("export_path", os.path.expanduser(f"~/Downloads/{workflow_name}-exports.csv"))
+workflow_name = os.environ["alfred_workflow_name"]
+export_path = os.environ["export_path"]
 export_path = os.path.expanduser(export_path)
 
 # === Line-by-line field lookup ===

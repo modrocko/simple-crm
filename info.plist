@@ -683,7 +683,7 @@ fi</string>
 				<false/>
 			</dict>
 			<key>description</key>
-			<string>Choose path &amp; file of import file</string>
+			<string>Full path &amp; file for import file</string>
 			<key>label</key>
 			<string>Import path</string>
 			<key>type</key>

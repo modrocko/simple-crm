@@ -7,9 +7,9 @@ import subprocess
 
 # === ENV VARS ===
 folder = os.environ["contact_folder"]
-ext = os.environ.get("file_extension", ".md").strip()
-import_path = os.path.expanduser(os.environ.get("import_path", ""))
-workflow_name = os.environ.get("alfred_workflow_name", "Import")
+ext = os.environ["file_extension"]
+import_path = os.environ["import_path"]
+workflow_name = os.environ["alfred_workflow_name"]
 
 # === Read rows from CSV ===
 with open(import_path, newline="") as csvfile:
@@ -24,12 +24,12 @@ os.makedirs(folder, exist_ok=True)
 for row in rows:
     name = row[0].strip() if row else "Unnamed"
     slug = re.sub(r"[^\w]+", "-", name.lower()).strip("-") or "contact"
-    filename = f"{slug}.{ext}"
+    filename = f"{slug}{ext}"
     path = os.path.join(folder, filename)
 
     counter = 1
     while os.path.exists(path):
-        filename = f"{slug}-{counter}.{ext}"
+        filename = f"{slug}-{counter}{ext}"
         path = os.path.join(folder, filename)
         counter += 1
 
