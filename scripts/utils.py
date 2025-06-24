@@ -3,35 +3,6 @@ import urllib.parse
 import json
 
 
-###################################
-#add items to the recent list/file
-def add_to_recent(entry, tag):
-
-    entry = dict(entry)  # make a copy
-    entry["tag"] = tag
-
-    recent_path = os.path.join(os.environ["alfred_workflow_data"], "recent.json")
-
-    try:
-        with open(recent_path) as f:
-            recent = json.load(f)
-    except FileNotFoundError:
-        recent = []
-
-    # remove duplicate if exists
-    recent = [r for r in recent if r.get("uid") != entry.get("uid")]
-
-    # insert to top
-    recent.insert(0, entry)
-
-    cap = int(os.environ.get("recent"))
-    recent = recent[:cap]
-
-    with open(recent_path, "w") as f:
-        json.dump(recent, f, indent=2)
-
-
-
 
 #######################################
 # get the icon based on its specific tag
@@ -56,3 +27,27 @@ def get_icon_for_tag(*strings):
                     return { "path": os.path.abspath(icon_path) }
 
     return ""
+
+
+
+#######################################
+def parse_query(raw_query):
+    """Split the query & detect :or mode"""
+    is_or = ":or" in raw_query
+    terms = [q for q in raw_query.replace(":or", "").split() if q]
+    return is_or, terms
+
+
+#######################################
+def matches_terms(text, terms, is_or):
+    """Return True if text matches all or any terms"""
+    text = text.lower()
+    if is_or:
+        return any(term in text for term in terms)
+    return all(term in text for term in terms)
+
+#######################################
+def get_query_terms(query):
+    is_or = ":or" in query
+    terms = [q for q in query.replace(":or", "").split() if q]
+    return is_or, terms

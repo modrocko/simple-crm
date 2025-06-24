@@ -2,20 +2,16 @@
 
 import os
 import json
-import re
 import sys
 import utils
 
 # === ENV VARS ===
 folder = os.environ["contact_folder"]
-ext = os.environ.get("file_extension", ".md").strip()
+ext = os.environ["file_extension"].strip()
 query = sys.argv[1].strip().lower() if len(sys.argv) > 0 else ""
 
-raw_query = query
-
-# === DETECT OR MODE ===
-is_or = ":or" in query
-query_terms = [q for q in query.replace(":or", "").split() if q]
+# === Parse query using utils ===
+is_or, query_terms = utils.parse_query(query)
 
 # === FIELDS TO SHOW ===
 display_fields_env = os.environ.get("display_fields", "")
@@ -29,17 +25,21 @@ def get_field(field, content):
     return ""
 
 items = []
-if raw_query:
-    items.append({
-            "title": "Save this search",
-            "subtitle": "↵ to Save this search",
-            "arg": raw_query,
-            "icon": { "path": "save.png" },
-            "variables": {
-                "action": "save_search"
-            }
-        })
 
+if query:
+    items.append({
+        "title": "Choose command...",
+        "subtitle": "↵ Save this search ∙ ⌘ Update rows below",
+        "arg": query,
+        "icon": { "path": "tools.png" },
+        "variables": { "action": "save_search" },
+        "mods": {
+            "cmd": {
+                "subtitle": "⌘ Update rows with a new value",
+                "variables": { "query": query }
+            }
+        }
+    })
 
 # === If folder not found ===
 if not os.path.exists(folder):
@@ -61,28 +61,24 @@ else:
             with open(path, "r") as f:
                 content = f.read()
 
-                name = get_field("Name", content)
-                fields = {field: get_field(field, content) for field in field_names}
-                subtitle_parts = [fields[f] if fields[f] else "—" for f in field_names]
-                subtitle = " ∙ ".join(subtitle_parts)
+            name = get_field("Name", content)
+            fields = {field: get_field(field, content) for field in field_names}
+            subtitle_parts = [fields[f] if fields[f] else "—" for f in field_names]
+            subtitle = " ∙ ".join(subtitle_parts)
 
-                full_text = f"{name} {' '.join(subtitle_parts)}".lower()
+            full_text = f"{name} {' '.join(subtitle_parts)}"
+            match = utils.matches_terms(full_text, query_terms, is_or)
 
-                match = (
-                    any(term in full_text for term in query_terms)
-                    if is_or else
-                    all(term in full_text for term in query_terms)
-                )
+            if match:
+                icon = utils.get_icon_for_tag(fields.get("Tags", ""))
+                matched = True
+                items.append({
+                    "title": name,
+                    "subtitle": subtitle,
+                    "arg": path,
+                    "icon": icon
+                })
 
-                if match:
-                    icon = utils.get_icon_for_tag(fields.get("Tags", ""))
-                    matched = True
-                    items.append({
-                        "title": name,
-                        "subtitle": subtitle,
-                        "arg": path,
-                        "icon": icon
-                    })
         except Exception as e:
             items.append({
                 "title": f"Error in {filename}",
