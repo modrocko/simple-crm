@@ -113,6 +113,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>F72DC987-2D4E-4362-9A9F-2C9E3C5AEF3A</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>DA00E772-B4BF-4051-A8D2-2A0EA93E2D8B</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
@@ -162,7 +172,7 @@
 				<integer>102</integer>
 				<key>script</key>
 				<string>cd "$alfred_workflow_directory"
-python3 scripts/remove_saved_search.py "$1"</string>
+python3 scripts/open_contacts.py "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -173,7 +183,7 @@ python3 scripts/remove_saved_search.py "$1"</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>A4280409-DA48-4C05-8A73-5688E2A9F94A</string>
+			<string>F72DC987-2D4E-4362-9A9F-2C9E3C5AEF3A</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -241,6 +251,30 @@ python3 scripts/update_contacts.py "$1"</string>
 			<string>ED87AF3A-49FA-4316-A45A-849235D8944F</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/remove_saved_search.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A4280409-DA48-4C05-8A73-5688E2A9F94A</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -719,9 +753,9 @@ osascript -e "tell application \"Alfred 5\" to run trigger \"refresh_list_tags\"
 			<key>note</key>
 			<string>removed saved search</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>340</real>
 			<key>ypos</key>
-			<real>65</real>
+			<real>365</real>
 		</dict>
 		<key>B2CDBAC8-6AB7-4F55-814A-9AC99F9A102C</key>
 		<dict>
@@ -763,6 +797,15 @@ osascript -e "tell application \"Alfred 5\" to run trigger \"refresh_list_tags\"
 			<real>755</real>
 			<key>ypos</key>
 			<real>265</real>
+		</dict>
+		<key>F72DC987-2D4E-4362-9A9F-2C9E3C5AEF3A</key>
+		<dict>
+			<key>note</key>
+			<string>open contacts</string>
+			<key>xpos</key>
+			<real>585</real>
+			<key>ypos</key>
+			<real>80</real>
 		</dict>
 		<key>F98EE783-8286-4763-B6F5-A34D6D520C03</key>
 		<dict>
@@ -833,7 +876,7 @@ osascript -e "tell application \"Alfred 5\" to run trigger \"refresh_list_tags\"
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>Name, Company, Email, Phone, Website, Tags, Lead Status, Lead Source, Note, Log</string>
+				<string>Name, Company, Email, Phone, Website, Tags, Lead Status, Lead Source, Notes, Log</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -1050,7 +1093,9 @@ osascript -e "tell application \"Alfred 5\" to run trigger \"refresh_list_tags\"
   "@deciding": "deciding.png",
   "@active": "active.png",
   "@loss": "loss.png",
-  "@pause": "pause.png"
+  "@pause": "pause.png",
+  "@meeting": "meeting.png",
+  "@lead": "lead.png"
 }</string>
 				<key>required</key>
 				<false/>

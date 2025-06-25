@@ -7,12 +7,24 @@
 	<key>contact_folder</key>
 	<string>~/Documents/00 now/my crm</string>
 	<key>display_fields</key>
-	<string>Company, Tags, Email, Phone, Lead Status</string>
+	<string>Company, Tags, Notes, Email, Phone, Lead Status</string>
 	<key>export_fields</key>
 	<string>Name, Company, Email, Phone, Website, Lead Status, Tags</string>
 	<key>file_extension</key>
 	<string>.md</string>
-	<key>file_template</key>
-	<string>Name, Company, Email, Phone, Website, Tags, Lead Status, Lead Source, Lead Thread, Questionnaire, Note, Log</string>
+	<key>tag_icons</key>
+	<string>{
+  "@waiting": "waiting.png",
+  "@ping": "ping.png",
+  "@won": "won.png",
+  "@deciding": "deciding.png",
+  "@loss": "loss.png",
+  "@pause": "pause.png",
+  "@meeting": "meeting.png",
+  "@lead": "lead.png",
+  "@hot": "hot.png",
+  "@cold": "cold.png",
+  "@past": "past.png"
+}</string>
 </dict>
 </plist>

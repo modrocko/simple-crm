@@ -29,15 +29,21 @@ items = []
 if query:
     items.append({
         "title": "Choose command...",
-        "subtitle": "↵ Save this search ∙ ⌘ Update rows below",
+        "subtitle": "↵ Save this search ∙ ⌘ Update contacts ∙ ⌥ Open contacts",
         "arg": query,
-        "icon": { "path": "tools.png" },
+        "icon": { "path": "info.png" },
         "variables": { "action": "save_search" },
         "mods": {
             "cmd": {
-                "subtitle": "⌘ Update rows with a new value",
+                "subtitle": "⌘ Update contacts in this list",
+                "variables": { "query": query }
+            },
+            "alt": {
+                "subtitle": "⌥ Open contacts in this list",
+                "arg": query,
                 "variables": { "query": query }
             }
+
         }
     })
 
