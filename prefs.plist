@@ -3,15 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>add_fields</key>
-	<string>Name, Company, Email, Phone, Tags</string>
+	<string>Name, Company, Tags, Reminder, Next</string>
 	<key>contact_folder</key>
 	<string>~/Documents/00 now/my crm</string>
 	<key>display_fields</key>
-	<string>Company, Tags, Notes, Email, Phone, Lead Status</string>
+	<string>Company, Tags, Notes, Email, Phone, Lead Status, Reminder</string>
 	<key>export_fields</key>
 	<string>Name, Company, Email, Phone, Website, Lead Status, Tags</string>
 	<key>file_extension</key>
 	<string>.md</string>
+	<key>file_template</key>
+	<string>Name, Company, Email, Phone, Website, Tags, Lead Status, Lead Source, Reminder, Next, Notes, Log</string>
 	<key>tag_icons</key>
 	<string>{
   "@waiting": "waiting.png",
@@ -24,7 +26,9 @@
   "@lead": "lead.png",
   "@hot": "hot.png",
   "@cold": "cold.png",
-  "@past": "past.png"
+  "@past": "past.png",
+  "@followup": "followup.png",
+  "@active": "active.png"
 }</string>
 </dict>
 </plist>

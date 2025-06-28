@@ -87,8 +87,8 @@ else:
         })
 
 # === Summary row at the top (did this to get rowcount before inserting this row) ===
+noun = "contact" if rowcount == 1 else "contacts"
 if query:
-    noun = "contact" if rowcount == 1 else "contacts"
     items.insert(0, {
         "title": f"{rowcount} {noun}",
         "subtitle": "↵ Save this search ∙ ⌘ Update contacts ∙ ⌥ Open contacts",
@@ -106,6 +106,12 @@ if query:
                 "variables": { "query": query }
             }
         }
+    })
+else:
+    items.insert(0, {
+        "title": f"{rowcount} {noun}",
+        "icon": { "path": "info.png" },
+        "valid": False
     })
 
 
