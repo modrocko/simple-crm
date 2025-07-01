@@ -70,19 +70,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>EC7565CA-EC03-4331-8E4B-F21A318A49B8</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>FF54581A-7BF8-496A-AD23-84474CFAA601</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>ED87AF3A-49FA-4316-A45A-849235D8944F</key>
 		<array>
 			<dict>
@@ -514,57 +501,6 @@ if path and os.path.exists(path):
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>{var:list_reminders}</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>cd "$alfred_workflow_directory"
-python3 scripts/list_reminders.py "$1"
-</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Show contacts that have a reminder date set</string>
-				<key>title</key>
-				<string>List reminders</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>EC7565CA-EC03-4331-8E4B-F21A318A49B8</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
 				<string>{var:run_util}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
@@ -585,8 +521,8 @@ query = sys.argv[1].lower() if len(sys.argv) &gt; 1 else ""
 items = [
     {"title": "Open workflow folder", "arg": "open_workflow"},
     {"title": "Open data folder", "arg": "open_data"},
-    {"title": "Export contacts", "arg": "export_contacts"},
-    {"title": "Import contacts", "arg": "import_contacts"}
+    {"title": "Export contacts", "arg": "export_contacts.py"},
+    {"title": "Import contacts", "arg": "import_contacts.py"}
 ]
 
 filtered = [item for item in items if query in item["title"].lower()]
@@ -630,7 +566,7 @@ elif [ "$1" = "open_data" ]; then
 	open "$alfred_workflow_data"
 
 else
-	python3 scripts/${1}.py
+	python3 scripts/${1}
 fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -643,6 +579,81 @@ fi</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>B2CDBAC8-6AB7-4F55-814A-9AC99F9A102C</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:show_icons}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/show_icons.py "$1"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Specify a tag to show the icon you like</string>
+				<key>title</key>
+				<string>Show supported icons</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>69453C75-DF71-4A33-9935-61E09BC733AA</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/check_reminders.py</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1EE75ED1-795B-4C37-AB08-EFB31DE94612</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -671,6 +682,17 @@ fi</string>
 			<key>ypos</key>
 			<real>555</real>
 		</dict>
+		<key>1EE75ED1-795B-4C37-AB08-EFB31DE94612</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
+			<key>note</key>
+			<string>check reminders</string>
+			<key>xpos</key>
+			<real>345</real>
+			<key>ypos</key>
+			<real>920</real>
+		</dict>
 		<key>37FDEA91-828D-4FF0-9E41-05B2AE1DAED8</key>
 		<dict>
 			<key>note</key>
@@ -679,6 +701,17 @@ fi</string>
 			<real>585</real>
 			<key>ypos</key>
 			<real>390</real>
+		</dict>
+		<key>69453C75-DF71-4A33-9935-61E09BC733AA</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>show supported icons</string>
+			<key>xpos</key>
+			<real>585</real>
+			<key>ypos</key>
+			<real>915</real>
 		</dict>
 		<key>83D4CD86-AFCE-4379-8CD7-03C43D128678</key>
 		<dict>
@@ -689,7 +722,7 @@ fi</string>
 			<key>xpos</key>
 			<real>340</real>
 			<key>ypos</key>
-			<real>890</real>
+			<real>745</real>
 		</dict>
 		<key>8A500D23-4715-4736-8743-E11A08563D28</key>
 		<dict>
@@ -718,7 +751,7 @@ fi</string>
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>890</real>
+			<real>745</real>
 		</dict>
 		<key>C43BF98B-6221-4598-A1A0-E307E9217FCD</key>
 		<dict>
@@ -737,17 +770,6 @@ fi</string>
 			<real>585</real>
 			<key>ypos</key>
 			<real>235</real>
-		</dict>
-		<key>EC7565CA-EC03-4331-8E4B-F21A318A49B8</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>8</integer>
-			<key>note</key>
-			<string>list reminders</string>
-			<key>xpos</key>
-			<real>340</real>
-			<key>ypos</key>
-			<real>725</real>
 		</dict>
 		<key>ED87AF3A-49FA-4316-A45A-849235D8944F</key>
 		<dict>
@@ -813,6 +835,27 @@ fi</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string>Name, Company, Email, Phone, Website, Tags, Lead Status, Lead Source, Reminder, Next, Note, Log</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>All fields for creating new contacts (used for importing csv file too)</string>
+			<key>label</key>
+			<string>All fields</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>file_template</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>Company, Lead Status, Lead Source, Email, Phone, Website</string>
 				<key>required</key>
 				<false/>
@@ -834,48 +877,6 @@ fi</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>Name, Company, Email, Phone, Website, Tags, Lead Status, Lead Source, Notes, Log</string>
-				<key>required</key>
-				<false/>
-				<key>trim</key>
-				<true/>
-				<key>verticalsize</key>
-				<integer>3</integer>
-			</dict>
-			<key>description</key>
-			<string>All fields for creating new contacts (used for importing csv file too)</string>
-			<key>label</key>
-			<string>All fields</string>
-			<key>type</key>
-			<string>textarea</string>
-			<key>variable</key>
-			<string>file_template</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string>Name, Company, Email, Phone, Website</string>
-				<key>required</key>
-				<false/>
-				<key>trim</key>
-				<true/>
-				<key>verticalsize</key>
-				<integer>3</integer>
-			</dict>
-			<key>description</key>
-			<string>Specify the fields to export all contacts into a .csv file</string>
-			<key>label</key>
-			<string>Export fields</string>
-			<key>type</key>
-			<string>textarea</string>
-			<key>variable</key>
-			<string>export_fields</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
 				<string>Name, Company, Lead Status, Email, Phone, Tags</string>
 				<key>required</key>
 				<false/>
@@ -892,6 +893,27 @@ fi</string>
 			<string>textarea</string>
 			<key>variable</key>
 			<string>add_fields</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Name, Company, Email, Phone, Website, Lead Status, Tags</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>Specify the fields to export all contacts into a .csv file</string>
+			<key>label</key>
+			<string>Export fields</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>export_fields</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1065,6 +1087,27 @@ fi</string>
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string>:crmui</string>
+				<key>placeholder</key>
+				<string>:crmui</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>See the list of tags associated with icons</string>
+			<key>label</key>
+			<string>Show supported icons</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>show_icons</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>{
   "@waiting": "waiting.png",
   "@ping": "ping.png",
@@ -1114,6 +1157,8 @@ fi</string>
 			<string>saved_search_count</string>
 		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>1.6.3</string>
 	<key>webaddress</key>

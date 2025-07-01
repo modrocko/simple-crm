@@ -32,7 +32,8 @@ add_data = dict(zip(add_fields, input_values))
 
 # === CREATE FILENAME FROM NAME FIELD ===
 name = input_values[0] if input_values else "Unnamed"
-slug = re.sub(r"[^\w]+", "-", name.lower()).strip("-")
+slug = re.sub(r"[^\w ]+", "", name).strip()
+
 filename = f"{slug}.{ext.lstrip('.')}"
 path = os.path.join(contact_folder, filename)
 

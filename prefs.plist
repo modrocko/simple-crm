@@ -7,13 +7,9 @@
 	<key>contact_folder</key>
 	<string>~/Documents/00 now/my crm</string>
 	<key>display_fields</key>
-	<string>Company, Tags, Notes, Email, Phone, Lead Status, Reminder</string>
-	<key>export_fields</key>
-	<string>Name, Company, Email, Phone, Website, Lead Status, Tags</string>
+	<string>Company, Tags, Note, Email, Reminder</string>
 	<key>file_extension</key>
 	<string>.md</string>
-	<key>file_template</key>
-	<string>Name, Company, Email, Phone, Website, Tags, Lead Status, Lead Source, Reminder, Next, Notes, Log</string>
 	<key>tag_icons</key>
 	<string>{
   "@waiting": "waiting.png",
@@ -28,7 +24,10 @@
   "@cold": "cold.png",
   "@past": "past.png",
   "@followup": "followup.png",
-  "@active": "active.png"
+  "@active": "active.png",
+  "@reminder": "reminder.png",
+  "@meh": "meh.png",
+  "@awaitingpayment": "awaitingpayment.png"
 }</string>
 </dict>
 </plist>

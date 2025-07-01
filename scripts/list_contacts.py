@@ -38,7 +38,7 @@ else:
     matched = False
     found_files = False
 
-    for filename in os.listdir(folder):
+    for filename in sorted(os.listdir(folder)):
         if not filename.endswith(ext):
             continue
         found_files = True
