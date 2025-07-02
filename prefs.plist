@@ -4,6 +4,8 @@
 <dict>
 	<key>add_fields</key>
 	<string>Name, Company, Tags, Reminder, Next</string>
+	<key>backup_folder</key>
+	<string>~/Documents/01 archive/my backups/crm backups</string>
 	<key>contact_folder</key>
 	<string>~/Documents/00 now/my crm</string>
 	<key>display_fields</key>

@@ -522,7 +522,8 @@ items = [
     {"title": "Open workflow folder", "arg": "open_workflow"},
     {"title": "Open data folder", "arg": "open_data"},
     {"title": "Export contacts", "arg": "export_contacts.py"},
-    {"title": "Import contacts", "arg": "import_contacts.py"}
+    {"title": "Import contacts", "arg": "import_contacts.py"},
+	{"title": "Backup contact files", "arg": "backup_contacts.py"}
 ]
 
 filtered = [item for item in items if query in item["title"].lower()]
@@ -830,6 +831,27 @@ python3 scripts/check_reminders.py</string>
 			<string>filepicker</string>
 			<key>variable</key>
 			<string>contact_folder</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>~/Documents/simple-crm/_backups</string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string>~/Documents/simple-crm/_backups</string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>Location for backups of all contact files</string>
+			<key>label</key>
+			<string>Backup path</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>backup_folder</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1157,8 +1179,6 @@ python3 scripts/check_reminders.py</string>
 			<string>saved_search_count</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>1.6.3</string>
 	<key>webaddress</key>
