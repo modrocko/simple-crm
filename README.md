@@ -22,7 +22,7 @@
 
 **More...**
 
-**Simple CRM is (super) lightweight, workflow built around files**. You open & edit these files with your favorite editor. What this workflow does is make it easy & fast to define, add, tag, find &  view contacts. And has tools to import, export & backup all your contacts. 
+**Simple CRM is a (super) lightweight, workflow built around files**. You open & edit these files with your favorite editor. This workflow makes it easy & fast to define, add, tag, find &  view contacts. And has tools to import, export & backup all your contacts. 
 
 Simple CRM is built for power users, freelancers & anyone wanting less — to do more.
 
