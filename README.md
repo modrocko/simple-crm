@@ -141,7 +141,7 @@ Save any filtered contacts from above to a saved search.
  `@hot OR @cold OR @pause` → matches any of the tags
 
 **NOT logic**  
- `@ping OR @waiting !@past` → matches ping or waiting, but excludes past
+ `@ping OR @waiting !@past` → matches ping or waiting, but excludes past  
  `@lead -@loss` → matches @lead but excludes @loss
 
 **Phrases**  
