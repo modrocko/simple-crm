@@ -149,17 +149,17 @@ Save any filtered contacts from above to a saved search.
 
 ### Search Filter Rules
 
-**AND by default**
+**AND by default**  
  `@lead @followup @active` → matches items with all 3 tags
 
-**OR logic**
+**OR logic**  
  `@hot OR @cold OR @pause` → matches any of the tags
 
-**NOT logic**
+**NOT logic**  
  `@ping OR @waiting !@past` → matches ping or waiting, but excludes past
  `@lead -@loss` → matches @lead but excludes @loss
 
-**Phrases**
+**Phrases**  
  `"awaiting payment" OR @reminder` → matches the exact phrase or @reminder
 
 All searches are case-insensitive.
