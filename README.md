@@ -123,28 +123,13 @@ Save any filtered contacts from above to a saved search.
 
 **Symbols allow for quick recognition for all contact rows.** I created out-of-the-box icons below for the specified tags. All this is completely configurable in `Workflow Configuration`. Add or change — anything.
 
-**Combine tags to tell the story for each contact:**  ex. `@hot @lead` ***Note:** The 1st tag listed determines the icon to be used.*
+**Combine tags to tell the story for each contact:**  ex. `@hot @lead` ***Note:** The 1st tag listed determines the icon to be used in the field `Tags:`.*
 
-**Want more icons?** Just let me know as I plan to keep adding to this workflow.
+**A list of tags & associated icons below** —with more coming...
 
-| Tag               | Icon                              |
-|------------------|-----------------------------------|
-| @active           | ![](assets/icons/active.png)            |
-| @awaitingpayment  | ![](assets/icons/awaitingpayment.png)   |
-| @cold             | ![](assets/icons/cold.png)              |
-| @deciding         | ![](assets/icons/deciding.png)          |
-| @followup         | ![](assets/icons/followup.png)          |
-| @hot              | ![](assets/icons/hot.png)               |
-| @lead             | ![](assets/icons/lead.png)              |
-| @loss             | ![](assets/icons/loss.png)              |
-| @meeting          | ![](assets/icons/meeting.png)           |
-| @past             | ![](assets/icons/past.png)              |
-| @meh              | ![](assets/icons/meh.png)               |
-| @pause            | ![](assets/icons/pause.png)             |
-| @ping             | ![](assets/icons/ping.png)              |
-| @reminder         | ![](assets/icons/reminder.png)          |
-| @waiting          | ![](assets/icons/waiting.png)           |
-| @won              | ![](assets/icons/won.png)               |
+ `@active` `@awaitingpayment` `@cold` `@deciding` `@followup` `@hot` `@lead` `@loss` `@meeting` `@past` `@meh` `@pause` `@ping` `@reminder` `@waiting` `@won`
+
+![](assets/icons.png)    
 
 
 ### Search Filter Rules
@@ -168,4 +153,4 @@ All searches are case-insensitive.
 
 Some useful tools to manage your contact files. And to peek into your data and workflow folders.
 
-![](assets/crmu.png)
+![](assets/crmu.png)  

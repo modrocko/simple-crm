@@ -731,7 +731,7 @@ Imagine finding *any contact* in seconds. And finding *a set of contacts* in few
 
 List all contacts, ready for filtering.
 
-![](assets/crml.png) 
+![](assets/crml.png)   
 
 &lt;kbd&gt;↵&lt;/kbd&gt; To open selected contact in your editor
 
@@ -779,36 +779,34 @@ Save any filtered contacts from above to a saved search.
 
 &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To remove this search
 
-
-
 ---
 
 ### Tags &amp; Icons
 
 **Symbols allow for quick recognition for all contact rows.** I created out-of-the-box icons below for the specified tags. All this is completely configurable in `Workflow Configuration`. Add or change — anything.
 
-**Combine tags to tell the story for each contact:**  ex. `@hot @lead` ***Note:** The 1st tag listed determines the icon to be used.*
+**Combine tags to tell the story for each contact:**  ex. `@hot @lead` ***Note:** The 1st tag listed determines the icon to be used in the field `Tags:`.*
 
-**Want more icons?** Just let me know as I plan to keep adding to this workflow.
+**A list of tags &amp; associated icons below** —with more coming...
 
-![](assets/icons/active.png) ![](assets/icons/awaitingpayment.png) ![](assets/icons/cold.png) ![](assets/icons/deciding.png) ![](assets/icons/followup.png) ![](assets/icons/hot.png) ![](assets/icons/lead.png) ![](assets/icons/loss.png) ![](assets/icons/meeting.png) ![](assets/icons/past.png) ![](assets/icons/meh.png) ![](assets/icons/pause.png) ![](assets/icons/ping.png) ![](assets/icons/reminder.png) ![](assets/icons/waiting.png) ![](assets/icons/won.png)
+ `@active` `@awaitingpayment` `@cold` `@deciding` `@followup` `@hot` `@lead` `@loss` `@meeting` `@past` `@meh` `@pause` `@ping` `@reminder` `@waiting` `@won`
 
-
+![](assets/icons.png)    
 
 
 ### Search Filter Rules
 
-**AND by default**
+**AND by default**  
  `@lead @followup @active` → matches items with all 3 tags
 
-**OR logic**
+**OR logic**  
  `@hot OR @cold OR @pause` → matches any of the tags
 
-**NOT logic**
+**NOT logic**  
  `@ping OR @waiting !@past` → matches ping or waiting, but excludes past
  `@lead -@loss` → matches @lead but excludes @loss
 
-**Phrases**
+**Phrases**  
  `"awaiting payment" OR @reminder` → matches the exact phrase or @reminder
 
 All searches are case-insensitive.
