@@ -123,7 +123,7 @@ Save any filtered contacts from above to a saved search.
 
 **Symbols allow for quick recognition for all contact rows.** I created out-of-the-box icons below for the specified tags. All this is completely configurable in `Workflow Configuration`. Add or change — anything.
 
-**Combine tags to tell the story for each contact:**  ex. `@hot @lead` ***Note:** The 1st tag listed determines the icon to be used in the field `Tags:`.*
+**Combine tags to tell the story for each contact:**  ex. `@hot @lead` ***Note:** The 1st tag listed determines the icon to be used in the field `Tags:`.* Use any tag you think of as you go — there are no limitations.
 
 **A list of tags & associated icons below** —with more coming...
 
