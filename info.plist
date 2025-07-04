@@ -684,7 +684,7 @@ python3 scripts/check_reminders.py</string>
 
 **More...**
 
-**Simple CRM is (super) lightweight, workflow built around files**. You open &amp; edit these files with your favorite editor. What this workflow does is make it easy &amp; fast to define, add, tag, find &amp;  view contacts. And has tools to import, export &amp; backup all your contacts. 
+**Simple CRM is a (super) lightweight, workflow built around files**. You open &amp; edit these files with your favorite editor. This workflow makes it easy &amp; fast to define, add, tag, find &amp;  view contacts. And has tools to import, export &amp; backup all your contacts. 
 
 Simple CRM is built for power users, freelancers &amp; anyone wanting less — to do more.
 
@@ -1334,6 +1334,8 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<string>saved_search_count</string>
 		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>3.6.3</string>
 	<key>webaddress</key>
