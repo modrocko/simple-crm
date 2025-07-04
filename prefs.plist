@@ -10,8 +10,12 @@
 	<string>~/Documents/00 now/my crm</string>
 	<key>display_fields</key>
 	<string>Company, Tags, Note, Email, Reminder</string>
+	<key>export_fields</key>
+	<string>Name, Company, Email, Phone, Website, Tags, Lead Source, Referred by</string>
 	<key>file_extension</key>
 	<string>.md</string>
+	<key>file_template</key>
+	<string>Name, Company, Email, Phone, Website, Tags, Lead Source, Referred by, Reminder, Next, Note, Log</string>
 	<key>tag_icons</key>
 	<string>{
   "@waiting": "waiting.png",

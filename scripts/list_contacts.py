@@ -8,11 +8,8 @@ import utils
 # === ENV VARS ===
 folder = os.environ["contact_folder"]
 ext = os.environ["file_extension"].strip()
-query = sys.argv[1].strip().lower() if len(sys.argv) > 0 else ""
+query = sys.argv[1].strip() if len(sys.argv) > 0 else ""
 rowcount = 0
-
-# === Parse query using utils ===
-is_or, query_terms = utils.parse_query(query)
 
 # === FIELDS TO SHOW ===
 display_fields_env = os.environ.get("display_fields", "")
@@ -53,7 +50,7 @@ else:
             subtitle = " ∙ ".join(subtitle_parts)
 
             full_text = f"{name} {' '.join(subtitle_parts)}"
-            match = utils.matches_terms(full_text, query_terms, is_or)
+            match = utils.matches_terms(full_text, query)
 
             if match:
                 icon = utils.get_icon_for_tag(fields.get("Tags", ""))
@@ -86,7 +83,7 @@ else:
             "valid": False
         })
 
-# === Summary row at the top (did this to get rowcount before inserting this row) ===
+# === Summary row at the top ===
 noun = "contact" if rowcount == 1 else "contacts"
 if query:
     items.insert(0, {
@@ -113,7 +110,6 @@ else:
         "icon": { "path": "info.png" },
         "valid": False
     })
-
 
 # === Output JSON for Alfred ===
 print(json.dumps({ "items": items }))

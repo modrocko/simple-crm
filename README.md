@@ -1,18 +1,32 @@
 # Simple CRM
 
-### World's simplest, fastest, useful CRM — via Alfred
+### World's simplest, fastest, most usable CRM — via Alfred
 
-The problem with most CRMs... Hassle to load an app. Too long to log in online. Too slow to add new contacts. Too cumbersome to find existing ones. And more features than most users need.
+**The problem with most CRMs...**
 
-But with Simple CRM... 
+✘  Hassle to load an app  
+✘  Too long to log in online  
+✘  Too slow to add new contacts  
+✘  Too cumbersome to find existing ones  
+✘  And more features than most users need
 
-✓  Load immediately, thanks to Alfred  
-✓  Add new contacts — blazingly simple & fast  
-✓  Find them — even faster  
-✓  Use tags to filter in infinite ways  
-✓  Use your favorite editor for all contacts file  
-✓  Save any search using the `enter` key  
-✓  Smart Icons for lead status & more *(completely configurable)*
+**But with Simple CRM...** 
+
+**✓**  Load immediately, thanks to Alfred  
+**✓**  Add new contacts — blazingly simple & fast  
+**✓**  Find them — even faster  
+**✓**  Use tags to filter in infinite ways  
+**✓**  Use your favorite editor for all contacts file  
+**✓**  Save any search using the `enter` key  
+**✓**  Smart Icons for lead status & more *(completely configurable)*
+
+**More...**
+
+**Simple CRM is (super) lightweight, workflow built around files**. You open & edit these files with your favorite editor. What this workflow does is make it easy & fast to define, add, tag, find &  view contacts. And has tools to import, export & backup all your contacts. 
+
+Simple CRM is built for power users, freelancers & anyone wanting less — to do more.
+
+Give it a shot. Tell me what ya like. And what sucks. I'll make it un-suck.
 
 ## Usage
 
@@ -28,39 +42,132 @@ Got existing contacts in your current CRM? Cool. Import them into Simple CRM.
 
 Voila. A new file created for each contact.
 
-### Main workflows
+### Tags
 
-![](assets/crm.png) 
+**Tags provide mucho power to categorize your leads.** They save you from having to create & complete too many fields too. And making search *real* easy. And fast! [See more about tags & icons](#tags--icons).
+
+## Main workflows
+
+![](assets/crm.png)  
 
 ### Add new contact
 
-Adding contacts is as simple as it gets. Start typing
+Adding contacts is as simple as it gets. Start typing to add a new contact, using a subset of fields defined in `Configure Workflow`. And informing you which field you're currently entering *(in CAPs)*. Fill in any or all fields.
 
-![image-20250701223815705](assets/crma.png)  
 
-Start typing to add a new contact, using a subset of fields defined in `Configure Workflow`.
-
-![image-20250701164045104](assets/image-20250701164045104.png)  
-
-Simple, fast entry on one line, informing you which field your currently entering *(in cap letters)*. 
+![](assets/crma.png) 
 
 <kbd>↵</kbd>  To create new contact file in your CRM folder
 
-<kbd>⌘</kbd><kbd>↵</kbd> To create contact file then open it for further editing
+<kbd>⌘</kbd><kbd>↵</kbd> To create new contact file — then open for further editing
 
-![image-20250701165036892](assets/image-20250701165036892.png)
+### List & Search contacts
 
-### List & search contacts 
+Imagine finding *any contact* in seconds. And finding *a set of contacts* in few seconds more. Simple CRM was built for this.
+
+#### List Contacts
+
+List all contacts, ready for filtering.
+
+![](assets/crml.png) 
+
+<kbd>↵</kbd> To open selected contact in your editor
+
+#### Search contacts
+
+Combine tags or any search fields *(as defined in `Configure Workflow`)* to filter rows — using basic AND/OR logic. This is the most powerful feature in Simple CRM. [See more filtering examples & rules](#Search-Filter-Rules).
+
+![](assets/crml1.png)   
+
+![](assets/crml2.png)   
+
+![](assets/crml3.png)   
+
+#### For 1st row
+
+<kbd>↵</kbd> To save currently applied filtering as a `saved search`
+
+<kbd>⌘</kbd><kbd>↵</kbd> To perform bulk update for all filtered contacts
+
+<kbd>⌘</kbd><kbd>⌥</kbd> To open contact files for all filtered contacts
+
+#### For all contact rows
+
+<kbd>↵</kbd> To open contact file for currently select contact
+
+#### Universal Actions
+
+Key Universal actions include: 
+
+**For 1st row:** 
+
+`Search in Finder` - Show all currently filtered contacts in Finder
+
+**For all contact rows**
+
+`View in Alfred` | `Open`  | `Reveal in Finder`  | `Delete`
+
+### Run a saved search
+
+Save any filtered contacts from above to a saved search.
+
+![](assets/crmss.png)  
+
+<kbd>↵</kbd> To run this search
+
+<kbd>⌘</kbd><kbd>↵</kbd> To remove this search
 
 
 
-![image-20250701172450662](assets/image-20250701172450662.png)  
+---
+
+### Tags & Icons
+
+**Symbols allow for quick recognition for all contact rows.** I created out-of-the-box icons below for the specified tags. All this is completely configurable in `Workflow Configuration`. Add or change — anything.
+
+**Combine tags to tell the story for each contact:**  ex. `@hot @lead` ***Note:** The 1st tag listed determines the icon to be used.*
+
+**Want more icons?** Just let me know as I plan to keep adding to this workflow.
+
+| Tag               | Icon                              |
+|------------------|-----------------------------------|
+| @active           | ![](assets/icons/active.png)            |
+| @awaitingpayment  | ![](assets/icons/awaitingpayment.png)   |
+| @cold             | ![](assets/icons/cold.png)              |
+| @deciding         | ![](assets/icons/deciding.png)          |
+| @followup         | ![](assets/icons/followup.png)          |
+| @hot              | ![](assets/icons/hot.png)               |
+| @lead             | ![](assets/icons/lead.png)              |
+| @loss             | ![](assets/icons/loss.png)              |
+| @meeting          | ![](assets/icons/meeting.png)           |
+| @past             | ![](assets/icons/past.png)              |
+| @meh              | ![](assets/icons/meh.png)               |
+| @pause            | ![](assets/icons/pause.png)             |
+| @ping             | ![](assets/icons/ping.png)              |
+| @reminder         | ![](assets/icons/reminder.png)          |
+| @waiting          | ![](assets/icons/waiting.png)           |
+| @won              | ![](assets/icons/won.png)               |
 
 
+### Search Filter Rules
 
+**AND by default**
+ `@lead @followup @active` → matches items with all 3 tags
 
+**OR logic**
+ `@hot OR @cold OR @pause` → matches any of the tags
 
+**NOT logic**
+ `@ping OR @waiting !@past` → matches ping or waiting, but excludes past
+ `@lead -@loss` → matches @lead but excludes @loss
 
+**Phrases**
+ `"awaiting payment" OR @reminder` → matches the exact phrase or @reminder
 
+All searches are case-insensitive.
 
+### Utilities
 
+Some useful tools to manage your contact files. And to peek into your data and workflow folders.
+
+![](assets/crmu.png)

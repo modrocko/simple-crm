@@ -1,7 +1,7 @@
 import os
 import urllib.parse
 import json
-
+import shlex
 
 
 #######################################
@@ -30,24 +30,39 @@ def get_icon_for_tag(*strings):
 
 
 
-#######################################
-def parse_query(raw_query):
-    """Split the query & detect :or mode"""
-    is_or = ":or" in raw_query
-    terms = [q for q in raw_query.replace(":or", "").split() if q]
-    return is_or, terms
 
-
-#######################################
-def matches_terms(text, terms, is_or):
-    """Return True if text matches all or any terms"""
+#########################################
+# filter logic
+def matches_terms(text, raw_query):
     text = text.lower()
-    if is_or:
-        return any(term in text for term in terms)
-    return all(term in text for term in terms)
+    terms = shlex.split(raw_query)  # handles quoted phrases
 
-#######################################
-def get_query_terms(query):
-    is_or = ":or" in query
-    terms = [q for q in query.replace(":or", "").split() if q]
-    return is_or, terms
+    include_terms = []
+    exclude_terms = []
+    current_logic = "AND"
+
+    i = 0
+    while i < len(terms):
+        term = terms[i]
+
+        if term.upper() == "OR":
+            current_logic = "OR"
+            i += 1
+            continue
+
+        if term.startswith("!") or term.startswith("-"):
+            exclude_terms.append(term[1:].lower())
+        else:
+            include_terms.append(term.lower())
+
+        i += 1
+
+    # Match logic
+    if current_logic == "OR":
+        include_match = any(term in text for term in include_terms)
+    else:
+        include_match = all(term in text for term in include_terms)
+
+    exclude_match = any(term in text for term in exclude_terms)
+
+    return include_match and not exclude_match
