@@ -69,7 +69,7 @@ Imagine finding *any contact* in seconds. And finding *a set of contacts* in few
 
 List all contacts, ready for filtering.
 
-![](assets/crml.png) 
+![](assets/crml.png)   
 
 <kbd>↵</kbd> To open selected contact in your editor
 
@@ -116,8 +116,6 @@ Save any filtered contacts from above to a saved search.
 <kbd>↵</kbd> To run this search
 
 <kbd>⌘</kbd><kbd>↵</kbd> To remove this search
-
-
 
 ---
 
