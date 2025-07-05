@@ -79,6 +79,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2FCEDCE2-D08E-4234-915C-440E2D97A7FE</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>DA00E772-B4BF-4051-A8D2-2A0EA93E2D8B</key>
 		<array>
@@ -504,40 +514,14 @@ python3 scripts/open_contact_file.py "$1"</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>#!/usr/bin/env python3
-
-import os
-import json
-import sys
-import subprocess
-
-# === Get the correct argument ===
-arg = sys.argv[1].strip() if len(sys.argv) &gt; 1 else ""
-
-if arg != "clear_recents":
-    sys.exit(0)
-
-# === Clear the recents file ===
-recent_path = os.path.join(os.environ["alfred_workflow_data"], "recent.json")
-
-try:
-    with open(recent_path, "w") as f:
-        json.dump([], f)
-except Exception:
-    pass
-
-# === Show notification ===
-title = os.environ["alfred_workflow_name"]
-subprocess.run([
-    "osascript", "-e",
-    f'display notification "Recent contacts cleared" with title "{title}"'
-])</string>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/clear_recents.py "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>9</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -596,6 +580,30 @@ python3 scripts/list_recent_contacts.py "$1"
 			<string>92A65387-14B5-4B1F-B1A5-CF7D727A750C</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/clear_recent.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2FCEDCE2-D08E-4234-915C-440E2D97A7FE</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -857,7 +865,7 @@ Combine tags or any search fields *(as defined in `Configure Workflow`)* to filt
 
 ![](assets/crml3.png)   
 
-#### For 1st row
+#### For summary row
 
 &lt;kbd&gt;↵&lt;/kbd&gt; To save currently applied filtering as a `saved search`
 
@@ -895,15 +903,17 @@ Save any filtered contacts from above to a saved search.
 
 List the most recently opened contact files.
 
-![](assets/crmr.png)  
+![](assets/crmr.png)    
 
-#### For 1st row    
+#### For summary row
 
 &lt;kbd&gt;↵&lt;/kbd&gt; To clear this recents list
 
 #### For all contact rows
 
 &lt;kbd&gt;↵&lt;/kbd&gt; To open selected contact file
+
+&lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To clear selected contact from this recents list
 
 ### Tags &amp; Icons
 
@@ -972,7 +982,16 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>345</real>
 			<key>ypos</key>
-			<real>1060</real>
+			<real>1220</real>
+		</dict>
+		<key>2FCEDCE2-D08E-4234-915C-440E2D97A7FE</key>
+		<dict>
+			<key>note</key>
+			<string>clear recent</string>
+			<key>xpos</key>
+			<real>585</real>
+			<key>ypos</key>
+			<real>885</real>
 		</dict>
 		<key>37FDEA91-828D-4FF0-9E41-05B2AE1DAED8</key>
 		<dict>
@@ -992,7 +1011,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>1055</real>
+			<real>1215</real>
 		</dict>
 		<key>83D4CD86-AFCE-4379-8CD7-03C43D128678</key>
 		<dict>
@@ -1003,7 +1022,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>340</real>
 			<key>ypos</key>
-			<real>885</real>
+			<real>1045</real>
 		</dict>
 		<key>8A500D23-4715-4736-8743-E11A08563D28</key>
 		<dict>
@@ -1025,7 +1044,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>340</real>
 			<key>ypos</key>
-			<real>725</real>
+			<real>810</real>
 		</dict>
 		<key>A4280409-DA48-4C05-8A73-5688E2A9F94A</key>
 		<dict>
@@ -1043,7 +1062,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>885</real>
+			<real>1045</real>
 		</dict>
 		<key>B52AACB2-80F3-4602-A48B-6A707717F6DC</key>
 		<dict>

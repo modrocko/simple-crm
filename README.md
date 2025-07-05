@@ -83,7 +83,7 @@ Combine tags or any search fields *(as defined in `Configure Workflow`)* to filt
 
 ![](assets/crml3.png)   
 
-#### For 1st row
+#### For summary row
 
 <kbd>↵</kbd> To save currently applied filtering as a `saved search`
 
@@ -121,15 +121,17 @@ Save any filtered contacts from above to a saved search.
 
 List the most recently opened contact files.
 
-![](assets/crmr.png)  
+![](assets/crmr.png)    
 
-#### For 1st row    
+#### For summary row
 
 <kbd>↵</kbd> To clear this recents list
 
 #### For all contact rows
 
 <kbd>↵</kbd> To open selected contact file
+
+<kbd>⌘</kbd><kbd>↵</kbd> To clear selected contact from this recents list
 
 ### Tags & Icons
 

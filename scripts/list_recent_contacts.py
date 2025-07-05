@@ -48,9 +48,15 @@ for entry in recent_list:
 
     items.append({
         "title": name,
-        "subtitle": "↵ Open contact file",
+        "subtitle": "↵ Open contact file ∙ ⌘ Clear contact from recents",
         "arg": path,
-        "icon": icon
+        "icon": icon,
+        "mods": {
+            "cmd": {
+                "subtitle": "⌘ Clear this recent contact",
+                "arg": f"clear::{path}"
+            }
+        }
     })
     rowcount += 1
 
