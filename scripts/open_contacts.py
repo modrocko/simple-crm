@@ -36,6 +36,7 @@ for filename in os.listdir(folder):
 
         if match:
             subprocess.run(["open", path])
+            utils.add_to_recent(path)
             opened += 1
 
     except Exception as e:
