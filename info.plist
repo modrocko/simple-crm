@@ -502,7 +502,7 @@ python3 scripts/open_contact_file.py "$1"</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>crmr</string>
+				<string>{var:list_recent}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -1303,13 +1303,13 @@ Some useful tools to manage your contact files. And to peek into your data and w
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Show contacts that have a value for the 'Reminder' field</string>
+			<string>List recently opended contact files</string>
 			<key>label</key>
-			<string>List reminders</string>
+			<string>List recent contacts</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
-			<string>list_reminders</string>
+			<string>list_recent</string>
 		</dict>
 		<dict>
 			<key>config</key>
