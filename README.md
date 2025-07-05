@@ -37,7 +37,7 @@ Got existing contacts in your current CRM? Cool. Import them into Simple CRM.
 - Export contacts to a .csv file
 - Define your fields in Simple CRM via `Configure Workflow`
 - Set  `CRM path` for all contact files
-- Set the `import`& `export` paths & `export` fields
+- Set the `import` & `export` paths & `export` fields
 - Select `Import contacts` from Simple CRM `utilities` 
 
 Voila. A new file created for each contact.
@@ -50,7 +50,7 @@ Voila. A new file created for each contact.
 
 ![](assets/crm.png)  
 
-### Add new contact
+### ▸ Add new contact
 
 Adding contacts is as simple as it gets. Start typing to add a new contact, using a subset of fields defined in `Configure Workflow`. And informing you which field you're currently entering *(in CAPs)*. Fill in any or all fields.
 
@@ -61,7 +61,7 @@ Adding contacts is as simple as it gets. Start typing to add a new contact, usin
 
 <kbd>⌘</kbd><kbd>↵</kbd> To create new contact file — then open for further editing
 
-### List & Search contacts
+### ▸ List & Search contacts
 
 Imagine finding *any contact* in seconds. And finding *a set of contacts* in few seconds more. Simple CRM was built for this.
 
@@ -107,7 +107,7 @@ Key Universal actions include:
 
 `View in Alfred` | `Open`  | `Reveal in Finder`  | `Delete`
 
-### Run a saved search
+### ▸ Run a saved search
 
 Save any filtered contacts from above to a saved search.
 
@@ -125,12 +125,13 @@ Save any filtered contacts from above to a saved search.
 
 **Combine tags to tell the story for each contact:**  ex. `@hot @lead` ***Note:** The 1st tag listed determines the icon to be used in the field `Tags:`.* Use any tag you think of as you go — there are no limitations.
 
-**A list of tags & associated icons below** —with more coming...
+**A list of tags & associated icons below** —with more coming!
 
  `@active` `@awaitingpayment` `@cold` `@deciding` `@followup` `@hot` `@lead` `@loss` `@meeting` `@past` `@meh` `@pause` `@ping` `@reminder` `@waiting` `@won`
 
-![](assets/icons.png)    
+![](assets/icons.png)  
 
+❗**Note:** You must define the field, `Tags:` in `Configure Workflow`  to display these or any custom icons for contacts.
 
 ### Search Filter Rules
 

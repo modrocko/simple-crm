@@ -66,3 +66,45 @@ def matches_terms(text, raw_query):
     exclude_match = any(term in text for term in exclude_terms)
 
     return include_match and not exclude_match
+
+
+
+
+#########################################
+# log recently opended items
+def add_to_recent(path):
+    name = ""
+
+    # === Extract name from file ===
+    try:
+        with open(path, "r") as f:
+            for line in f:
+                if line.lower().startswith("name:"):
+                    name = line.split(":", 1)[1].strip()
+                    break
+    except Exception:
+        return  # skip if unreadable
+
+    if not name:
+        return  # skip if no name
+
+    # === Load recent list ===
+    recent_path = os.path.join(os.environ["alfred_workflow_data"], "recent.json")
+    try:
+        with open(recent_path, "r") as f:
+            recent = json.load(f)
+    except FileNotFoundError:
+        recent = []
+
+    # === Remove duplicates ===
+    recent = [r for r in recent if r.get("path") != path]
+
+    # === Add to top ===
+    recent.insert(0, { "name": name, "path": path })
+
+    # === Cap the list ===
+    cap = int(os.environ["recent"])
+    recent = recent[:cap]
+
+    with open(recent_path, "w") as f:
+        json.dump(recent, f, indent=2)
