@@ -16,7 +16,7 @@
 **✓**  Add new contacts — blazingly simple & fast  
 **✓**  Find them — even faster  
 **✓**  Use tags to filter in infinite ways  
-**✓**  Use your favorite editor for all contacts file  
+**✓**  Use your favorite editor for all contact file  
 **✓**  Save any search using the `enter` key  
 **✓**  Smart Icons for lead status & more *(completely configurable)*
 
@@ -121,11 +121,15 @@ Save any filtered contacts from above to a saved search.
 
 List the most recently opened contact files.
 
-![](assets/crmr.png)    
+![](assets/crmr.png)  
+
+#### For 1st row    
+
+<kbd>↵</kbd> To clear this recents list
+
+#### For all contact rows
 
 <kbd>↵</kbd> To open selected contact file
-
----
 
 ### Tags & Icons
 

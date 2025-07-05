@@ -69,6 +69,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B52AACB2-80F3-4602-A48B-6A707717F6DC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>DA00E772-B4BF-4051-A8D2-2A0EA93E2D8B</key>
 		<array>
@@ -489,6 +499,56 @@ python3 scripts/open_contact_file.py "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>#!/usr/bin/env python3
+
+import os
+import json
+import sys
+import subprocess
+
+# === Get the correct argument ===
+arg = sys.argv[1].strip() if len(sys.argv) &gt; 1 else ""
+
+if arg != "clear_recents":
+    sys.exit(0)
+
+# === Clear the recents file ===
+recent_path = os.path.join(os.environ["alfred_workflow_data"], "recent.json")
+
+try:
+    with open(recent_path, "w") as f:
+        json.dump([], f)
+except Exception:
+    pass
+
+# === Show notification ===
+title = os.environ["alfred_workflow_name"]
+subprocess.run([
+    "osascript", "-e",
+    f'display notification "Recent contacts cleared" with title "{title}"'
+])</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>9</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B52AACB2-80F3-4602-A48B-6A707717F6DC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -730,7 +790,7 @@ python3 scripts/check_reminders.py</string>
 **✓**  Add new contacts — blazingly simple &amp; fast  
 **✓**  Find them — even faster  
 **✓**  Use tags to filter in infinite ways  
-**✓**  Use your favorite editor for all contacts file  
+**✓**  Use your favorite editor for all contact file  
 **✓**  Save any search using the `enter` key  
 **✓**  Smart Icons for lead status &amp; more *(completely configurable)*
 
@@ -835,11 +895,15 @@ Save any filtered contacts from above to a saved search.
 
 List the most recently opened contact files.
 
-![](assets/crmr.png)    
+![](assets/crmr.png)  
+
+#### For 1st row    
+
+&lt;kbd&gt;↵&lt;/kbd&gt; To clear this recents list
+
+#### For all contact rows
 
 &lt;kbd&gt;↵&lt;/kbd&gt; To open selected contact file
-
----
 
 ### Tags &amp; Icons
 
@@ -961,7 +1025,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>340</real>
 			<key>ypos</key>
-			<real>715</real>
+			<real>725</real>
 		</dict>
 		<key>A4280409-DA48-4C05-8A73-5688E2A9F94A</key>
 		<dict>
@@ -980,6 +1044,15 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<real>585</real>
 			<key>ypos</key>
 			<real>885</real>
+		</dict>
+		<key>B52AACB2-80F3-4602-A48B-6A707717F6DC</key>
+		<dict>
+			<key>note</key>
+			<string>clear recents</string>
+			<key>xpos</key>
+			<real>585</real>
+			<key>ypos</key>
+			<real>725</real>
 		</dict>
 		<key>C43BF98B-6221-4598-A1A0-E307E9217FCD</key>
 		<dict>
@@ -1399,7 +1472,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>3.7.4</string>
+	<string>3.7.5</string>
 	<key>webaddress</key>
 	<string>toddsgotapen.com</string>
 </dict>

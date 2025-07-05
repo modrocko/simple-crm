@@ -60,11 +60,16 @@ with open(recent_path, "w") as f:
 
 # === Summary row ===
 noun = "contact" if rowcount == 1 else "contacts"
-items.insert(0, {
+summary_item = {
     "title": f"{rowcount} recent {noun}",
     "icon": { "path": "info.png" },
-    "valid": False
-})
+    "arg": "clear_recents"
+}
+
+if rowcount > 0:
+    summary_item["subtitle"] = "↵ Clear recents"
+
+items.insert(0, summary_item)
 
 # === Output JSON ===
 print(json.dumps({ "items": items }))
