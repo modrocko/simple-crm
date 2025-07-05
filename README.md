@@ -117,6 +117,14 @@ Save any filtered contacts from above to a saved search.
 
 <kbd>⌘</kbd><kbd>↵</kbd> To remove this search
 
+### ▸ List recent contacts
+
+List the most recently opened contact files.
+
+![](assets/crmr.png)    
+
+<kbd>↵</kbd> To open selected contact file
+
 ---
 
 ### Tags & Icons
