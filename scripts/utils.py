@@ -71,6 +71,16 @@ def matches_terms(text, raw_query):
 
 
 #########################################
+# get query terms
+def get_query_terms(query):
+    is_or = ":or" in query
+    terms = [q for q in query.replace(":or", "").split() if q]
+    return is_or, terms
+
+
+
+
+#########################################
 # log recently opended items
 def add_to_recent(path):
     name = ""
