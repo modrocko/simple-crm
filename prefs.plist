@@ -16,24 +16,5 @@
 	<string>.md</string>
 	<key>file_template</key>
 	<string>Name, Company, Email, Phone, Website, Tags, Lead Source, Referred by, Reminder, Next, Note, Log</string>
-	<key>tag_icons</key>
-	<string>{
-  "@waiting": "waiting.png",
-  "@ping": "ping.png",
-  "@won": "won.png",
-  "@deciding": "deciding.png",
-  "@loss": "loss.png",
-  "@pause": "pause.png",
-  "@meeting": "meeting.png",
-  "@lead": "lead.png",
-  "@hot": "hot.png",
-  "@cold": "cold.png",
-  "@past": "past.png",
-  "@followup": "followup.png",
-  "@active": "active.png",
-  "@reminder": "reminder.png",
-  "@meh": "meh.png",
-  "@awaitingpayment": "awaitingpayment.png"
-}</string>
 </dict>
 </plist>

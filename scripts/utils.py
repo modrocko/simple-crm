@@ -9,22 +9,20 @@ import shlex
 # cache the icon map
 _icon_map = None
 
+import os
+
 def get_icon_for_tag(*strings):
-    global _icon_map
-    if _icon_map is None:
-        try:
-            _icon_map = json.loads(os.environ["tag_icons"])
-        except Exception:
-            _icon_map = {}
+    icons_dir = os.path.join(os.path.dirname(__file__), "..", "icons")
 
     for string in strings:
         if not isinstance(string, str):
             continue
         for word in string.split():
-            for keyword, filename in _icon_map.items():
-                if keyword == word:
-                    icon_path = os.path.join(os.path.dirname(__file__), "..", "icons", filename)
-                    return { "path": os.path.abspath(icon_path) }
+            tag = word.lstrip("@")
+            icon_file = f"{tag}.png"
+            icon_path = os.path.join(icons_dir, icon_file)
+            if os.path.exists(icon_path):
+                return { "path": os.path.abspath(icon_path) }
 
     return ""
 
