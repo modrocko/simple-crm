@@ -1239,6 +1239,48 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>Default is 1st field defined</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>List of fields to use when creating a new contact or importing contacts (use comma-separated for multiple fields)</string>
+			<key>label</key>
+			<string>File name</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>filename_fields</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>Default is space</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Separator to be used for filename between words</string>
+			<key>label</key>
+			<string>File name separator</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>filename_separator</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>Name, Company, Email, Phone, Website, Lead Status, Tags</string>
 				<key>required</key>
 				<false/>
@@ -1255,27 +1297,6 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<string>textarea</string>
 			<key>variable</key>
 			<string>export_fields</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
-				<string>~/Downloads/crm_export.csv</string>
-				<key>filtermode</key>
-				<integer>1</integer>
-				<key>placeholder</key>
-				<string>~/Downloads/crm_export.csv</string>
-				<key>required</key>
-				<false/>
-			</dict>
-			<key>description</key>
-			<string>Full path &amp; file for exported csv file</string>
-			<key>label</key>
-			<string>Export path</string>
-			<key>type</key>
-			<string>filepicker</string>
-			<key>variable</key>
-			<string>export_path</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1302,6 +1323,27 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string>~/Downloads/crm_export.csv</string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string>~/Downloads/crm_export.csv</string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>Full path &amp; file for exported csv file</string>
+			<key>label</key>
+			<string>Export path</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>export_path</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>.txt</string>
 				<key>placeholder</key>
 				<string>.txt</string>
@@ -1323,27 +1365,6 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>crml</string>
-				<key>placeholder</key>
-				<string>crml</string>
-				<key>required</key>
-				<false/>
-				<key>trim</key>
-				<true/>
-			</dict>
-			<key>description</key>
-			<string>List &amp; search all contacts</string>
-			<key>label</key>
-			<string>List contacts</string>
-			<key>type</key>
-			<string>textfield</string>
-			<key>variable</key>
-			<string>list_contacts</string>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>default</key>
 				<string>crma</string>
 				<key>placeholder</key>
 				<string>crma</string>
@@ -1360,6 +1381,27 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<string>textfield</string>
 			<key>variable</key>
 			<string>add_contact</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>crml</string>
+				<key>placeholder</key>
+				<string>crml</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>List &amp; search all contacts</string>
+			<key>label</key>
+			<string>List contacts</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>list_contacts</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1488,8 +1530,6 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<string>recent</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>3.7.5</string>
 	<key>webaddress</key>

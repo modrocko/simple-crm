@@ -11,6 +11,10 @@ file_template = os.environ["file_template"]
 ext = os.environ["file_extension"]
 add_fields = os.environ["add_fields"]
 open_file = os.environ["open_file"]
+title = os.environ["alfred_workflow_name"]
+filename_fields = os.environ.get("filename_fields", "")
+filename_fields = os.environ.get("filename_fields", "")
+filename_separator = os.environ.get("filename_separator", "").strip() or " "
 
 # === PARSE FIELD LISTS ===
 if "," in file_template:
@@ -30,10 +34,15 @@ input_values = [v.strip() for v in input_line.split("|")]
 # === MAP VALUES TO ADD_FIELDS ===
 add_data = dict(zip(add_fields, input_values))
 
-# === CREATE FILENAME FROM NAME FIELD ===
-name = input_values[0] if input_values else "Unnamed"
-slug = re.sub(r"[^\w ]+", "", name).strip()
+# === CREATE FILENAME FROM SELECTED FIELDS OR FALLBACK ===
+if filename_fields:
+    name_fields = [f.strip() for f in filename_fields.split(",") if f.strip()]
+    name_parts = [add_data.get(f, "") for f in name_fields]
+    name = filename_separator.join(name_parts).strip()
+else:
+    name = input_values[0] if input_values else "Unnamed"
 
+slug = re.sub(r"[^\w ]+", "", name).strip()
 filename = f"{slug}.{ext.lstrip('.')}"
 path = os.path.join(contact_folder, filename)
 
@@ -52,13 +61,13 @@ with open(path, "w") as f:
     for field in all_fields:
         value = add_data.get(field, "")
         if ext == ".md":
-            value += "  "  # add 2 spaces for Markdown line break
+            value += "  "
         f.write(f"{field}: {value}\n")
 
 # === NOTIFY USER ===
 subprocess.run([
     "osascript", "-e",
-    f'display notification "Contact saved" with title "CRM Contact Created" subtitle "{name}"'
+    f'display notification "Contact {name} saved" with title "{title}"'
 ])
 
 # === OPEN FILE if requested ===
@@ -67,3 +76,4 @@ if open_file == "true":
 
 # === RETURN FILE PATH TO ALFRED ===
 print(path)
+
