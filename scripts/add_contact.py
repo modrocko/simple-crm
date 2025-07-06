@@ -60,8 +60,7 @@ os.makedirs(contact_folder, exist_ok=True)
 with open(path, "w") as f:
     for field in all_fields:
         value = add_data.get(field, "")
-        if ext == ".md":
-            value += "  "
+        value += "  " # Add spaces to improve view of markdown files in Alfred viewer
         f.write(f"{field}: {value}\n")
 
 # === NOTIFY USER ===

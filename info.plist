@@ -1176,16 +1176,16 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>Name, Company, Email, Phone, Website, Tags, Lead Status, Lead Source, Referred by, Reminder, Next, Note, Log</string>
+				<string>Name, Company, Email, Phone, Website, Tags, Lead Source, Lead Thread, Referred by, Reminder, Next Action, Note, Questionnaire, Log</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
 				<true/>
 				<key>verticalsize</key>
-				<integer>3</integer>
+				<integer>6</integer>
 			</dict>
 			<key>description</key>
-			<string>All fields for creating new contacts (used for importing csv file too)</string>
+			<string>All fields for importing &amp; creating new contacts</string>
 			<key>label</key>
 			<string>All fields</string>
 			<key>type</key>
