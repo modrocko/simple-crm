@@ -1,26 +1,42 @@
 #!/usr/bin/env python3
 
 import os
-import json
 import sys
+import json
 
+# === GET QUERY ===
 query = sys.argv[1].lower() if len(sys.argv) > 1 else ""
-tag_icons_env = os.environ.get("tag_icons", "{}")
+
+# === LOAD ICONS DIRECTORY ===
+workflow_dir = os.path.dirname(__file__)
+icons_dir = os.path.join(workflow_dir, "..", "icons")
 
 try:
-    tag_icons = json.loads(tag_icons_env)
-except json.JSONDecodeError:
-    print(json.dumps({"items": [{"title": "❌ tag_icons is invalid JSON"}]}))
+    icon_files = os.listdir(icons_dir)
+except FileNotFoundError:
+    print(json.dumps({"items": [{"title": "❌ icons folder not found"}]}))
     sys.exit(1)
 
-items = []
-for tag, icon in tag_icons.items():
+# === GET TAGS FROM FILENAMES ===
+tags = []
+for filename in icon_files:
+    if not filename.lower().endswith(".png"):
+        continue
+    tag = os.path.splitext(filename)[0]
     if query in tag.lower():
-        items.append({
-            "title": tag,
-            "subtitle": icon,
-            "arg": tag,
-            "icon": { "path": os.path.join("icons", icon) }
-        })
+        tags.append((tag, filename))
 
-print(json.dumps({"items": items}))
+# === SORT TAGS ALPHABETICALLY ===
+tags.sort()
+
+# === BUILD RESULTS ===
+items = []
+for tag, filename in tags:
+    items.append({
+        "title": f"@{tag}",
+        "subtitle": filename,
+        "arg": f"@{tag}",
+        "icon": { "path": os.path.join("icons", filename) }
+    })
+
+print(json.dumps({ "items": items }))

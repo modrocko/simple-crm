@@ -754,30 +754,6 @@ python3 scripts/show_icons.py "$1"
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>cd "$alfred_workflow_directory"
-python3 scripts/check_reminders.py</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>1EE75ED1-795B-4C37-AB08-EFB31DE94612</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string># Simple CRM
@@ -972,17 +948,6 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<real>110</real>
 			<key>ypos</key>
 			<real>555</real>
-		</dict>
-		<key>1EE75ED1-795B-4C37-AB08-EFB31DE94612</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>2</integer>
-			<key>note</key>
-			<string>check reminders</string>
-			<key>xpos</key>
-			<real>345</real>
-			<key>ypos</key>
-			<real>1220</real>
 		</dict>
 		<key>2FCEDCE2-D08E-4234-915C-440E2D97A7FE</key>
 		<dict>
