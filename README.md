@@ -81,7 +81,7 @@ Combine tags or any search fields *(as defined in `Configure Workflow`)* to filt
 
 ![](assets/crml2.png)   
 
-![](assets/crml3.png)   
+![](assets/crml3.png)     
 
 #### For summary row
 
@@ -90,6 +90,8 @@ Combine tags or any search fields *(as defined in `Configure Workflow`)* to filt
 <kbd>⌘</kbd><kbd>↵</kbd> To perform bulk update for all filtered contacts
 
 <kbd>⌘</kbd><kbd>⌥</kbd> To open contact files for all filtered contacts
+
+<kbd>⌘</kbd><kbd>⌃</kbd> To export contacts into .csv for all filtered contacts
 
 #### For all contact rows
 

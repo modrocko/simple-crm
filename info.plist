@@ -862,7 +862,7 @@ python3 scripts/show_icons.py "$1"
 **✓**  Add new contacts — blazingly simple &amp; fast  
 **✓**  Find them — even faster  
 **✓**  Use tags to filter in infinite ways  
-**✓**  Use your favorite editor for all contact file  
+**✓**  Use your favorite editor for all contact files  
 **✓**  Save any search using the `enter` key  
 **✓**  Smart Icons for lead status &amp; more *(completely configurable)*
 
@@ -927,7 +927,7 @@ Combine tags or any search fields *(as defined in `Configure Workflow`)* to filt
 
 ![](assets/crml2.png)   
 
-![](assets/crml3.png)   
+![](assets/crml3.png)     
 
 #### For summary row
 
@@ -936,6 +936,8 @@ Combine tags or any search fields *(as defined in `Configure Workflow`)* to filt
 &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To perform bulk update for all filtered contacts
 
 &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;⌥&lt;/kbd&gt; To open contact files for all filtered contacts
+
+&lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;⌃&lt;/kbd&gt; To export contacts into .csv for all filtered contacts
 
 #### For all contact rows
 
