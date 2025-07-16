@@ -1,8 +1,17 @@
+
+
+
 #!/usr/bin/env python3
 
 import os
 import csv
 import subprocess
+import sys
+import utils
+
+query = sys.argv[1].strip().lower() if len(sys.argv) > 1 else ""
+query_terms = [q for q in query.split() if q]
+
 
 # === ENV VARS ===
 folder = os.environ["contact_folder"]
@@ -27,12 +36,18 @@ for filename in os.listdir(folder):
         continue
     path = os.path.join(folder, filename)
     with open(path, "r") as f:
-        lines = f.readlines()
-        row = []
-        for field in export_fields:
-            value = get_field(field, lines)
-            row.append(value)
-        rows.append(row)
+        content = f.read()
+
+    if not utils.matches_terms(content, query):
+        continue
+
+    lines = content.splitlines()
+    row = []
+    for field in export_fields:
+        value = get_field(field, lines)
+        row.append(value)
+    rows.append(row)
+
 
 # === Write CSV ===
 os.makedirs(os.path.dirname(export_path), exist_ok=True)

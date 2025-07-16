@@ -88,7 +88,7 @@ noun = "contact" if rowcount == 1 else "contacts"
 if query:
     items.insert(0, {
         "title": f"{rowcount} {noun}",
-        "subtitle": "↵ Save this search ∙ ⌘ Update contacts ∙ ⌥ Open contacts",
+        "subtitle": "↵ Save search ∙ ⌘ Update contacts ∙ ⌥ Open contacts ∙ ⌃ Export contacts",
         "arg": query,
         "icon": { "path": "info.png" },
         "variables": { "action": "save_search" },
@@ -101,6 +101,10 @@ if query:
                 "subtitle": "⌥ Open contacts in this list",
                 "arg": query,
                 "variables": { "query": query }
+            },
+            "ctrl": {
+                "subtitle": "⌥ Exports contacts from this list",
+                "arg": query
             }
         }
     })
