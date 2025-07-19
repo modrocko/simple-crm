@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>add_fields</key>
+	<string>Name, Company, Email, Phone, Website, Tags</string>
 	<key>backup_folder</key>
 	<string>~/Documents/01 archive/my backups/crm backups</string>
 	<key>contact_folder</key>
@@ -9,7 +11,7 @@
 	<key>display_fields</key>
 	<string>Name, Company, Tags, Note, Reminder, Next Action</string>
 	<key>export_fields</key>
-	<string>Name, Company, Email, Phone, Website, Tags, Lead Source, Referred by</string>
+	<string>Name, Company, Email, Phone, Website, Tags, Next Action, Note</string>
 	<key>file_extension</key>
 	<string>.md</string>
 	<key>saved_search</key>

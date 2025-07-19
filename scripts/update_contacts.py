@@ -24,7 +24,13 @@ except:
     sys.exit(1)
 
 # === QUERY TERMS ===
+query = re.sub(r"\s+or\s+", " :or ", query, flags=re.IGNORECASE)
 is_or, terms = utils.get_query_terms(query)
+
+print("query:", query)
+print("is_or:", is_or)
+print("terms:", terms)
+
 
 updated = 0
 
