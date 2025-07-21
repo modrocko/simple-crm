@@ -40,9 +40,10 @@ if filename_fields:
     name_parts = [add_data.get(f, "") for f in name_fields]
     name = filename_separator.join(name_parts).strip()
 else:
-    name = input_values[0] if input_values else "Unnamed"
+    name = input_values[0] if input_values else "unnamed"
 
-slug = re.sub(r"[^\w ]+", "", name).strip()
+slug = re.sub(r"[^\w\- ]+", "", name).strip().lower()
+
 filename = f"{slug}.{ext.lstrip('.')}"
 path = os.path.join(contact_folder, filename)
 

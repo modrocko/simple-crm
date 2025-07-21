@@ -28,6 +28,8 @@ Simple CRM is built for power users, freelancers & anyone wanting less — to do
 
 Give it a shot. Tell me what ya like. And what sucks. I'll make it un-suck.
 
+▸ [Download latest workflow](https://github.com/modrocko/simple-crm/releases/latest)
+
 ## Usage
 
 ### Set up
