@@ -154,25 +154,25 @@ List the most recently opened contact files.
 ### Search Filter Rules
 
 **AND by default**  
- `@lead @followup @active` → matches items with all 3 tags
+ `@lead @followup @active` → matches items with all 3 tags  
 
 **OR logic**  
- `@hot OR @cold OR @pause` → matches any of the tags
+ `@hot OR @cold OR @pause` → matches any of the tags  
 
 **NOT logic**  
  `@ping OR @waiting !@past` → matches ping or waiting, but excludes past  
- `@lead -@loss` → matches @lead but excludes @loss
+ `@lead -@loss` → matches @lead but excludes @loss  
 
 **Phrases**  
- `"awaiting payment" OR @reminder` → matches the exact phrase or @reminder
+ `"awaiting payment" OR @reminder` → matches the exact phrase or @reminder  
 
-**Field match**
- `email:gmail.com` → matches items where email field contains `gmail.com`
- `name:"Jane Doe"` → matches items where name field is exactly `"Jane Doe"`
+**Field match**  
+ `email:gmail.com` → matches items where email field contains `gmail.com`  
+ `name:"Jane Doe"` → matches items where name field is exactly `"Jane Doe"`  
 
-**Has field**
- `has:phone` → matches items where phone field is not empty
- `!has:company` → matches items with an empty or missing company field
+**Has field**  
+ `has:phone` → matches items where phone field is not empty  
+ `!has:company` → matches items with an empty or missing company field  
 
 All searches are case-insensitive.
 
