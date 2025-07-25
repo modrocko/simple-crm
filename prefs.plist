@@ -8,10 +8,6 @@
 	<string>~/Documents/01 archive/my backups/crm backups</string>
 	<key>contact_folder</key>
 	<string>~/Documents/00 now/my crm</string>
-	<key>display_fields</key>
-	<string>Name, Company, Tags, Note, Reminder, Next Action</string>
-	<key>export_fields</key>
-	<string>Name, Company, Email, Phone, Website, Tags, Next Action, Note</string>
 	<key>file_extension</key>
 	<string>.md</string>
 	<key>saved_search</key>

@@ -166,6 +166,14 @@ List the most recently opened contact files.
 **Phrases**  
  `"awaiting payment" OR @reminder` → matches the exact phrase or @reminder
 
+**Field match**
+ `email:gmail.com` → matches items where email field contains `gmail.com`
+ `name:"Jane Doe"` → matches items where name field is exactly `"Jane Doe"`
+
+**Has field**
+ `has:phone` → matches items where phone field is not empty
+ `!has:company` → matches items with an empty or missing company field
+
 All searches are case-insensitive.
 
 ### Utilities

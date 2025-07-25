@@ -116,3 +116,130 @@ def add_to_recent(path):
 
     with open(recent_path, "w") as f:
         json.dump(recent, f, indent=2)
+
+
+
+####################################################
+# added this section to keep above code and logic in tact | Fri, Jul 25 2025
+
+
+def matches_has(content: str, name: str, raw_query: str) -> bool:
+    import shlex
+
+    # Build normalized field dictionary
+    fields = {}
+    for line in content.splitlines():
+        if ":" not in line:
+            continue
+        k, v = line.split(":", 1)
+        key = k.strip()
+        val = v.strip()
+        fields[key] = val
+        fields[key.lower()] = val
+        fields[key.lower().replace(" ", "_")] = val
+    fields["name"] = name
+
+    def _truthy(value):
+        if value is None:
+            return False
+        if isinstance(value, str):
+            return value.strip() != ""
+        if isinstance(value, (list, tuple, set)):
+            return any(bool(x) for x in value)
+        return bool(value)
+
+    tokens = shlex.split(raw_query or "")
+    i = 0
+    while i < len(tokens):
+        tok = tokens[i].lower()
+        # Merge following tokens if "has:" or "!has:" is incomplete
+        if tok.startswith("has:") or tok.startswith("!has:"):
+            prefix = "has:" if tok.startswith("has:") else "!has:"
+            field_name = tok[len(prefix):].strip()
+            j = i + 1
+            while j < len(tokens) and not any(tokens[j].lower().startswith(x) for x in ("has:", "!has:")):
+                field_name += " " + tokens[j]
+                j += 1
+            field_name = field_name.strip().replace(" ", "_")
+            if prefix == "has:":
+                if not _truthy(fields.get(field_name)):
+                    return False
+            else:
+                if _truthy(fields.get(field_name)):
+                    return False
+            i = j
+        else:
+            i += 1
+    return True
+
+
+
+def matches_structured(content: str, name: str, raw_query: str) -> bool:
+    import shlex
+
+    # Build normalized field dictionary
+    fields = {}
+    for line in content.splitlines():
+        if ":" not in line:
+            continue
+        k, v = line.split(":", 1)
+        key = k.strip()
+        val = v.strip()
+        fields[key] = val
+        fields[key.lower()] = val
+        fields[key.lower().replace(" ", "_")] = val
+    fields["name"] = name
+
+    def _truthy(value):
+        if value is None:
+            return False
+        if isinstance(value, str):
+            return value.strip() != ""
+        if isinstance(value, (list, tuple, set)):
+            return any(bool(x) for x in value)
+        return bool(value)
+
+    tokens = shlex.split(raw_query or "")
+    i = 0
+    while i < len(tokens):
+        tok = tokens[i]
+
+        # --- HAS / !HAS ---
+        if tok.lower().startswith("has:") or tok.lower().startswith("!has:"):
+            prefix = "has:" if tok.lower().startswith("has:") else "!has:"
+            field_name = tok[len(prefix):].strip()
+            j = i + 1
+            while j < len(tokens) and not any(tokens[j].lower().startswith(x) for x in ("has:", "!has:")):
+                field_name += " " + tokens[j]
+                j += 1
+            field_name = field_name.strip().replace(" ", "_").lower()
+            if prefix == "has:":
+                if not _truthy(fields.get(field_name)):
+                    return False
+            else:
+                if _truthy(fields.get(field_name)):
+                    return False
+            i = j
+            continue
+
+        # --- FIELD MATCH (field:value) ---
+        if ":" in tok:
+            field, val = tok.split(":", 1)
+            field_key = field.strip().replace(" ", "_").lower()
+            field_val = str(fields.get(field_key, "")).lower()
+            val = val.strip('"').lower()
+
+            # Exact match if query contains quotes
+            exact = f'{field}:"{val}"'.lower() in raw_query.lower()
+            if exact:
+                if field_val != val:
+                    return False
+            else:
+                if val not in field_val:
+                    return False
+            i += 1
+            continue
+
+        # Skip words that aren't handled here
+        i += 1
+    return True

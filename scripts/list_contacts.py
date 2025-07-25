@@ -49,8 +49,17 @@ else:
             subtitle_parts = [fields[f] if fields[f] else "—" for f in field_names]
             subtitle = " ∙ ".join(subtitle_parts)
 
+#            full_text = f"{name} {' '.join(subtitle_parts)}"
+#            match = utils.matches_terms(full_text, query)
+
             full_text = f"{name} {' '.join(subtitle_parts)}"
-            match = utils.matches_terms(full_text, query)
+
+
+            if any(op in query.lower() for op in ("has:", "!has:")) or ":" in query:
+                match = utils.matches_structured(content, name, query)
+            else:
+                match = utils.matches_terms(full_text, query)
+
 
             if match:
                 icon = utils.get_icon_for_tag(fields.get("Tags", ""))
