@@ -38,7 +38,7 @@ for entry in recent_list:
     try:
         with open(path, "r") as f:
             for line in f:
-                if line.lower().startswith("tags:"):
+                if line.lower().startswith("lead status:"):
                     tags = line.split(":", 1)[1].strip()
                     break
     except Exception:

@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>add_fields</key>
-	<string>Name, Company, Email, Phone, Website, Tags</string>
 	<key>backup_folder</key>
 	<string>~/Documents/01 archive/my backups/crm backups</string>
 	<key>contact_folder</key>

@@ -52,7 +52,7 @@ else:
             match = utils.filter_contact(content, query, field_names)
 
             if match:
-                icon = utils.get_icon_for_tag(fields.get("Tags", ""))
+                icon = utils.get_icon_for_tag(fields.get("Lead Status", ""))
                 matched = True
                 rowcount += 1
                 items.append({
