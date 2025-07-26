@@ -19,7 +19,7 @@ else:
 
 # Filter & build results
 for entry in saved:
-    text = entry.get("query", "")
+    text = entry.get("name")
     if not text:
         continue
 
@@ -29,15 +29,16 @@ for entry in saved:
 
     items.append({
         "title": text,
-        "subtitle": "↵ Run search • ⌘ Remove search",
-        "arg": text,
+        "subtitle": "↵ Run search • ⌘ Remove search • ⌥ Rename search" ,
+        "arg": entry["query"],
         "mods": {
             "cmd": {
                 "subtitle": "⌘ Remove this saved search",
-                "arg": text,
-                "variables": {
-                    "action": "remove_saved_search"
-                }
+                "arg": text
+            },
+            "option": {
+                "subtitle": "⌥ Rename this saved search",
+                "arg": text
             }
         }
     })

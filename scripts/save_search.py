@@ -39,7 +39,8 @@ if query in queries:
     sys.exit(0)
 
 # === SAVE NEW QUERY TO TOP ===
-saved.insert(0, { "query": query })
+saved.insert(0, { "name": query, "query": query })
+
 
 # === TRIM & SAVE BACK ===
 # === ENSURE FOLDER EXISTS & SAVE ===

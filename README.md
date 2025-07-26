@@ -121,11 +121,13 @@ Key Universal actions include:
 
 Save any filtered contacts from above to a saved search.
 
-![](assets/crmss.png)  
+![](assets/crms.png)    
 
 <kbd>↵</kbd> To run this search
 
 <kbd>⌘</kbd><kbd>↵</kbd> To remove this search
+
+<kbd>⌘</kbd><kbd>⌥</kbd> To rename this search
 
 ### ▸ List recent contacts
 
