@@ -123,6 +123,33 @@ def add_to_recent(path):
 # added this section to keep above code and logic in tact | Fri, Jul 25 2025
 
 
+def filter_contact(content: str, query: str, display_fields: list[str]) -> bool:
+    # Build name and full_text like list_contacts did
+    fields = {}
+    for line in content.splitlines():
+        if ":" in line:
+            k, v = line.split(":", 1)
+            fields[k.strip()] = v.strip()
+
+    name = fields.get("Name", "")
+    subtitle_parts = [fields.get(f, "—") for f in display_fields]
+    full_text = f"{name} {' '.join(subtitle_parts)}"
+
+    # Decide match
+    if is_structured_query(query):
+        return matches_structured(content, name, query)
+    else:
+        return matches_terms(full_text, query)
+
+
+
+
+def is_structured_query(query: str) -> bool:
+    """Returns True if query contains has:, !has:, or field:value logic."""
+    q = (query or "").lower()
+    return any(op in q for op in ("has:", "!has:")) or ":" in q
+
+
 def matches_has(content: str, name: str, raw_query: str) -> bool:
     import shlex
 
@@ -200,6 +227,58 @@ def matches_structured(content: str, name: str, raw_query: str) -> bool:
         return bool(value)
 
     tokens = shlex.split(raw_query or "")
+
+    # --- FIX: rebuild tokens so "field: value" & "field:value" both work ---
+    rebuilt = []
+    i = 0
+    carry = []
+    while i < len(tokens):
+        t = tokens[i]
+
+        # handle has:/!has: first (allow multi-word fields)
+        tl = t.lower()
+        if tl.startswith("has:") or tl.startswith("!has:"):
+            prefix = "has:" if tl.startswith("has:") else "!has:"
+            field_name = t[len(prefix):]
+            j = i + 1
+            while j < len(tokens) and ":" not in tokens[j] and not tokens[j].lower().startswith(("has:", "!has:")):
+                field_name += " " + tokens[j]
+                j += 1
+            rebuilt.append(prefix + field_name)
+            i = j
+            carry = []
+            continue
+
+        # if token has a colon somewhere
+        if ":" in t:
+            left, right = t.split(":", 1)
+            field_bits = carry + [left]
+            carry = []
+
+            # if value part is empty (i.e. token ended with ':'), pull from following tokens
+            if right.strip() == "":
+                j = i + 1
+                vals = []
+                while j < len(tokens) and ":" not in tokens[j] and not tokens[j].lower().startswith(("has:", "!has:")):
+                    vals.append(tokens[j])
+                    j += 1
+                rebuilt.append(f'{" ".join(field_bits)}:{ " ".join(vals) }'.strip())
+                i = j
+            else:
+                rebuilt.append(f'{" ".join(field_bits)}:{right}'.strip())
+                i += 1
+            continue
+
+        # otherwise, accumulate as possible field-name parts
+        carry.append(t)
+        i += 1
+
+    if carry:
+        rebuilt.extend(carry)
+
+    tokens = rebuilt
+    # ---------------------------------------------------------
+
     i = 0
     while i < len(tokens):
         tok = tokens[i]
@@ -207,19 +286,14 @@ def matches_structured(content: str, name: str, raw_query: str) -> bool:
         # --- HAS / !HAS ---
         if tok.lower().startswith("has:") or tok.lower().startswith("!has:"):
             prefix = "has:" if tok.lower().startswith("has:") else "!has:"
-            field_name = tok[len(prefix):].strip()
-            j = i + 1
-            while j < len(tokens) and not any(tokens[j].lower().startswith(x) for x in ("has:", "!has:")):
-                field_name += " " + tokens[j]
-                j += 1
-            field_name = field_name.strip().replace(" ", "_").lower()
+            field_name = tok[len(prefix):].strip().replace(" ", "_").lower()
             if prefix == "has:":
                 if not _truthy(fields.get(field_name)):
                     return False
             else:
                 if _truthy(fields.get(field_name)):
                     return False
-            i = j
+            i += 1
             continue
 
         # --- FIELD MATCH (field:value) ---
@@ -240,6 +314,36 @@ def matches_structured(content: str, name: str, raw_query: str) -> bool:
             i += 1
             continue
 
-        # Skip words that aren't handled here
         i += 1
+
     return True
+
+
+
+# run this line to test the quesries below: python3 -c "import utils; utils.test_queries()"
+
+def test_queries():
+    """Quick test for matches_structured queries."""
+    sample_content = """Name: Jane Doe
+Email: jane.doe@gmail.com
+Next Action: Complete payment
+Company: Acme Corp
+"""
+    sample_name = "Jane Doe"
+
+    test_cases = [
+        'next action:complete',
+        'next action: complete',
+        '"next action": complete',
+        'name:"Jane Doe"',
+        'email:gmail.com',
+        'company:Acme',
+        'company:"Acme Corp"',
+        'has:company',
+        '!has:phone',
+    ]
+
+    print("=== Testing matches_structured ===")
+    for q in test_cases:
+        result = matches_structured(sample_content, sample_name, q)
+        print(f"{q:<30} -> {result}")

@@ -18,19 +18,14 @@ try:
         raise ValueError
     old = parts[0].strip()
     new = parts[1].strip()
-    query = os.environ["query"].strip().lower()
+    query = os.environ["query"].strip()
 except:
     print("❌ Input must be in format: old|new")
     sys.exit(1)
 
-# === QUERY TERMS ===
-query = re.sub(r"\s+or\s+", " :or ", query, flags=re.IGNORECASE)
-is_or, terms = utils.get_query_terms(query)
-
-print("query:", query)
-print("is_or:", is_or)
-print("terms:", terms)
-
+# === DISPLAY FIELDS (for consistent filtering) ===
+display_fields_env = os.environ.get("display_fields", "")
+display_fields = [f.strip() for f in display_fields_env.split(",") if f.strip()]
 
 updated = 0
 
@@ -43,10 +38,11 @@ for filename in os.listdir(folder):
         with open(path, "r") as f:
             content = f.read()
 
-        full_text = content.lower()
-        match = any(t in full_text for t in terms) if is_or else all(t in full_text for t in terms)
+        # Use the unified matcher
+        if not utils.filter_contact(content, query, display_fields):
+            continue
 
-        if match and re.search(re.escape(old), content, re.IGNORECASE):
+        if re.search(re.escape(old), content, re.IGNORECASE):
             content = re.sub(re.escape(old), new, content, flags=re.IGNORECASE)
             with open(path, "w") as f:
                 f.write(content)

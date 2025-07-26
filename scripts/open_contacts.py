@@ -12,13 +12,14 @@ title = os.environ["alfred_workflow_name"]
 
 # === INPUT ===
 try:
-    query = os.environ["query"].strip().lower()
-except:
+    query = os.environ["query"].strip()
+except KeyError:
     print("❌ Missing query")
     sys.exit(1)
 
-# === QUERY TERMS ===
-is_or, terms = utils.get_query_terms(query)
+# === DISPLAY FIELDS (for consistent matching) ===
+display_fields_env = os.environ.get("display_fields", "")
+display_fields = [f.strip() for f in display_fields_env.split(",") if f.strip()]
 
 opened = 0
 
@@ -31,10 +32,8 @@ for filename in os.listdir(folder):
         with open(path, "r") as f:
             content = f.read()
 
-        full_text = content.lower()
-        match = any(t in full_text for t in terms) if is_or else all(t in full_text for t in terms)
-
-        if match:
+        # Unified matching logic
+        if utils.filter_contact(content, query, display_fields):
             subprocess.run(["open", path])
             utils.add_to_recent(path)
             opened += 1
