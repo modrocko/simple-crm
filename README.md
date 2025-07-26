@@ -147,7 +147,7 @@ List the most recently opened contact files.
 
 **Symbols allow for quick recognition for all contact rows.** I created out-of-the-box icons below for the specified tags. This is completely configurable by adding or changing icons in the `/icons` folder. The workflow will automatically assign tags with icons *(if they exist)*, for example: `@meeting` will display `meeting.png`.
 
-**Combine tags to tell the story for each contact:**  ex. `@hot @lead` ***Note:** The 1st tag listed determines the icon to be used in the field `Tags:`.* Use any tag you think of as you go — there are no limitations.
+**Combine tags to tell the story for each contact:**  ex. `@hot @lead` ***Note:** The 1st tag listed determines the icon to be used in the field `Lead Status`.* Use any tag you think of as you go — there are no limitations.
 
 **A list of tags & associated icons below** —with more coming!
 
@@ -155,7 +155,7 @@ List the most recently opened contact files.
 
 ![](assets/icons.png)  
 
-❗**Note:** You must define the field, `Tags:` in `Configure Workflow`  to display these or any custom icons for contacts.
+❗**Note:** You must define the field, `Lead Status` in `Configure Workflow`  to display any icons for contacts.
 
 ### Search Filter Rules
 
