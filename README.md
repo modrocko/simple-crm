@@ -81,6 +81,10 @@ List all contacts, ready for filtering.
 
 <kbd>↵</kbd> To open selected contact in your editor
 
+<kbd>⌃</kbd><kbd>↵</kbd> To export contacts into .csv for all filtered contacts
+
+<kbd>⇧</kbd><kbd>↵</kbd> To view contact (then select <kbd>⌘</kbd><kbd>O</kbd> to open/edit contact)
+
 #### Search contacts
 
 Combine tags or any search fields *(as defined in `Configure Workflow`)* to filter rows — using basic AND/OR logic. This is the most powerful feature in Simple CRM. [See more filtering examples & rules](#Search-Filter-Rules).
@@ -97,13 +101,15 @@ Combine tags or any search fields *(as defined in `Configure Workflow`)* to filt
 
 <kbd>⌘</kbd><kbd>↵</kbd> To perform bulk update for all filtered contacts
 
-<kbd>⌘</kbd><kbd>⌥</kbd> To open contact files for all filtered contacts
+<kbd>⌥</kbd><kbd>↵</kbd> To open contact files for all filtered contacts
 
-<kbd>⌘</kbd><kbd>⌃</kbd> To export contacts into .csv for all filtered contacts
+<kbd>⌃</kbd><kbd>↵</kbd> To export contacts into .csv for all filtered contacts
 
 #### For all contact rows
 
 <kbd>↵</kbd> To open contact file for currently select contact
+
+<kbd>⇧</kbd><kbd>↵</kbd> To view contact (then select <kbd>⌘</kbd><kbd>O</kbd> to open/edit contact)
 
 #### Universal Actions
 
