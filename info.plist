@@ -277,7 +277,7 @@
 				<key>fontsizing</key>
 				<integer>0</integer>
 				<key>footertext</key>
-				<string></string>
+				<string>Esc to exit ∙ ⌘+O to open file</string>
 				<key>inputfile</key>
 				<string></string>
 				<key>inputtype</key>
@@ -291,7 +291,7 @@
 				<key>spellchecking</key>
 				<integer>0</integer>
 				<key>stackview</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.userinterface.text</string>
@@ -923,7 +923,8 @@ items = [
     {"title": "Open data folder", "arg": "open_data"},
     {"title": "Export contacts", "arg": "export_contacts.py"},
     {"title": "Import contacts", "arg": "import_contacts.py"},
-	{"title": "Backup contact files", "arg": "backup_contacts.py"}
+	{"title": "Backup contact files", "arg": "backup_contacts.py"},
+	{"title": "View documentation", "arg": "view_readme"}
 ]
 
 filtered = [item for item in items if query in item["title"].lower()]
@@ -965,6 +966,9 @@ if [ "$1" = "open_workflow" ]; then
 
 elif [ "$1" = "open_data" ]; then
 	open "$alfred_workflow_data"
+
+elif [ "$1" = "view_readme" ]; then
+	open "readme.md"
 
 else
 	python3 scripts/${1}
@@ -1090,7 +1094,7 @@ Voila. A new file created for each contact.
 
 ### Tags for `Lead Status`
 
-**Tags provide mucho power to categorize your leads.** They save you from having to create &amp; complete too many fields too. And making search *real* easy. And fast! [See more about tags &amp; icons](#tags--icons).
+**Tags provide mucho power to categorize your leads.** They save you from having to create &amp; complete too many fields too. And making search *real* easy. And fast! [See more about tags &amp; icons](#Tags &amp; Icons for `Lead Status`).
 
 ## Main workflows
 
@@ -1242,7 +1246,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>865</real>
 			<key>ypos</key>
-			<real>310</real>
+			<real>320</real>
 		</dict>
 		<key>13A07A42-59B2-41D3-8882-AA61FAC8E1D4</key>
 		<dict>
@@ -1251,7 +1255,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>340</real>
 			<key>ypos</key>
-			<real>970</real>
+			<real>980</real>
 		</dict>
 		<key>189F166B-CDC9-45AD-8F62-9A8B1BE9FFA8</key>
 		<dict>
@@ -1262,14 +1266,14 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>110</real>
 			<key>ypos</key>
-			<real>630</real>
+			<real>640</real>
 		</dict>
 		<key>2D2BDA87-90F7-4FC4-886F-D61E51808AB1</key>
 		<dict>
 			<key>xpos</key>
 			<real>500</real>
 			<key>ypos</key>
-			<real>1000</real>
+			<real>1010</real>
 		</dict>
 		<key>2FCEDCE2-D08E-4234-915C-440E2D97A7FE</key>
 		<dict>
@@ -1278,7 +1282,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>1315</real>
+			<real>1325</real>
 		</dict>
 		<key>37FDEA91-828D-4FF0-9E41-05B2AE1DAED8</key>
 		<dict>
@@ -1287,21 +1291,23 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>465</real>
+			<real>475</real>
 		</dict>
 		<key>447BA2A6-AAE1-4EF5-9AB6-38BD69FB81F3</key>
 		<dict>
+			<key>note</key>
+			<string>view contact</string>
 			<key>xpos</key>
-			<real>580</real>
+			<real>585</real>
 			<key>ypos</key>
-			<real>25</real>
+			<real>15</real>
 		</dict>
 		<key>555C94EC-EFC7-4403-9945-900594BA2FE1</key>
 		<dict>
 			<key>xpos</key>
 			<real>780</real>
 			<key>ypos</key>
-			<real>805</real>
+			<real>815</real>
 		</dict>
 		<key>69453C75-DF71-4A33-9935-61E09BC733AA</key>
 		<dict>
@@ -1312,14 +1318,14 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>1645</real>
+			<real>1655</real>
 		</dict>
 		<key>83A8A9DE-E41C-451C-BB44-99E564615683</key>
 		<dict>
 			<key>xpos</key>
 			<real>985</real>
 			<key>ypos</key>
-			<real>805</real>
+			<real>815</real>
 		</dict>
 		<key>83D4CD86-AFCE-4379-8CD7-03C43D128678</key>
 		<dict>
@@ -1330,7 +1336,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>340</real>
 			<key>ypos</key>
-			<real>1475</real>
+			<real>1485</real>
 		</dict>
 		<key>853D9928-072D-43D8-8EBF-EBE2CC0316E1</key>
 		<dict>
@@ -1339,7 +1345,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>805</real>
+			<real>815</real>
 		</dict>
 		<key>8A500D23-4715-4736-8743-E11A08563D28</key>
 		<dict>
@@ -1350,7 +1356,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>110</real>
 			<key>ypos</key>
-			<real>275</real>
+			<real>285</real>
 		</dict>
 		<key>92A65387-14B5-4B1F-B1A5-CF7D727A750C</key>
 		<dict>
@@ -1361,7 +1367,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>340</real>
 			<key>ypos</key>
-			<real>1240</real>
+			<real>1250</real>
 		</dict>
 		<key>A4280409-DA48-4C05-8A73-5688E2A9F94A</key>
 		<dict>
@@ -1370,7 +1376,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>340</real>
 			<key>ypos</key>
-			<real>440</real>
+			<real>450</real>
 		</dict>
 		<key>B2CDBAC8-6AB7-4F55-814A-9AC99F9A102C</key>
 		<dict>
@@ -1379,7 +1385,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>1475</real>
+			<real>1485</real>
 		</dict>
 		<key>B52AACB2-80F3-4602-A48B-6A707717F6DC</key>
 		<dict>
@@ -1388,7 +1394,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>1155</real>
+			<real>1165</real>
 		</dict>
 		<key>C43BF98B-6221-4598-A1A0-E307E9217FCD</key>
 		<dict>
@@ -1397,7 +1403,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>340</real>
 			<key>ypos</key>
-			<real>275</real>
+			<real>285</real>
 		</dict>
 		<key>CF3CCB05-81F7-4FFC-AA88-1B6A48F32BDD</key>
 		<dict>
@@ -1406,7 +1412,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>970</real>
+			<real>980</real>
 		</dict>
 		<key>DA00E772-B4BF-4051-A8D2-2A0EA93E2D8B</key>
 		<dict>
@@ -1415,7 +1421,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>310</real>
+			<real>320</real>
 		</dict>
 		<key>E07A44CE-8A04-401D-876F-D0426C729AA8</key>
 		<dict>
@@ -1424,14 +1430,14 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>45</real>
 			<key>ypos</key>
-			<real>445</real>
+			<real>455</real>
 		</dict>
 		<key>ED87AF3A-49FA-4316-A45A-849235D8944F</key>
 		<dict>
 			<key>xpos</key>
 			<real>755</real>
 			<key>ypos</key>
-			<real>340</real>
+			<real>350</real>
 		</dict>
 		<key>F72DC987-2D4E-4362-9A9F-2C9E3C5AEF3A</key>
 		<dict>
@@ -1440,7 +1446,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>155</real>
+			<real>165</real>
 		</dict>
 		<key>F98EE783-8286-4763-B6F5-A34D6D520C03</key>
 		<dict>
@@ -1451,7 +1457,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>340</real>
 			<key>ypos</key>
-			<real>630</real>
+			<real>640</real>
 		</dict>
 		<key>FF54581A-7BF8-496A-AD23-84474CFAA601</key>
 		<dict>
@@ -1460,7 +1466,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>xpos</key>
 			<real>585</real>
 			<key>ypos</key>
-			<real>630</real>
+			<real>640</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -1865,8 +1871,6 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<string>recent</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>3.7.5</string>
 	<key>webaddress</key>
