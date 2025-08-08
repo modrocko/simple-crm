@@ -52,7 +52,7 @@ Voila. A new file created for each contact.
 
 ### Tags for `Lead Status`
 
-**Tags provide mucho power to categorize your leads.** They save you from having to create & complete too many fields too. And making search *real* easy. And fast! [See more about tags & icons](#Tags-&-Icons-for-Lead Status).
+**Tags provide mucho power to categorize your leads.** They save you from having to create & complete too many fields too. And making search *real* easy. And fast! [See more about tags & icons](#Tags-&-Icons-for-`Lead Status`).
 
 ## Main workflows
 
