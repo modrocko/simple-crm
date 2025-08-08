@@ -52,7 +52,7 @@ Voila. A new file created for each contact.
 
 ### Tags for `Lead Status`
 
-**Tags provide mucho power to categorize your leads.** They save you from having to create & complete too many fields too. And making search *real* easy. And fast! [See more about tags & icons](#Tags-&-Icons-for-`Lead Status`).
+**Tags provide mucho power to categorize your leads.** They save you from having to create & complete too many fields too. And making search *real* easy. And fast! [See more about tags & icons](#Tags-and-Icons-for-`Lead Status`).
 
 ## Main workflows
 
@@ -151,7 +151,7 @@ List the most recently opened contact files.
 
 <kbd>⌘</kbd><kbd>↵</kbd> To clear selected contact from this recents list
 
-### Tags & Icons for `Lead Status`
+### Tags and Icons for `Lead Status`
 
 **Symbols allow for quick recognition for all contact rows.** I created out-of-the-box icons below for the specified tags. This is completely configurable by adding or changing icons in the `/icons` folder. The workflow will automatically assign tags with icons *(if they exist)*, for example: `@meeting` will display `meeting.png`.
 
