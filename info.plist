@@ -67,6 +67,21 @@
 				<false/>
 			</dict>
 		</array>
+		<key>3804045A-7C29-4FC9-8BAF-A68E583C1FEE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA00E772-B4BF-4051-A8D2-2A0EA93E2D8B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>EA1AF04F-39D3-4555-A673-EB3E056FCA5C</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>447BA2A6-AAE1-4EF5-9AB6-38BD69FB81F3</key>
 		<array/>
 		<key>555C94EC-EFC7-4403-9945-900594BA2FE1</key>
@@ -199,9 +214,9 @@
 				<key>destinationuid</key>
 				<string>447BA2A6-AAE1-4EF5-9AB6-38BD69FB81F3</string>
 				<key>modifiers</key>
-				<integer>131072</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>⇧ View contact</string>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -217,7 +232,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>DA00E772-B4BF-4051-A8D2-2A0EA93E2D8B</string>
+				<string>3804045A-7C29-4FC9-8BAF-A68E583C1FEE</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
@@ -460,6 +475,38 @@ python3 scripts/update_contacts.py "$1"</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>ED87AF3A-49FA-4316-A45A-849235D8944F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>update_contacts</string>
+						<key>outputlabel</key>
+						<string>update</string>
+						<key>uid</key>
+						<string>EA1AF04F-39D3-4555-A673-EB3E056FCA5C</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>3804045A-7C29-4FC9-8BAF-A68E583C1FEE</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1123,9 +1170,7 @@ List all contacts, ready for filtering.
 
 &lt;kbd&gt;↵&lt;/kbd&gt; To open selected contact in your editor
 
-&lt;kbd&gt;⌃&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To export contacts into .csv for all filtered contacts
-
-&lt;kbd&gt;⇧&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To view contact (then select &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;O&lt;/kbd&gt; to open/edit contact)
+&lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To view contact (then select &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;O&lt;/kbd&gt; to edit contact)
 
 #### Search contacts
 
@@ -1151,7 +1196,7 @@ Combine tags or any search fields *(as defined in `Configure Workflow`)* to filt
 
 &lt;kbd&gt;↵&lt;/kbd&gt; To open contact file for currently select contact
 
-&lt;kbd&gt;⇧&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To view contact (then select &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;O&lt;/kbd&gt; to open/edit contact)
+&lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To view contact (then select &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;O&lt;/kbd&gt; to edit contact)
 
 #### Universal Actions
 
@@ -1244,9 +1289,9 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>update contacts</string>
 			<key>xpos</key>
-			<real>865</real>
+			<real>975</real>
 			<key>ypos</key>
-			<real>320</real>
+			<real>310</real>
 		</dict>
 		<key>13A07A42-59B2-41D3-8882-AA61FAC8E1D4</key>
 		<dict>
@@ -1292,6 +1337,13 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<real>585</real>
 			<key>ypos</key>
 			<real>475</real>
+		</dict>
+		<key>3804045A-7C29-4FC9-8BAF-A68E583C1FEE</key>
+		<dict>
+			<key>xpos</key>
+			<real>615</real>
+			<key>ypos</key>
+			<real>345</real>
 		</dict>
 		<key>447BA2A6-AAE1-4EF5-9AB6-38BD69FB81F3</key>
 		<dict>
@@ -1419,9 +1471,9 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>specify replacement</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>725</real>
 			<key>ypos</key>
-			<real>320</real>
+			<real>310</real>
 		</dict>
 		<key>E07A44CE-8A04-401D-876F-D0426C729AA8</key>
 		<dict>
@@ -1435,9 +1487,9 @@ Some useful tools to manage your contact files. And to peek into your data and w
 		<key>ED87AF3A-49FA-4316-A45A-849235D8944F</key>
 		<dict>
 			<key>xpos</key>
-			<real>755</real>
+			<real>895</real>
 			<key>ypos</key>
-			<real>350</real>
+			<real>340</real>
 		</dict>
 		<key>F72DC987-2D4E-4362-9A9F-2C9E3C5AEF3A</key>
 		<dict>
@@ -1874,7 +1926,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>3.7.6</string>
+	<string>3.7.7</string>
 	<key>webaddress</key>
 	<string>toddsgotapen.com</string>
 </dict>

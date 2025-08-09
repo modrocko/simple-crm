@@ -81,9 +81,7 @@ List all contacts, ready for filtering.
 
 <kbd>↵</kbd> To open selected contact in your editor
 
-<kbd>⌃</kbd><kbd>↵</kbd> To export contacts into .csv for all filtered contacts
-
-<kbd>⇧</kbd><kbd>↵</kbd> To view contact (then select <kbd>⌘</kbd><kbd>O</kbd> to open/edit contact)
+<kbd>⌘</kbd><kbd>↵</kbd> To view contact (then select <kbd>⌘</kbd><kbd>O</kbd> to edit contact)
 
 #### Search contacts
 
@@ -109,7 +107,7 @@ Combine tags or any search fields *(as defined in `Configure Workflow`)* to filt
 
 <kbd>↵</kbd> To open contact file for currently select contact
 
-<kbd>⇧</kbd><kbd>↵</kbd> To view contact (then select <kbd>⌘</kbd><kbd>O</kbd> to open/edit contact)
+<kbd>⌘</kbd><kbd>↵</kbd> To view contact (then select <kbd>⌘</kbd><kbd>O</kbd> to edit contact)
 
 #### Universal Actions
 

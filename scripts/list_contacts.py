@@ -59,7 +59,15 @@ else:
                     "title": name,
                     "subtitle": subtitle,
                     "arg": path,
-                    "icon": icon
+                    "icon": icon,
+                    "mods":{
+                        "cmd": {
+                            "subtitle": "⌘ View contact",
+                            "variables": {
+                                "action": "view_contact"
+                            }
+                        }
+                    }
                 })
 
         except Exception as e:
@@ -94,7 +102,10 @@ if query:
         "mods": {
             "cmd": {
                 "subtitle": "⌘ Update contacts in this list",
-                "variables": { "query": query }
+                "variables": {
+                    "query": query,
+                    "action": "update_contacts"
+                }
             },
             "alt": {
                 "subtitle": "⌥ Open contacts in this list",
