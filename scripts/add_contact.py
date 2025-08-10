@@ -13,7 +13,6 @@ add_fields = os.environ["add_fields"]
 open_file = os.environ["open_file"]
 title = os.environ["alfred_workflow_name"]
 filename_fields = os.environ.get("filename_fields", "")
-filename_fields = os.environ.get("filename_fields", "")
 filename_separator = os.environ.get("filename_separator", "").strip() or " "
 
 # === PARSE FIELD LISTS ===
