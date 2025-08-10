@@ -966,12 +966,13 @@ import sys
 query = sys.argv[1].lower() if len(sys.argv) &gt; 1 else ""
 
 items = [
-    {"title": "Open workflow folder", "arg": "open_workflow"},
-    {"title": "Open data folder", "arg": "open_data"},
-    {"title": "Export contacts", "arg": "export_contacts.py"},
-    {"title": "Import contacts", "arg": "import_contacts.py"},
-	{"title": "Backup contact files", "arg": "backup_contacts.py"},
-	{"title": "View documentation", "arg": "view_readme"}
+    {"title": "Open workflow folder", "subtitle": "Open folder for this workflow", "arg": "open_workflow"},
+    {"title": "Open data folder", "subtitle": "Open underlying data folder for this workflow", "arg": "open_data"},
+    {"title": "Export contacts", "subtitle": "Export all contacts to csv file", "arg": "export_contacts.py"},
+	{"title": "Split names in exported file", "subtitle":"Split Name field into first &amp; last names", "arg": "split_names.py"},
+    {"title": "Import contacts", "subtitle": "Populate Simple CRM with contacts from csv file", "arg": "import_contacts.py"},
+	{"title": "Backup contact files", "subtitle": "Backup all your contacts to a file", "arg": "backup_contacts.py"},
+	{"title": "View documentation", "subtitle": "View the readme file for this workflow", "arg": "view_readme"}
 ]
 
 filtered = [item for item in items if query in item["title"].lower()]
@@ -1923,10 +1924,8 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<string>recent</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>3.7.7</string>
+	<string>3.7.8</string>
 	<key>webaddress</key>
 	<string>toddsgotapen.com</string>
 </dict>
