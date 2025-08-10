@@ -6,12 +6,9 @@ import sys
 title = os.environ["alfred_workflow_name"]
 
 # ====== SETTINGS ======
-INPUT_FILE = os.environ["export_path"]
-OUTPUT_FILE = os.path.splitext(INPUT_FILE)[0] + "_split_names.csv"
+INPUT_FILE = os.environ["import_path"]
+OUTPUT_FILE = os.path.splitext(INPUT_FILE)[0] + "_joined_names.csv"
 NAME_COLUMN = "Name"
-FIRSTNAME_COLUMN = "First Name"
-LASTNAME_COLUMN = "Last Name"
-SPLIT_LIMIT = 1  # How many splits (1 = split into 2 parts)
 # ======================
 
 # Check if input file exists
@@ -25,15 +22,18 @@ if not os.path.isfile(INPUT_FILE):
 # Load CSV
 df = pd.read_csv(INPUT_FILE)
 
-# Split name column
-split_names = df[NAME_COLUMN].str.split(' ', n=SPLIT_LIMIT, expand=True)
+# Get names of first two columns
+col1, col2 = df.columns[:2]
 
-# Drop original name column
-df = df.drop(columns=[NAME_COLUMN])
+# Join first two columns into "Name"
+df[NAME_COLUMN] = df[col1].astype(str) + " " + df[col2].astype(str)
 
-# Insert new columns at start
-df.insert(0, FIRSTNAME_COLUMN, split_names[0])
-df.insert(1, LASTNAME_COLUMN, split_names[1])
+# Drop the first two columns
+df = df.drop(columns=[col1, col2])
+
+# Move "Name" to the start
+name_col = df.pop(NAME_COLUMN)
+df.insert(0, NAME_COLUMN, name_col)
 
 # Save CSV
 df.to_csv(OUTPUT_FILE, index=False)
