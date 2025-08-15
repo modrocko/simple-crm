@@ -31,12 +31,27 @@ tags.sort()
 
 # === BUILD RESULTS ===
 items = []
+# Top row with count
+items.append({
+    "title": f"{len(tags)} matching tags",
+    "subtitle": "Type to filter",
+    "valid": False,
+    "icon": {"path": "info.png"}
+})
+
 for tag, filename in tags:
     items.append({
         "title": f"@{tag}",
         "subtitle": filename,
         "arg": f"@{tag}",
-        "icon": { "path": os.path.join("icons", filename) }
+        "icon": {"path": os.path.join("icons", filename)},
+        "mods": {
+            "cmd": {
+                "subtitle": "⌘ Copy tag to clipboard",
+                "arg": f"@{tag}",
+                "variables": {"action": "copy"}
+            }
+        }
     })
 
 print(json.dumps({ "items": items }))

@@ -97,6 +97,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>69453C75-DF71-4A33-9935-61E09BC733AA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E987AC9A-6628-4741-BB33-034A1F58E789</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>83D4CD86-AFCE-4379-8CD7-03C43D128678</key>
 		<array>
 			<dict>
@@ -187,6 +200,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>F98EE783-8286-4763-B6F5-A34D6D520C03</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E987AC9A-6628-4741-BB33-034A1F58E789</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>90CE1D2B-AEA3-4F16-9F59-BC1F03A616D8</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -1039,6 +1065,27 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>"{query}" copied to clipboard</string>
+				<key>title</key>
+				<string>Simple CRM</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>90CE1D2B-AEA3-4F16-9F59-BC1F03A616D8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1084,6 +1131,25 @@ python3 scripts/show_icons.py "$1"
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>69453C75-DF71-4A33-9935-61E09BC733AA</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>E987AC9A-6628-4741-BB33-034A1F58E789</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -1370,7 +1436,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>show supported icons</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>340</real>
 			<key>ypos</key>
 			<real>1655</real>
 		</dict>
@@ -1411,6 +1477,13 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<real>110</real>
 			<key>ypos</key>
 			<real>285</real>
+		</dict>
+		<key>90CE1D2B-AEA3-4F16-9F59-BC1F03A616D8</key>
+		<dict>
+			<key>xpos</key>
+			<real>780</real>
+			<key>ypos</key>
+			<real>1655</real>
 		</dict>
 		<key>92A65387-14B5-4B1F-B1A5-CF7D727A750C</key>
 		<dict>
@@ -1485,6 +1558,13 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<real>45</real>
 			<key>ypos</key>
 			<real>455</real>
+		</dict>
+		<key>E987AC9A-6628-4741-BB33-034A1F58E789</key>
+		<dict>
+			<key>xpos</key>
+			<real>585</real>
+			<key>ypos</key>
+			<real>1655</real>
 		</dict>
 		<key>ED87AF3A-49FA-4316-A45A-849235D8944F</key>
 		<dict>
@@ -1928,7 +2008,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>3.7.9</string>
+	<string>3.8.1</string>
 	<key>webaddress</key>
 	<string>toddsgotapen.com</string>
 </dict>
