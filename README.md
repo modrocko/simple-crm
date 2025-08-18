@@ -165,6 +165,8 @@ List the most recently opened contact files.
 
 ### Search Filter Rules
 
+Searching is  a powerful beast. Use them. Save them. This functionality kicks in when listing contacts. 
+
 **AND by default**  
  `@lead @followup @active` → matches items with all 3 tags  
 

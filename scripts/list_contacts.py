@@ -121,6 +121,7 @@ if query:
 else:
     items.insert(0, {
         "title": f"{rowcount} {noun}",
+        "subtitle": "Start typing to filter contacts",
         "icon": { "path": "info.png" },
         "valid": False
     })
