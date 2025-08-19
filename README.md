@@ -63,7 +63,7 @@ Voila. A new file created for each contact.
 Adding contacts is as simple as it gets. Start typing to add a new contact, using a subset of fields defined in `Configure Workflow`. And informing you which field you're currently entering *(in CAPs)*. Fill in any or all fields.
 
 
-![](assets/crma.png) 
+![](assets/crma.png)  
 
 <kbd>↵</kbd>  To create new contact file in your CRM folder
 
@@ -148,6 +148,14 @@ List the most recently opened contact files.
 <kbd>↵</kbd> To open selected contact file
 
 <kbd>⌘</kbd><kbd>↵</kbd> To clear selected contact from this recents list
+
+### ▸ Show reminders
+
+Use this command to quickly show all upcoming reminders you may have set/
+
+![](assets/crmrem.png) 
+
+<kbd>↵</kbd> To list contacts that have a date & action as specified in `Configure Workflow`
 
 ### Tags and Icons for Lead Status
 

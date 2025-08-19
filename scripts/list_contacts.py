@@ -12,8 +12,10 @@ query = sys.argv[1].strip() if len(sys.argv) > 0 else ""
 rowcount = 0
 
 # === FIELDS TO SHOW ===
-display_fields_env = os.environ.get("display_fields", "")
+fields_env_name = os.environ["fields_env"] if "fields_env" in os.environ else "display_fields"
+display_fields_env = os.environ[fields_env_name]
 field_names = [field.strip() for field in display_fields_env.split(",")]
+
 
 # === Extract field from file content ===
 def get_field(field, content):

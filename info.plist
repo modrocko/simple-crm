@@ -25,9 +25,9 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>A4280409-DA48-4C05-8A73-5688E2A9F94A</string>
+				<string>F98EE783-8286-4763-B6F5-A34D6D520C03</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -35,9 +35,9 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>F98EE783-8286-4763-B6F5-A34D6D520C03</string>
+				<string>A4280409-DA48-4C05-8A73-5688E2A9F94A</string>
 				<key>modifiers</key>
-				<integer>0</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -89,6 +89,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>83A8A9DE-E41C-451C-BB44-99E564615683</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6935725D-264B-4DCD-A931-E646101195E3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F98EE783-8286-4763-B6F5-A34D6D520C03</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -195,6 +208,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>DB80A1D7-F69B-413D-88F9-E18A837E1DC0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EBB889E3-1B73-4406-8155-7874DB8F37D9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>E07A44CE-8A04-401D-876F-D0426C729AA8</key>
 		<array>
 			<dict>
@@ -213,6 +239,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>90CE1D2B-AEA3-4F16-9F59-BC1F03A616D8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EBB889E3-1B73-4406-8155-7874DB8F37D9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6935725D-264B-4DCD-A931-E646101195E3</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -545,7 +584,7 @@ python3 scripts/update_contacts.py "$1"</string>
 				<integer>102</integer>
 				<key>script</key>
 				<string>cd "$alfred_workflow_directory"
-python3 scripts/remove_saved_search.py "$1"</string>
+python3 scripts/save_search.py "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -556,7 +595,7 @@ python3 scripts/remove_saved_search.py "$1"</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>A4280409-DA48-4C05-8A73-5688E2A9F94A</string>
+			<string>37FDEA91-828D-4FF0-9E41-05B2AE1DAED8</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -596,24 +635,31 @@ python3 scripts/remove_saved_search.py "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
 				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>cd "$alfred_workflow_directory"
-python3 scripts/save_search.py "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
+				<key>focusedappvariablename</key>
 				<string></string>
-				<key>type</key>
+				<key>hotkey</key>
+				<integer>15</integer>
+				<key>hotmod</key>
+				<integer>262144</integer>
+				<key>hotstring</key>
+				<string>R</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>37FDEA91-828D-4FF0-9E41-05B2AE1DAED8</string>
+			<string>DB80A1D7-F69B-413D-88F9-E18A837E1DC0</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -644,53 +690,23 @@ python3 scripts/open_contact_file.py "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
 				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
+				<integer>2</integer>
 				<key>keyword</key>
-				<string>{var:saved_search}</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>cd "$alfred_workflow_directory"
-python3 scripts/list_saved_searches.py "$1"
-</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
+				<string>crmrem</string>
 				<key>subtext</key>
-				<string>Run a previously saved search query</string>
-				<key>title</key>
-				<string>Run a saved search</string>
-				<key>type</key>
-				<integer>0</integer>
+				<string>Show contacts having upcoming reminders</string>
+				<key>text</key>
+				<string>Show reminders</string>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>189F166B-CDC9-45AD-8F62-9A8B1BE9FFA8</string>
+			<string>EBB889E3-1B73-4406-8155-7874DB8F37D9</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -745,6 +761,50 @@ python3 scripts/list_contacts.py "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string>has:next action date</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>fields_env</key>
+					<string>reminder_fields</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>6935725D-264B-4DCD-A931-E646101195E3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/remove_saved_search.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A4280409-DA48-4C05-8A73-5688E2A9F94A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>path</key>
 				<string></string>
 			</dict>
@@ -793,6 +853,57 @@ python3 scripts/export_contacts.py "$1"</string>
 			<string>853D9928-072D-43D8-8EBF-EBE2CC0316E1</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:saved_search}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/list_saved_searches.py "$1"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Run a previously saved search query</string>
+				<key>title</key>
+				<string>Run a saved search</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>189F166B-CDC9-45AD-8F62-9A8B1BE9FFA8</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1220,7 +1331,7 @@ Voila. A new file created for each contact.
 Adding contacts is as simple as it gets. Start typing to add a new contact, using a subset of fields defined in `Configure Workflow`. And informing you which field you're currently entering *(in CAPs)*. Fill in any or all fields.
 
 
-![](assets/crma.png) 
+![](assets/crma.png)  
 
 &lt;kbd&gt;↵&lt;/kbd&gt;  To create new contact file in your CRM folder
 
@@ -1306,6 +1417,14 @@ List the most recently opened contact files.
 
 &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To clear selected contact from this recents list
 
+### ▸ Show reminders
+
+Use this command to quickly show all upcoming reminders you may have set/
+
+![](assets/crmrem.png) 
+
+&lt;kbd&gt;↵&lt;/kbd&gt; To list contacts that have a date &amp; action as specified in `Configure Workflow`
+
 ### Tags and Icons for Lead Status
 
 **Symbols allow for quick recognition for all contact rows.** I created out-of-the-box icons below for the specified tags. This is completely configurable by adding or changing icons in the `/icons` folder. The workflow will automatically assign tags with icons *(if they exist)*, for example: `@meeting` will display `meeting.png`.
@@ -1321,6 +1440,8 @@ List the most recently opened contact files.
 ❗**Note:** You must define the field, `Lead Status` in `Configure Workflow`  to display any icons for contacts.
 
 ### Search Filter Rules
+
+Searching is  a powerful beast. Use them. Save them. This functionality kicks in when listing contacts. 
 
 **AND by default**  
  `@lead @followup @active` → matches items with all 3 tags  
@@ -1357,7 +1478,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>update contacts</string>
 			<key>xpos</key>
-			<real>975</real>
+			<real>1115</real>
 			<key>ypos</key>
 			<real>310</real>
 		</dict>
@@ -1366,9 +1487,9 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>specify rename</string>
 			<key>xpos</key>
-			<real>340</real>
+			<real>480</real>
 			<key>ypos</key>
-			<real>980</real>
+			<real>990</real>
 		</dict>
 		<key>189F166B-CDC9-45AD-8F62-9A8B1BE9FFA8</key>
 		<dict>
@@ -1377,23 +1498,23 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>list saved searches</string>
 			<key>xpos</key>
-			<real>110</real>
+			<real>230</real>
 			<key>ypos</key>
-			<real>640</real>
+			<real>880</real>
 		</dict>
 		<key>2D2BDA87-90F7-4FC4-886F-D61E51808AB1</key>
 		<dict>
 			<key>xpos</key>
-			<real>500</real>
+			<real>640</real>
 			<key>ypos</key>
-			<real>1010</real>
+			<real>1020</real>
 		</dict>
 		<key>2FCEDCE2-D08E-4234-915C-440E2D97A7FE</key>
 		<dict>
 			<key>note</key>
 			<string>clear recent</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>725</real>
 			<key>ypos</key>
 			<real>1325</real>
 		</dict>
@@ -1402,14 +1523,14 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>save search</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>725</real>
 			<key>ypos</key>
 			<real>475</real>
 		</dict>
 		<key>3804045A-7C29-4FC9-8BAF-A68E583C1FEE</key>
 		<dict>
 			<key>xpos</key>
-			<real>615</real>
+			<real>755</real>
 			<key>ypos</key>
 			<real>345</real>
 		</dict>
@@ -1418,16 +1539,23 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>view contact</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>725</real>
 			<key>ypos</key>
 			<real>15</real>
 		</dict>
 		<key>555C94EC-EFC7-4403-9945-900594BA2FE1</key>
 		<dict>
 			<key>xpos</key>
-			<real>780</real>
+			<real>920</real>
 			<key>ypos</key>
 			<real>815</real>
+		</dict>
+		<key>6935725D-264B-4DCD-A931-E646101195E3</key>
+		<dict>
+			<key>xpos</key>
+			<real>400</real>
+			<key>ypos</key>
+			<real>670</real>
 		</dict>
 		<key>69453C75-DF71-4A33-9935-61E09BC733AA</key>
 		<dict>
@@ -1436,14 +1564,14 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>show supported icons</string>
 			<key>xpos</key>
-			<real>340</real>
+			<real>480</real>
 			<key>ypos</key>
 			<real>1655</real>
 		</dict>
 		<key>83A8A9DE-E41C-451C-BB44-99E564615683</key>
 		<dict>
 			<key>xpos</key>
-			<real>985</real>
+			<real>1125</real>
 			<key>ypos</key>
 			<real>815</real>
 		</dict>
@@ -1454,7 +1582,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>invoke utils</string>
 			<key>xpos</key>
-			<real>340</real>
+			<real>480</real>
 			<key>ypos</key>
 			<real>1485</real>
 		</dict>
@@ -1463,7 +1591,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>export contacts</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>725</real>
 			<key>ypos</key>
 			<real>815</real>
 		</dict>
@@ -1474,14 +1602,14 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>specify contact</string>
 			<key>xpos</key>
-			<real>110</real>
+			<real>230</real>
 			<key>ypos</key>
 			<real>285</real>
 		</dict>
 		<key>90CE1D2B-AEA3-4F16-9F59-BC1F03A616D8</key>
 		<dict>
 			<key>xpos</key>
-			<real>780</real>
+			<real>920</real>
 			<key>ypos</key>
 			<real>1655</real>
 		</dict>
@@ -1492,7 +1620,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>list recent contacts</string>
 			<key>xpos</key>
-			<real>340</real>
+			<real>480</real>
 			<key>ypos</key>
 			<real>1250</real>
 		</dict>
@@ -1501,16 +1629,16 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>removed saved search</string>
 			<key>xpos</key>
-			<real>340</real>
+			<real>480</real>
 			<key>ypos</key>
-			<real>450</real>
+			<real>810</real>
 		</dict>
 		<key>B2CDBAC8-6AB7-4F55-814A-9AC99F9A102C</key>
 		<dict>
 			<key>note</key>
 			<string>run utils</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>725</real>
 			<key>ypos</key>
 			<real>1485</real>
 		</dict>
@@ -1519,7 +1647,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>clear recents</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>725</real>
 			<key>ypos</key>
 			<real>1165</real>
 		</dict>
@@ -1528,7 +1656,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>add contact</string>
 			<key>xpos</key>
-			<real>340</real>
+			<real>480</real>
 			<key>ypos</key>
 			<real>285</real>
 		</dict>
@@ -1537,39 +1665,59 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>rename search</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>725</real>
 			<key>ypos</key>
-			<real>980</real>
+			<real>990</real>
 		</dict>
 		<key>DA00E772-B4BF-4051-A8D2-2A0EA93E2D8B</key>
 		<dict>
 			<key>note</key>
 			<string>specify replacement</string>
 			<key>xpos</key>
-			<real>725</real>
+			<real>865</real>
 			<key>ypos</key>
 			<real>310</real>
+		</dict>
+		<key>DB80A1D7-F69B-413D-88F9-E18A837E1DC0</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>xpos</key>
+			<real>50</real>
+			<key>ypos</key>
+			<real>640</real>
 		</dict>
 		<key>E07A44CE-8A04-401D-876F-D0426C729AA8</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>45</real>
+			<real>235</real>
 			<key>ypos</key>
-			<real>455</real>
+			<real>475</real>
 		</dict>
 		<key>E987AC9A-6628-4741-BB33-034A1F58E789</key>
 		<dict>
 			<key>xpos</key>
-			<real>585</real>
+			<real>725</real>
 			<key>ypos</key>
 			<real>1655</real>
+		</dict>
+		<key>EBB889E3-1B73-4406-8155-7874DB8F37D9</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>show reminders</string>
+			<key>xpos</key>
+			<real>230</real>
+			<key>ypos</key>
+			<real>640</real>
 		</dict>
 		<key>ED87AF3A-49FA-4316-A45A-849235D8944F</key>
 		<dict>
 			<key>xpos</key>
-			<real>895</real>
+			<real>1035</real>
 			<key>ypos</key>
 			<real>340</real>
 		</dict>
@@ -1578,7 +1726,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>open contacts</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>725</real>
 			<key>ypos</key>
 			<real>165</real>
 		</dict>
@@ -1589,7 +1737,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>list contacts</string>
 			<key>xpos</key>
-			<real>340</real>
+			<real>480</real>
 			<key>ypos</key>
 			<real>640</real>
 		</dict>
@@ -1598,7 +1746,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>open contact file</string>
 			<key>xpos</key>
-			<real>585</real>
+			<real>725</real>
 			<key>ypos</key>
 			<real>640</real>
 		</dict>
@@ -1672,7 +1820,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>Name, Company, Lead Status, Note, Next Action</string>
+				<string>Company, Lead Status, Note, Next Action</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -1688,6 +1836,27 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<string>textarea</string>
 			<key>variable</key>
 			<string>display_fields</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Next Action Date, Next Action</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>3</integer>
+			</dict>
+			<key>description</key>
+			<string>The fields to show for the reminders view</string>
+			<key>label</key>
+			<string>Reminder fields</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>reminder_fields</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1924,6 +2093,27 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string>crmrem</string>
+				<key>placeholder</key>
+				<string>crmrem</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>List all contacts that have a reminder set for the next action to take</string>
+			<key>label</key>
+			<string>List reminders</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>list_reminders</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>:crmu</string>
 				<key>placeholder</key>
 				<string>:crmu</string>
@@ -2008,7 +2198,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>3.8.2</string>
+	<string>3.8.5</string>
 	<key>webaddress</key>
 	<string>toddsgotapen.com</string>
 </dict>
