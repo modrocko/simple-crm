@@ -762,7 +762,7 @@ python3 scripts/list_contacts.py "$1"</string>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>has:next action date</string>
+				<string>has:{var:reminder_query_field}</string>
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
@@ -1836,6 +1836,27 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<string>textarea</string>
 			<key>variable</key>
 			<string>display_fields</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>Next Action Date</string>
+				<key>placeholder</key>
+				<string>Next Action Date</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Field to use for filtering contacts for reminders</string>
+			<key>label</key>
+			<string>Reminder query field</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>reminder_query_field</string>
 		</dict>
 		<dict>
 			<key>config</key>
