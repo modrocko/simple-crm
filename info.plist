@@ -544,7 +544,7 @@ python3 scripts/specify_contact.py "$1"</string>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Start typing to add new contact</string>
+				<string>Add a new contact to this crm</string>
 				<key>title</key>
 				<string>Add new contact</string>
 				<key>type</key>
@@ -793,7 +793,7 @@ python3 scripts/list_contacts.py "$1"</string>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>List all contacts from the files on disk</string>
+				<string>List (&amp; filter) all contacts</string>
 				<key>title</key>
 				<string>List contacts</string>
 				<key>type</key>
