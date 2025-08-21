@@ -12,7 +12,7 @@ query = sys.argv[1].strip() if len(sys.argv) > 0 else ""
 rowcount = 0
 
 # === FIELDS TO SHOW ===
-fields_env_name = os.environ["fields_env"] if "fields_env" in os.environ else "display_fields"
+fields_env_name = os.environ.get("fields_env", "display_fields")
 display_fields_env = os.environ[fields_env_name]
 field_names = [field.strip() for field in display_fields_env.split(",")]
 
@@ -50,11 +50,12 @@ else:
             fields = {field: get_field(field, content) for field in field_names}
             subtitle_parts = [fields[f] if fields[f] else "—" for f in field_names]
             subtitle = " ∙ ".join(subtitle_parts)
+            next_action_date = fields.get(os.environ.get("reminder_query_field", ""), "")
 
             match = utils.filter_contact(content, query, field_names)
 
             if match:
-                icon = utils.get_icon_for_tag(fields.get("Lead Status", ""))
+                icon = utils.get_icon_for_tag(fields["Lead Status"])
                 matched = True
                 rowcount += 1
                 items.append({
@@ -67,6 +68,14 @@ else:
                             "subtitle": "⌘ View contact",
                             "variables": {
                                 "action": "view_contact"
+                            }
+                        },
+                        "alt": {
+                            "subtitle": "⌥ Set reminder" if next_action_date else "",
+                            "arg": name,
+                            "variables": {
+                                "next_action_date": next_action_date,
+                                "action": "set_reminder"
                             }
                         }
                     }

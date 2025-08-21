@@ -151,11 +151,19 @@ List the most recently opened contact files.
 
 ### ▸ Show reminders
 
-Use this command to quickly show all upcoming reminders you may have set/
+Use this command to quickly show all upcoming reminders you may have set
 
 ![](assets/crmrem.png) 
 
-<kbd>↵</kbd> To list contacts that have a date & action as specified in `Configure Workflow`
+![](assets/crmrem2.png)  
+
+<kbd>↵</kbd> To edit highlighted contact
+
+<kbd>⌘</kbd><kbd>↵</kbd> To quick-view highlighted contact
+
+<kbd>⌥</kbd><kbd>↵</kbd> To set reminder for highlighted contact in Reminders app or as a Calendar event*
+
+**Note:**  You must set the calendar to use in `Configure Workflow`.
 
 ### Tags and Icons for Lead Status
 

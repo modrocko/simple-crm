@@ -149,6 +149,31 @@
 				<false/>
 			</dict>
 		</array>
+		<key>870A3E9B-B096-4ABA-8D1C-6976F6B7D2AB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D5EA4BBC-DD30-491E-B2BD-CF1805B31ECF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>EA1AF04F-39D3-4555-A673-EB3E056FCA5C</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F72DC987-2D4E-4362-9A9F-2C9E3C5AEF3A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>8A500D23-4715-4736-8743-E11A08563D28</key>
 		<array>
 			<dict>
@@ -212,7 +237,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>EBB889E3-1B73-4406-8155-7874DB8F37D9</string>
+				<string>6935725D-264B-4DCD-A931-E646101195E3</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -287,7 +312,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>F72DC987-2D4E-4362-9A9F-2C9E3C5AEF3A</string>
+				<string>870A3E9B-B096-4ABA-8D1C-6976F6B7D2AB</string>
 				<key>modifiers</key>
 				<integer>524288</integer>
 				<key>modifiersubtext</key>
@@ -350,6 +375,30 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/set_reminder.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D5EA4BBC-DD30-491E-B2BD-CF1805B31ECF</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>behaviour</key>
 				<integer>0</integer>
 				<key>fontmode</key>
@@ -407,6 +456,62 @@ python3 scripts/open_contacts.py "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>set_reminder</string>
+						<key>outputlabel</key>
+						<string>set reminder</string>
+						<key>uid</key>
+						<string>EA1AF04F-39D3-4555-A673-EB3E056FCA5C</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>open contacts</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>870A3E9B-B096-4ABA-8D1C-6976F6B7D2AB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/add_contact.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C43BF98B-6221-4598-A1A0-E307E9217FCD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -457,26 +562,23 @@ python3 scripts/specify_contact.py "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>cd "$alfred_workflow_directory"
-python3 scripts/add_contact.py "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>11</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>:replace</string>
+				<key>subtext</key>
+				<string>Format: Current value | New value</string>
+				<key>text</key>
+				<string>Choose what to replace</string>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>C43BF98B-6221-4598-A1A0-E307E9217FCD</string>
+			<string>DA00E772-B4BF-4051-A8D2-2A0EA93E2D8B</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -501,27 +603,6 @@ python3 scripts/update_contacts.py "$1"</string>
 			<string>074D2B6E-6290-42E8-949B-78A2AD29E1CB</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>:replace</string>
-				<key>subtext</key>
-				<string>Format: Current value | New value</string>
-				<key>text</key>
-				<string>Choose what to replace</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>DA00E772-B4BF-4051-A8D2-2A0EA93E2D8B</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -566,7 +647,7 @@ python3 scripts/update_contacts.py "$1"</string>
 				<key>elselabel</key>
 				<string>else</string>
 				<key>hideelse</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -574,30 +655,6 @@ python3 scripts/update_contacts.py "$1"</string>
 			<string>3804045A-7C29-4FC9-8BAF-A68E583C1FEE</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>cd "$alfred_workflow_directory"
-python3 scripts/save_search.py "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>37FDEA91-828D-4FF0-9E41-05B2AE1DAED8</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -635,33 +692,47 @@ python3 scripts/save_search.py "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
+				<key>concurrently</key>
 				<false/>
-				<key>focusedappvariablename</key>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/save_search.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
 				<string></string>
-				<key>hotkey</key>
-				<integer>15</integer>
-				<key>hotmod</key>
-				<integer>262144</integer>
-				<key>hotstring</key>
-				<string>R</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
+				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>DB80A1D7-F69B-413D-88F9-E18A837E1DC0</string>
+			<string>37FDEA91-828D-4FF0-9E41-05B2AE1DAED8</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>crmrem</string>
+				<key>subtext</key>
+				<string>Show contacts having upcoming reminders</string>
+				<key>text</key>
+				<string>Show reminders</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EBB889E3-1B73-4406-8155-7874DB8F37D9</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -686,27 +757,6 @@ python3 scripts/open_contact_file.py "$1"</string>
 			<string>FF54581A-7BF8-496A-AD23-84474CFAA601</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>crmrem</string>
-				<key>subtext</key>
-				<string>Show contacts having upcoming reminders</string>
-				<key>text</key>
-				<string>Show reminders</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>EBB889E3-1B73-4406-8155-7874DB8F37D9</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -781,6 +831,37 @@ python3 scripts/list_contacts.py "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>15</integer>
+				<key>hotmod</key>
+				<integer>262144</integer>
+				<key>hotstring</key>
+				<string>R</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>DB80A1D7-F69B-413D-88F9-E18A837E1DC0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -805,34 +886,6 @@ python3 scripts/remove_saved_search.py "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>path</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.revealfile</string>
-			<key>uid</key>
-			<string>555C94EC-EFC7-4403-9945-900594BA2FE1</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>soundname</key>
-				<string>Hero</string>
-				<key>systemsound</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.playsound</string>
-			<key>uid</key>
-			<string>83A8A9DE-E41C-451C-BB44-99E564615683</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -853,6 +906,34 @@ python3 scripts/export_contacts.py "$1"</string>
 			<string>853D9928-072D-43D8-8EBF-EBE2CC0316E1</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Hero</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>83A8A9DE-E41C-451C-BB44-99E564615683</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>555C94EC-EFC7-4403-9945-900594BA2FE1</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -908,27 +989,6 @@ python3 scripts/list_saved_searches.py "$1"
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>:rename</string>
-				<key>subtext</key>
-				<string>Format: Current value | New value</string>
-				<key>text</key>
-				<string>Choose what to replace</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>13A07A42-59B2-41D3-8882-AA61FAC8E1D4</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -949,6 +1009,27 @@ python3 scripts/rename_search.py "$1"</string>
 			<string>CF3CCB05-81F7-4FFC-AA88-1B6A48F32BDD</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>:rename</string>
+				<key>subtext</key>
+				<string>Format: Current value | New value</string>
+				<key>text</key>
+				<string>Choose what to replace</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>13A07A42-59B2-41D3-8882-AA61FAC8E1D4</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1197,6 +1278,25 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>E987AC9A-6628-4741-BB33-034A1F58E789</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1242,25 +1342,6 @@ python3 scripts/show_icons.py "$1"
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>69453C75-DF71-4A33-9935-61E09BC733AA</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>E987AC9A-6628-4741-BB33-034A1F58E789</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -1419,11 +1500,19 @@ List the most recently opened contact files.
 
 ### ▸ Show reminders
 
-Use this command to quickly show all upcoming reminders you may have set/
+Use this command to quickly show all upcoming reminders you may have set
 
 ![](assets/crmrem.png) 
 
-&lt;kbd&gt;↵&lt;/kbd&gt; To list contacts that have a date &amp; action as specified in `Configure Workflow`
+![](assets/crmrem2.png)  
+
+&lt;kbd&gt;↵&lt;/kbd&gt; To edit highlighted contact
+
+&lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To quick-view highlighted contact
+
+&lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To set reminder for highlighted contact in Reminders app or as a Calendar event*
+
+**Note:**  You must set the calendar to use in `Configure Workflow`.
 
 ### Tags and Icons for Lead Status
 
@@ -1478,18 +1567,18 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>update contacts</string>
 			<key>xpos</key>
-			<real>1115</real>
+			<real>1205</real>
 			<key>ypos</key>
-			<real>310</real>
+			<real>540</real>
 		</dict>
 		<key>13A07A42-59B2-41D3-8882-AA61FAC8E1D4</key>
 		<dict>
 			<key>note</key>
 			<string>specify rename</string>
 			<key>xpos</key>
-			<real>480</real>
+			<real>515</real>
 			<key>ypos</key>
-			<real>990</real>
+			<real>1220</real>
 		</dict>
 		<key>189F166B-CDC9-45AD-8F62-9A8B1BE9FFA8</key>
 		<dict>
@@ -1498,64 +1587,64 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>list saved searches</string>
 			<key>xpos</key>
-			<real>230</real>
+			<real>265</real>
 			<key>ypos</key>
-			<real>880</real>
+			<real>1150</real>
 		</dict>
 		<key>2D2BDA87-90F7-4FC4-886F-D61E51808AB1</key>
 		<dict>
 			<key>xpos</key>
-			<real>640</real>
+			<real>675</real>
 			<key>ypos</key>
-			<real>1020</real>
+			<real>1250</real>
 		</dict>
 		<key>2FCEDCE2-D08E-4234-915C-440E2D97A7FE</key>
 		<dict>
 			<key>note</key>
 			<string>clear recent</string>
 			<key>xpos</key>
-			<real>725</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>1325</real>
+			<real>1555</real>
 		</dict>
 		<key>37FDEA91-828D-4FF0-9E41-05B2AE1DAED8</key>
 		<dict>
 			<key>note</key>
 			<string>save search</string>
 			<key>xpos</key>
-			<real>725</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>475</real>
+			<real>705</real>
 		</dict>
 		<key>3804045A-7C29-4FC9-8BAF-A68E583C1FEE</key>
 		<dict>
 			<key>xpos</key>
-			<real>755</real>
+			<real>790</real>
 			<key>ypos</key>
-			<real>345</real>
+			<real>575</real>
 		</dict>
 		<key>447BA2A6-AAE1-4EF5-9AB6-38BD69FB81F3</key>
 		<dict>
 			<key>note</key>
 			<string>view contact</string>
 			<key>xpos</key>
-			<real>725</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>15</real>
+			<real>195</real>
 		</dict>
 		<key>555C94EC-EFC7-4403-9945-900594BA2FE1</key>
 		<dict>
 			<key>xpos</key>
-			<real>920</real>
+			<real>955</real>
 			<key>ypos</key>
-			<real>815</real>
+			<real>1045</real>
 		</dict>
 		<key>6935725D-264B-4DCD-A931-E646101195E3</key>
 		<dict>
 			<key>xpos</key>
-			<real>400</real>
+			<real>435</real>
 			<key>ypos</key>
-			<real>670</real>
+			<real>900</real>
 		</dict>
 		<key>69453C75-DF71-4A33-9935-61E09BC733AA</key>
 		<dict>
@@ -1564,16 +1653,16 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>show supported icons</string>
 			<key>xpos</key>
-			<real>480</real>
+			<real>515</real>
 			<key>ypos</key>
-			<real>1655</real>
+			<real>1885</real>
 		</dict>
 		<key>83A8A9DE-E41C-451C-BB44-99E564615683</key>
 		<dict>
 			<key>xpos</key>
-			<real>1125</real>
+			<real>1160</real>
 			<key>ypos</key>
-			<real>815</real>
+			<real>1045</real>
 		</dict>
 		<key>83D4CD86-AFCE-4379-8CD7-03C43D128678</key>
 		<dict>
@@ -1582,18 +1671,25 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>invoke utils</string>
 			<key>xpos</key>
-			<real>480</real>
+			<real>515</real>
 			<key>ypos</key>
-			<real>1485</real>
+			<real>1715</real>
 		</dict>
 		<key>853D9928-072D-43D8-8EBF-EBE2CC0316E1</key>
 		<dict>
 			<key>note</key>
 			<string>export contacts</string>
 			<key>xpos</key>
-			<real>725</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>815</real>
+			<real>1045</real>
+		</dict>
+		<key>870A3E9B-B096-4ABA-8D1C-6976F6B7D2AB</key>
+		<dict>
+			<key>xpos</key>
+			<real>765</real>
+			<key>ypos</key>
+			<real>370</real>
 		</dict>
 		<key>8A500D23-4715-4736-8743-E11A08563D28</key>
 		<dict>
@@ -1602,16 +1698,16 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>specify contact</string>
 			<key>xpos</key>
-			<real>230</real>
+			<real>265</real>
 			<key>ypos</key>
-			<real>285</real>
+			<real>515</real>
 		</dict>
 		<key>90CE1D2B-AEA3-4F16-9F59-BC1F03A616D8</key>
 		<dict>
 			<key>xpos</key>
-			<real>920</real>
+			<real>955</real>
 			<key>ypos</key>
-			<real>1655</real>
+			<real>1885</real>
 		</dict>
 		<key>92A65387-14B5-4B1F-B1A5-CF7D727A750C</key>
 		<dict>
@@ -1620,88 +1716,97 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>list recent contacts</string>
 			<key>xpos</key>
-			<real>480</real>
+			<real>515</real>
 			<key>ypos</key>
-			<real>1250</real>
+			<real>1480</real>
 		</dict>
 		<key>A4280409-DA48-4C05-8A73-5688E2A9F94A</key>
 		<dict>
 			<key>note</key>
 			<string>removed saved search</string>
 			<key>xpos</key>
-			<real>480</real>
+			<real>515</real>
 			<key>ypos</key>
-			<real>810</real>
+			<real>1040</real>
 		</dict>
 		<key>B2CDBAC8-6AB7-4F55-814A-9AC99F9A102C</key>
 		<dict>
 			<key>note</key>
 			<string>run utils</string>
 			<key>xpos</key>
-			<real>725</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>1485</real>
+			<real>1715</real>
 		</dict>
 		<key>B52AACB2-80F3-4602-A48B-6A707717F6DC</key>
 		<dict>
 			<key>note</key>
 			<string>clear recents</string>
 			<key>xpos</key>
-			<real>725</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>1165</real>
+			<real>1395</real>
 		</dict>
 		<key>C43BF98B-6221-4598-A1A0-E307E9217FCD</key>
 		<dict>
 			<key>note</key>
 			<string>add contact</string>
 			<key>xpos</key>
-			<real>480</real>
+			<real>515</real>
 			<key>ypos</key>
-			<real>285</real>
+			<real>515</real>
 		</dict>
 		<key>CF3CCB05-81F7-4FFC-AA88-1B6A48F32BDD</key>
 		<dict>
 			<key>note</key>
 			<string>rename search</string>
 			<key>xpos</key>
-			<real>725</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>990</real>
+			<real>1220</real>
+		</dict>
+		<key>D5EA4BBC-DD30-491E-B2BD-CF1805B31ECF</key>
+		<dict>
+			<key>note</key>
+			<string>set reminder</string>
+			<key>xpos</key>
+			<real>955</real>
+			<key>ypos</key>
+			<real>195</real>
 		</dict>
 		<key>DA00E772-B4BF-4051-A8D2-2A0EA93E2D8B</key>
 		<dict>
 			<key>note</key>
 			<string>specify replacement</string>
 			<key>xpos</key>
-			<real>865</real>
+			<real>955</real>
 			<key>ypos</key>
-			<real>310</real>
+			<real>540</real>
 		</dict>
 		<key>DB80A1D7-F69B-413D-88F9-E18A837E1DC0</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>50</real>
+			<real>265</real>
 			<key>ypos</key>
-			<real>640</real>
+			<real>1015</real>
 		</dict>
 		<key>E07A44CE-8A04-401D-876F-D0426C729AA8</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>235</real>
+			<real>265</real>
 			<key>ypos</key>
-			<real>475</real>
+			<real>690</real>
 		</dict>
 		<key>E987AC9A-6628-4741-BB33-034A1F58E789</key>
 		<dict>
 			<key>xpos</key>
-			<real>725</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>1655</real>
+			<real>1885</real>
 		</dict>
 		<key>EBB889E3-1B73-4406-8155-7874DB8F37D9</key>
 		<dict>
@@ -1710,25 +1815,25 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>show reminders</string>
 			<key>xpos</key>
-			<real>230</real>
+			<real>265</real>
 			<key>ypos</key>
-			<real>640</real>
+			<real>840</real>
 		</dict>
 		<key>ED87AF3A-49FA-4316-A45A-849235D8944F</key>
 		<dict>
 			<key>xpos</key>
-			<real>1035</real>
+			<real>1125</real>
 			<key>ypos</key>
-			<real>340</real>
+			<real>570</real>
 		</dict>
 		<key>F72DC987-2D4E-4362-9A9F-2C9E3C5AEF3A</key>
 		<dict>
 			<key>note</key>
 			<string>open contacts</string>
 			<key>xpos</key>
-			<real>725</real>
+			<real>955</real>
 			<key>ypos</key>
-			<real>165</real>
+			<real>365</real>
 		</dict>
 		<key>F98EE783-8286-4763-B6F5-A34D6D520C03</key>
 		<dict>
@@ -1737,18 +1842,18 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>list contacts</string>
 			<key>xpos</key>
-			<real>480</real>
+			<real>515</real>
 			<key>ypos</key>
-			<real>640</real>
+			<real>870</real>
 		</dict>
 		<key>FF54581A-7BF8-496A-AD23-84474CFAA601</key>
 		<dict>
 			<key>note</key>
 			<string>open contact file</string>
 			<key>xpos</key>
-			<real>725</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>640</real>
+			<real>870</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -1871,13 +1976,60 @@ Some useful tools to manage your contact files. And to peek into your data and w
 				<integer>3</integer>
 			</dict>
 			<key>description</key>
-			<string>The fields to show for the reminders view</string>
+			<string>The fields to show &amp; search on for the reminders view</string>
 			<key>label</key>
 			<string>Reminder fields</string>
 			<key>type</key>
 			<string>textarea</string>
 			<key>variable</key>
 			<string>reminder_fields</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>reminder</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>Reminders app</string>
+						<string>reminder</string>
+					</array>
+					<array>
+						<string>Calendar event</string>
+						<string>event</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Choose type of reminder to set — in either Reminders app or as Calendar event</string>
+			<key>label</key>
+			<string>Reminder type</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>reminder_type</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>calendar not set</string>
+				<key>placeholder</key>
+				<string>Must specify a calendar</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Calendar to use for setting reminder events</string>
+			<key>label</key>
+			<string>Reminder calendar</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>reminder_calendar</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -2219,7 +2371,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>3.8.5</string>
+	<string>4.8.6</string>
 	<key>webaddress</key>
 	<string>toddsgotapen.com</string>
 </dict>
