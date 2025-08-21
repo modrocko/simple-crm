@@ -1567,18 +1567,18 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>update contacts</string>
 			<key>xpos</key>
-			<real>1205</real>
+			<real>1010</real>
 			<key>ypos</key>
-			<real>540</real>
+			<real>400</real>
 		</dict>
 		<key>13A07A42-59B2-41D3-8882-AA61FAC8E1D4</key>
 		<dict>
 			<key>note</key>
 			<string>specify rename</string>
 			<key>xpos</key>
-			<real>515</real>
+			<real>320</real>
 			<key>ypos</key>
-			<real>1220</real>
+			<real>1080</real>
 		</dict>
 		<key>189F166B-CDC9-45AD-8F62-9A8B1BE9FFA8</key>
 		<dict>
@@ -1587,64 +1587,64 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>list saved searches</string>
 			<key>xpos</key>
-			<real>265</real>
+			<real>70</real>
 			<key>ypos</key>
-			<real>1150</real>
+			<real>1010</real>
 		</dict>
 		<key>2D2BDA87-90F7-4FC4-886F-D61E51808AB1</key>
 		<dict>
 			<key>xpos</key>
-			<real>675</real>
+			<real>480</real>
 			<key>ypos</key>
-			<real>1250</real>
+			<real>1110</real>
 		</dict>
 		<key>2FCEDCE2-D08E-4234-915C-440E2D97A7FE</key>
 		<dict>
 			<key>note</key>
 			<string>clear recent</string>
 			<key>xpos</key>
-			<real>760</real>
+			<real>565</real>
 			<key>ypos</key>
-			<real>1555</real>
+			<real>1415</real>
 		</dict>
 		<key>37FDEA91-828D-4FF0-9E41-05B2AE1DAED8</key>
 		<dict>
 			<key>note</key>
 			<string>save search</string>
 			<key>xpos</key>
-			<real>760</real>
+			<real>565</real>
 			<key>ypos</key>
-			<real>705</real>
+			<real>565</real>
 		</dict>
 		<key>3804045A-7C29-4FC9-8BAF-A68E583C1FEE</key>
 		<dict>
 			<key>xpos</key>
-			<real>790</real>
+			<real>595</real>
 			<key>ypos</key>
-			<real>575</real>
+			<real>435</real>
 		</dict>
 		<key>447BA2A6-AAE1-4EF5-9AB6-38BD69FB81F3</key>
 		<dict>
 			<key>note</key>
 			<string>view contact</string>
 			<key>xpos</key>
-			<real>760</real>
+			<real>565</real>
 			<key>ypos</key>
-			<real>195</real>
+			<real>55</real>
 		</dict>
 		<key>555C94EC-EFC7-4403-9945-900594BA2FE1</key>
 		<dict>
 			<key>xpos</key>
-			<real>955</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>1045</real>
+			<real>905</real>
 		</dict>
 		<key>6935725D-264B-4DCD-A931-E646101195E3</key>
 		<dict>
 			<key>xpos</key>
-			<real>435</real>
+			<real>240</real>
 			<key>ypos</key>
-			<real>900</real>
+			<real>760</real>
 		</dict>
 		<key>69453C75-DF71-4A33-9935-61E09BC733AA</key>
 		<dict>
@@ -1653,16 +1653,16 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>show supported icons</string>
 			<key>xpos</key>
-			<real>515</real>
+			<real>320</real>
 			<key>ypos</key>
-			<real>1885</real>
+			<real>1745</real>
 		</dict>
 		<key>83A8A9DE-E41C-451C-BB44-99E564615683</key>
 		<dict>
 			<key>xpos</key>
-			<real>1160</real>
+			<real>965</real>
 			<key>ypos</key>
-			<real>1045</real>
+			<real>905</real>
 		</dict>
 		<key>83D4CD86-AFCE-4379-8CD7-03C43D128678</key>
 		<dict>
@@ -1671,25 +1671,25 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>invoke utils</string>
 			<key>xpos</key>
-			<real>515</real>
+			<real>320</real>
 			<key>ypos</key>
-			<real>1715</real>
+			<real>1575</real>
 		</dict>
 		<key>853D9928-072D-43D8-8EBF-EBE2CC0316E1</key>
 		<dict>
 			<key>note</key>
 			<string>export contacts</string>
 			<key>xpos</key>
-			<real>760</real>
+			<real>565</real>
 			<key>ypos</key>
-			<real>1045</real>
+			<real>905</real>
 		</dict>
 		<key>870A3E9B-B096-4ABA-8D1C-6976F6B7D2AB</key>
 		<dict>
 			<key>xpos</key>
-			<real>765</real>
+			<real>570</real>
 			<key>ypos</key>
-			<real>370</real>
+			<real>230</real>
 		</dict>
 		<key>8A500D23-4715-4736-8743-E11A08563D28</key>
 		<dict>
@@ -1698,16 +1698,16 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>specify contact</string>
 			<key>xpos</key>
-			<real>265</real>
+			<real>70</real>
 			<key>ypos</key>
-			<real>515</real>
+			<real>375</real>
 		</dict>
 		<key>90CE1D2B-AEA3-4F16-9F59-BC1F03A616D8</key>
 		<dict>
 			<key>xpos</key>
-			<real>955</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>1885</real>
+			<real>1745</real>
 		</dict>
 		<key>92A65387-14B5-4B1F-B1A5-CF7D727A750C</key>
 		<dict>
@@ -1716,97 +1716,97 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>list recent contacts</string>
 			<key>xpos</key>
-			<real>515</real>
+			<real>320</real>
 			<key>ypos</key>
-			<real>1480</real>
+			<real>1340</real>
 		</dict>
 		<key>A4280409-DA48-4C05-8A73-5688E2A9F94A</key>
 		<dict>
 			<key>note</key>
 			<string>removed saved search</string>
 			<key>xpos</key>
-			<real>515</real>
+			<real>320</real>
 			<key>ypos</key>
-			<real>1040</real>
+			<real>900</real>
 		</dict>
 		<key>B2CDBAC8-6AB7-4F55-814A-9AC99F9A102C</key>
 		<dict>
 			<key>note</key>
 			<string>run utils</string>
 			<key>xpos</key>
-			<real>760</real>
+			<real>565</real>
 			<key>ypos</key>
-			<real>1715</real>
+			<real>1575</real>
 		</dict>
 		<key>B52AACB2-80F3-4602-A48B-6A707717F6DC</key>
 		<dict>
 			<key>note</key>
 			<string>clear recents</string>
 			<key>xpos</key>
-			<real>760</real>
+			<real>565</real>
 			<key>ypos</key>
-			<real>1395</real>
+			<real>1255</real>
 		</dict>
 		<key>C43BF98B-6221-4598-A1A0-E307E9217FCD</key>
 		<dict>
 			<key>note</key>
 			<string>add contact</string>
 			<key>xpos</key>
-			<real>515</real>
+			<real>320</real>
 			<key>ypos</key>
-			<real>515</real>
+			<real>375</real>
 		</dict>
 		<key>CF3CCB05-81F7-4FFC-AA88-1B6A48F32BDD</key>
 		<dict>
 			<key>note</key>
 			<string>rename search</string>
 			<key>xpos</key>
-			<real>760</real>
+			<real>565</real>
 			<key>ypos</key>
-			<real>1220</real>
+			<real>1080</real>
 		</dict>
 		<key>D5EA4BBC-DD30-491E-B2BD-CF1805B31ECF</key>
 		<dict>
 			<key>note</key>
 			<string>set reminder</string>
 			<key>xpos</key>
-			<real>955</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>195</real>
+			<real>55</real>
 		</dict>
 		<key>DA00E772-B4BF-4051-A8D2-2A0EA93E2D8B</key>
 		<dict>
 			<key>note</key>
 			<string>specify replacement</string>
 			<key>xpos</key>
-			<real>955</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>540</real>
+			<real>400</real>
 		</dict>
 		<key>DB80A1D7-F69B-413D-88F9-E18A837E1DC0</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>265</real>
+			<real>70</real>
 			<key>ypos</key>
-			<real>1015</real>
+			<real>875</real>
 		</dict>
 		<key>E07A44CE-8A04-401D-876F-D0426C729AA8</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<real>265</real>
+			<real>70</real>
 			<key>ypos</key>
-			<real>690</real>
+			<real>550</real>
 		</dict>
 		<key>E987AC9A-6628-4741-BB33-034A1F58E789</key>
 		<dict>
 			<key>xpos</key>
-			<real>760</real>
+			<real>565</real>
 			<key>ypos</key>
-			<real>1885</real>
+			<real>1745</real>
 		</dict>
 		<key>EBB889E3-1B73-4406-8155-7874DB8F37D9</key>
 		<dict>
@@ -1815,25 +1815,25 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>show reminders</string>
 			<key>xpos</key>
-			<real>265</real>
+			<real>70</real>
 			<key>ypos</key>
-			<real>840</real>
+			<real>700</real>
 		</dict>
 		<key>ED87AF3A-49FA-4316-A45A-849235D8944F</key>
 		<dict>
 			<key>xpos</key>
-			<real>1125</real>
+			<real>930</real>
 			<key>ypos</key>
-			<real>570</real>
+			<real>430</real>
 		</dict>
 		<key>F72DC987-2D4E-4362-9A9F-2C9E3C5AEF3A</key>
 		<dict>
 			<key>note</key>
 			<string>open contacts</string>
 			<key>xpos</key>
-			<real>955</real>
+			<real>760</real>
 			<key>ypos</key>
-			<real>365</real>
+			<real>225</real>
 		</dict>
 		<key>F98EE783-8286-4763-B6F5-A34D6D520C03</key>
 		<dict>
@@ -1842,18 +1842,18 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>list contacts</string>
 			<key>xpos</key>
-			<real>515</real>
+			<real>320</real>
 			<key>ypos</key>
-			<real>870</real>
+			<real>730</real>
 		</dict>
 		<key>FF54581A-7BF8-496A-AD23-84474CFAA601</key>
 		<dict>
 			<key>note</key>
 			<string>open contact file</string>
 			<key>xpos</key>
-			<real>760</real>
+			<real>565</real>
 			<key>ypos</key>
-			<real>870</real>
+			<real>730</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
