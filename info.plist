@@ -1512,7 +1512,13 @@ Use this command to quickly show all upcoming reminders you may have set
 
 &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To set reminder for highlighted contact in Reminders app or as a Calendar event*
 
-**Note:**  You must set the calendar to use in `Configure Workflow`.
+\* You must set the calendar to use in `Configure Workflow`.
+
+**Supported Date Formats**
+
+- `%Y-%m-%d` → 2025-08-20  
+- `%m/%d/%Y` → 08/20/2025  
+- `%b %d %Y` → Aug 20 2025  
 
 ### Tags and Icons for Lead Status
 
@@ -1925,7 +1931,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>Company, Lead Status, Note, Next Action</string>
+				<string>Company, Lead Status, Note, Next Action, Next Action Date</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -2371,7 +2377,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>4.8.6</string>
+	<string>4.8.7</string>
 	<key>webaddress</key>
 	<string>toddsgotapen.com</string>
 </dict>

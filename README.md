@@ -163,7 +163,13 @@ Use this command to quickly show all upcoming reminders you may have set
 
 <kbd>⌥</kbd><kbd>↵</kbd> To set reminder for highlighted contact in Reminders app or as a Calendar event*
 
-**Note:**  You must set the calendar to use in `Configure Workflow`.
+\* You must set the calendar to use in `Configure Workflow`.
+
+**Supported Date Formats**
+
+- `%Y-%m-%d` → 2025-08-20  
+- `%m/%d/%Y` → 08/20/2025  
+- `%b %d %Y` → Aug 20 2025  
 
 ### Tags and Icons for Lead Status
 
@@ -210,7 +216,7 @@ All searches are case-insensitive.
 
 Some useful tools to manage your contact files. And to peek into your data and workflow folders.
 
-![](assets/crmu.png)     
+![](assets/crmu.png)        
 
 
 
