@@ -35,18 +35,14 @@ def make_reminder(title: str, due_day: date):
 
 # Check if calendar exists
 def is_cal_name_valid(cal_name: str) -> bool:
-    check_script = f'tell application "Calendar" to return (exists calendar "{cal_name}")'
+    check_script = f'tell application "Calendar" to return (exists calendar "{esc(cal_name)}")'
     result = subprocess.run(
-        ["/usr/bin/osascript", "-e", check_script],
-        capture_output=True, text=True
+        ["osascript", "-e", check_script], capture_output=True, text=True
     )
     if result.stdout.strip().lower() == "true":
         return True
     else:
-        subprocess.run([
-            "osascript", "-e",
-            f'display notification "Calendar \'{cal_name or "unset"}\' not found" with title "Reminders"'
-        ])
+        notify(f"Calendar '{cal_name}' not found")
         return False
 
 
@@ -61,6 +57,8 @@ def make_event(title: str, due_day: date):
     if not is_cal_name_valid(cal_name):
         sys.exit(0)
 
+    notify("Adding calendar event...")
+
     script = f'''
     tell application "Calendar"
         set theCal to calendar "{esc(cal_name)}"
@@ -68,8 +66,8 @@ def make_event(title: str, due_day: date):
         set year of startDate to {y}
         set month of startDate to {m}
         set day of startDate to {d}
-        set time of startDate to 0
-        set endDate to startDate + (1 * days)
+        set time of startDate to (6 * hours)
+        set endDate to startDate + (0 * minutes)
         tell theCal
             make new event at end of events with properties {{summary:"{esc(title)}", start date:startDate, end date:endDate}}
         end tell
@@ -79,19 +77,19 @@ def make_event(title: str, due_day: date):
 
 
 # Show macOS notification
-def notify(title: str, msg: str):
+def notify(msg: str):
+    title = os.environ["alfred_workflow_name"]
     subprocess.run(
-        ["osascript","-e",f'display notification "{esc(msg)}" with title "{esc(title)}"'],
-        check=False
+        ["osascript","-e",f'display notification "{esc(msg)}" with title "{esc(title)}"'], check=False
     )
 
 
 
 # Run workflow logic
 def main():
+    title = os.environ["alfred_workflow_name"]
     name = sys.argv[1] if len(sys.argv) > 1 else "Unknown"
-    wf = os.environ["alfred_workflow_name"]
-    full_title = f"Contact {name} (added by {wf})"
+    full_title = f"Ping {name} (added by {title})"
 
     # must have a day
     due_raw = os.environ["next_action_date"]
@@ -105,10 +103,10 @@ def main():
     target = os.environ.get("reminder_type", "reminder").lower()
     if target == "event":
         make_event(full_title, due_day)
-        notify(wf, f"Added calendar event for {name}")
+        notify(f"Added calendar event for {name}")
     else:
         make_reminder(full_title, due_day)
-        notify(wf, f"Added reminder for {name}")
+        notify(f"Added reminder for {name}")
 
 if __name__ == "__main__":
     main()
