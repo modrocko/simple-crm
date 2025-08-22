@@ -544,7 +544,7 @@ python3 scripts/specify_contact.py "$1"</string>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>Add a new contact to this crm</string>
+				<string>Start typing to add a new contact</string>
 				<key>title</key>
 				<string>Add new contact</string>
 				<key>type</key>
@@ -1111,7 +1111,7 @@ python3 scripts/list_recent_contacts.py "$1"
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>List contacts recently opened</string>
+				<string>List recently opened contacts</string>
 				<key>title</key>
 				<string>List recent contacts</string>
 				<key>type</key>
@@ -1184,14 +1184,54 @@ import sys
 query = sys.argv[1].lower() if len(sys.argv) &gt; 1 else ""
 
 items = [
-    {"title": "Open workflow folder", "subtitle": "Open folder for this workflow", "arg": "open_workflow"},
-    {"title": "Open data folder", "subtitle": "Open underlying data folder for this workflow", "arg": "open_data"},
-    {"title": "Export contacts", "subtitle": "Export all contacts to csv file", "arg": "export_contacts.py"},
-	{"title": "Split names post-export", "subtitle":"Split 'Name' field into first &amp; last names", "arg": "split_names.py"},
-	{"title": "Join names pre-import", "subtitle":"Join first &amp; last names into 'Name' field", "arg": "join_names.py"},
-    {"title": "Import contacts", "subtitle": "Populate Simple CRM with contacts from csv file", "arg": "import_contacts.py"},
-	{"title": "Backup contact files", "subtitle": "Backup all your contacts to a file", "arg": "backup_contacts.py"},
-	{"title": "View documentation", "subtitle": "View the readme file for this workflow", "arg": "view_readme"}
+    {
+        "title": "Open workflow folder",
+        "subtitle": "Open folder for this workflow",
+        "arg": "open_workflow",
+		"icon": {"path": "icons2/openworkflowfolder.png"}
+    },
+    {
+        "title": "Open data folder",
+        "subtitle": "Open underlying data folder for this workflow",
+        "arg": "open_data",
+		"icon": {"path": "icons2/opendatafolder.png"}
+    },
+    {
+        "title": "Export contacts",
+        "subtitle": "Export all contacts to csv file",
+        "arg": "export_contacts.py",
+		"icon": {"path": "icons2/exportcontacts.png"}
+    },
+    {
+        "title": "Split names post-export",
+        "subtitle": "Split 'Name' field into first &amp; last names",
+        "arg": "split_names.py",
+		"icon": {"path": "icons2/splitnames.png"}
+    },
+    {
+        "title": "Join names pre-import",
+        "subtitle": "Join first &amp; last names into 'Name' field",
+        "arg": "join_names.py",
+		"icon": {"path": "icons2/combinenames.png"}
+    },
+    {
+        "title": "Import contacts",
+        "subtitle": "Populate Simple CRM with contacts from csv file",
+        "arg": "import_contacts.py",
+		"icon": {"path": "icons2/importcontacts.png"}
+    },
+    {
+        "title": "Backup contact files",
+        "subtitle": "Backup all your contacts to a file",
+        "arg": "backup_contacts.py",
+		"icon": {"path": "icons2/backupcontactfiles.png"}
+    },
+    {
+        "title": "View documentation",
+        "subtitle": "View the readme file for this workflow",
+        "arg": "view_readme",
+		"icon": {"path": "icons2/viewdocumentation.png"}
+    }
 ]
 
 filtered = [item for item in items if query in item["title"].lower()]
@@ -2374,10 +2414,8 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<string>recent</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>4.8.7</string>
+	<string>4.8.8</string>
 	<key>webaddress</key>
 	<string>toddsgotapen.com</string>
 </dict>
