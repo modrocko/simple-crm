@@ -33,31 +33,42 @@ if not os.path.exists(folder):
         "subtitle": folder,
         "valid": False
     })
-else:
+else:  # folder found
     matched = False
     found_files = False
 
+    # loop all files in the contacts folder, sorted by name
     for filename in sorted(os.listdir(folder), key=str.lower):
         if not filename.endswith(ext):
             continue
         found_files = True
         path = os.path.join(folder, filename)
         try:
+            # read the whole contact file
             with open(path, "r") as f:
                 content = f.read()
 
+            # grab the Name field & all display fields
             name = get_field("Name", content)
             fields = {field: get_field(field, content) for field in field_names}
+
+            # build the subtitle like: "Company ∙ Email ∙ Phone"
             subtitle_parts = [fields[f] if fields[f] else "—" for f in field_names]
             subtitle = " ∙ ".join(subtitle_parts)
+
+            # get next action date field from configuration
             next_action_date = fields.get(os.environ.get("reminder_query_field", ""), "")
 
+            # run the search
             match = utils.filter_contact(content, query, field_names)
 
             if match:
+                # get the right icon based on lead status field
                 icon = utils.get_icon_for_tag(fields["Lead Status"])
                 matched = True
                 rowcount += 1
+
+                # add row for this contact
                 items.append({
                     "title": name,
                     "subtitle": subtitle,
@@ -82,12 +93,14 @@ else:
                 })
 
         except Exception as e:
+            # show any file level errors
             items.append({
                 "title": f"Error in {filename}",
                 "subtitle": str(e),
                 "valid": False
             })
 
+    # handle empty states
     if not found_files:
         items.append({
             "title": "No contacts available",
@@ -130,6 +143,7 @@ if query:
         }
     })
 else:
+    # no query typed yet, show 1st row prompt
     items.insert(0, {
         "title": f"{rowcount} {noun}",
         "subtitle": "Start typing to filter contacts",
