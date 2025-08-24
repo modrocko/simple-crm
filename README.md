@@ -77,7 +77,7 @@ Imagine finding *any contact* in seconds. And finding *a set of contacts* in few
 
 List all contacts, ready for filtering.
 
-![](assets/crml.png)   
+![](assets/crml.png)    
 
 <kbd>↵</kbd> To open selected contact in your editor
 
@@ -97,7 +97,7 @@ Combine tags or any search fields *(as defined in `Configure Workflow`)* to filt
 
 <kbd>↵</kbd> To save currently applied filtering as a `saved search`
 
-<kbd>⌘</kbd><kbd>↵</kbd> To perform bulk update for all filtered contacts
+<kbd>⌘</kbd><kbd>↵</kbd> To perform bulk update for all filtered contacts (see `Update Contacts` section below)
 
 <kbd>⌥</kbd><kbd>↵</kbd> To open contact files for all filtered contacts
 
@@ -125,7 +125,7 @@ Key Universal actions include:
 
 Save any filtered contacts from above to a saved search.
 
-![](assets/crms.png)    
+![](assets/crms.png)     
 
 <kbd>↵</kbd> To run this search
 
@@ -212,11 +212,21 @@ Searching is  a powerful beast. Use them. Save them. This functionality kicks in
 
 All searches are case-insensitive.
 
+### Update Contacts
+
+This is a **bulk replace** feature. It does **a plain-text find & replace** across all contacts for the currently filtered rows via the `List Contacts` function.
+
+- **Any text string** in the file can be replaced
+- **Case-insensitive** match (`ACME`, `acme`, `AcMe` → all replaced)
+- **All occurrences** in the file get updated
+
 ### Utilities
 
 Some useful tools to manage your contact files. And to peek into your data and workflow folders.
 
-![](assets/crmu.png)        
+![](assets/crmu.png) 
+
+​     
 
 
 
