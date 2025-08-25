@@ -2441,6 +2441,8 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<string>recent</string>
 		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>5.3.1</string>
 	<key>webaddress</key>
