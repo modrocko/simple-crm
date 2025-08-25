@@ -177,13 +177,10 @@ Use this command to quickly show all upcoming reminders you may have set
 
 **Combine tags to tell the story for each contact:**  ex. `@hot @lead` ***Note:** The 1st tag listed determines the icon to be used in the field `Lead Status`.* Use any tag you think of as you go — there are no limitations.
 
-**A list of tags & associated icons below** —with more coming!
-
- `@active` `@awaitingpayment` `@cold` `@deciding` `@followup` `@hot` `@lead` `@loss` `@meeting` `@past` `@meh` `@pause` `@ping` `@reminder` `@waiting` `@won`
-
-![](assets/icons.png)  
-
 ❗**Note:** You must define the field, `Lead Status` in `Configure Workflow`  to display any icons for contacts.
+
+*Invoke the utility to see all currently supported icons for tags:*
+![](assets/crmui.png) 
 
 ### Search Filter Rules
 
@@ -212,6 +209,28 @@ Searching is  a powerful beast. Use them. Save them. This functionality kicks in
 
 All searches are case-insensitive.
 
+### Sorting Contacts
+
+You can sort any list of contacts by a field while searching or listing.
+
+**Basic usage**
+
+* `sort:<Field Name>` → sort ascending (A→Z or oldest→newest)
+* `-sort:<Field Name>` → sort descending (Z→A or newest→oldest)
+
+**Examples**
+
+* `sort:Next Action Date` → show contacts with oldest dates first
+* `-sort:Next Action Date` → show contacts with newest dates first
+* `sort:Company` → alphabetical sort by company name
+* `-sort:Lead Status` → reverse alphabetical sort by lead status
+
+**Notes**
+
+* Works with any defined field in your contacts
+* Dates are sorted using most date formats
+* Non-date fields are sorted as plain text (case-insensitive)
+
 ### Update Contacts
 
 This is a **bulk replace** feature. It does **a plain-text find & replace** across all contacts for the currently filtered rows via the `List Contacts` function.
@@ -225,8 +244,3 @@ This is a **bulk replace** feature. It does **a plain-text find & replace** acro
 Some useful tools to manage your contact files. And to peek into your data and workflow folders.
 
 ![](assets/crmu.png) 
-
-​     
-
-
-

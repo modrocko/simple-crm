@@ -812,7 +812,7 @@ python3 scripts/list_contacts.py "$1"</string>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>has:{var:reminder_query_field}</string>
+				<string>has:{var:reminder_query_field} sort:{var:reminder_query_field}</string>
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
@@ -1466,7 +1466,7 @@ Imagine finding *any contact* in seconds. And finding *a set of contacts* in few
 
 List all contacts, ready for filtering.
 
-![](assets/crml.png)   
+![](assets/crml.png)    
 
 &lt;kbd&gt;↵&lt;/kbd&gt; To open selected contact in your editor
 
@@ -1486,7 +1486,7 @@ Combine tags or any search fields *(as defined in `Configure Workflow`)* to filt
 
 &lt;kbd&gt;↵&lt;/kbd&gt; To save currently applied filtering as a `saved search`
 
-&lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To perform bulk update for all filtered contacts
+&lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To perform bulk update for all filtered contacts (see `Update Contacts` section below)
 
 &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To open contact files for all filtered contacts
 
@@ -1514,7 +1514,7 @@ Key Universal actions include:
 
 Save any filtered contacts from above to a saved search.
 
-![](assets/crms.png)    
+![](assets/crms.png)     
 
 &lt;kbd&gt;↵&lt;/kbd&gt; To run this search
 
@@ -1566,13 +1566,10 @@ Use this command to quickly show all upcoming reminders you may have set
 
 **Combine tags to tell the story for each contact:**  ex. `@hot @lead` ***Note:** The 1st tag listed determines the icon to be used in the field `Lead Status`.* Use any tag you think of as you go — there are no limitations.
 
-**A list of tags &amp; associated icons below** —with more coming!
-
- `@active` `@awaitingpayment` `@cold` `@deciding` `@followup` `@hot` `@lead` `@loss` `@meeting` `@past` `@meh` `@pause` `@ping` `@reminder` `@waiting` `@won`
-
-![](assets/icons.png)  
-
 ❗**Note:** You must define the field, `Lead Status` in `Configure Workflow`  to display any icons for contacts.
+
+*Invoke the utility to see all currently supported icons for tags:*
+![](assets/crmui.png) 
 
 ### Search Filter Rules
 
@@ -1600,6 +1597,36 @@ Searching is  a powerful beast. Use them. Save them. This functionality kicks in
  `!has:company` → matches items with an empty or missing company field  
 
 All searches are case-insensitive.
+
+### Sorting Contacts
+
+You can sort any list of contacts by a field while searching or listing.
+
+**Basic usage**
+
+* `sort:&lt;Field Name&gt;` → sort ascending (A→Z or oldest→newest)
+* `-sort:&lt;Field Name&gt;` → sort descending (Z→A or newest→oldest)
+
+**Examples**
+
+* `sort:Next Action Date` → show contacts with oldest dates first
+* `-sort:Next Action Date` → show contacts with newest dates first
+* `sort:Company` → alphabetical sort by company name
+* `-sort:Lead Status` → reverse alphabetical sort by lead status
+
+**Notes**
+
+* Works with any defined field in your contacts
+* Dates are sorted using most date formats
+* Non-date fields are sorted as plain text (case-insensitive)
+
+### Update Contacts
+
+This is a **bulk replace** feature. It does **a plain-text find &amp; replace** across all contacts for the currently filtered rows via the `List Contacts` function.
+
+- **Any text string** in the file can be replaced
+- **Case-insensitive** match (`ACME`, `acme`, `AcMe` → all replaced)
+- **All occurrences** in the file get updated
 
 ### Utilities
 
@@ -2414,10 +2441,8 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<string>recent</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>4.8.9</string>
+	<string>5.3.1</string>
 	<key>webaddress</key>
 	<string>toddsgotapen.com</string>
 </dict>

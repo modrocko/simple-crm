@@ -4,14 +4,22 @@ import os
 import json
 import sys
 import utils
+import sort
 
 # === ENV VARS ===
 folder = os.environ["contact_folder"]
 ext = os.environ["file_extension"].strip()
+
 query = sys.argv[1].strip() if len(sys.argv) > 0 else ""
+
+# allow sorting (for date fields only at this time - for 'reminders')
+query, sort_field, descending = sort.extract_sort(query)
+
 rowcount = 0
 
 # === FIELDS TO SHOW ===
+# Use default fields unless specified otherwise by 'fields_env' config variable
+# This is how to control view for this script, by setting 'fields_env' var. Cool huh?
 fields_env_name = os.environ.get("fields_env", "display_fields")
 display_fields_env = os.environ[fields_env_name]
 field_names = [field.strip() for field in display_fields_env.split(",")]
@@ -82,6 +90,7 @@ else:  # folder found
                             }
                         },
                         "alt": {
+                            # set reminder function if 'next actiondate' is non null
                             "subtitle": "⌥ Set reminder" if next_action_date else "",
                             "arg": name,
                             "variables": {
@@ -150,6 +159,11 @@ else:
         "icon": { "path": "info.png" },
         "valid": False
     })
+
+
+# Sort contacts, if specified (while keeping summary row at top)
+if sort_field:
+    items = sort.sort_items_keep_first(items, key_field=sort_field, descending=descending)
 
 # === Output JSON for Alfred ===
 print(json.dumps({ "items": items }))
