@@ -89,7 +89,7 @@ def notify(msg: str):
 def main():
     title = os.environ["alfred_workflow_name"]
     name = sys.argv[1] if len(sys.argv) > 1 else "Unknown"
-    full_title = f"Ping {name} (added by {title})"
+    full_title = f"Ping {name} ({title})"
 
     # must have a day
     due_raw = os.environ["next_action_date"]

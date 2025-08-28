@@ -22,7 +22,7 @@
 
 **More...**
 
-**Simple CRM is a (super) lightweight, workflow built around files**. You open & edit these files with your favorite editor. This workflow makes it easy & fast to define, add, tag, find &  view contacts. And has tools to import, export & backup all your contacts. 
+**Simple CRM is a (super) lightweight, CRM built around files**. You open & edit these files with your favorite editor. This workflow makes it easy & fast to define, add, tag, find &  view contacts. And has tools to import, export & backup all your contacts. 
 
 Simple CRM is built for power users, freelancers & anyone wanting less — to do more.
 
@@ -32,7 +32,7 @@ Give it a shot. Tell me what ya like. And what sucks. I'll make it un-suck.
 
 ## Usage
 
-### Set up
+### Setup
 
 Got existing contacts in your current CRM? Cool. Import them into Simple CRM.
 
@@ -52,7 +52,7 @@ Voila. A new file created for each contact.
 
 ### Tags for `Lead Status`
 
-**Tags provide mucho power to categorize your leads.** They save you from having to create & complete too many fields too. And making search *real* easy. And fast! [See more about tags & icons](#tags-and-icons-for-lead-status).
+**Tags provide mucho power to categorize your leads.** They save you from having to create & complete too many fields too. And makes search *real* easy. And fast! [See more about tags & icons](#tags-and-icons-for-lead-status).
 
 ## Main workflows
 
@@ -163,6 +163,8 @@ Use this command to quickly show all upcoming reminders you may have set
 
 <kbd>⌥</kbd><kbd>↵</kbd> To set reminder for highlighted contact in Reminders app or as a Calendar event*
 
+<kbd>⌥</kbd><kbd>⌃</kbd> To clear reminder date for highlighted contact from the contact file only
+
 \* You must set the calendar to use in `Configure Workflow`.
 
 **Supported Date Formats**
@@ -211,22 +213,11 @@ All searches are case-insensitive.
 
 ### Sorting Contacts
 
-You can sort any list of contacts by a field while searching or listing.
-
-**Basic usage**
+Make any list smarter by sorting it on the fly.
 
 * `sort:<Field Name>` → sort ascending (A→Z or oldest→newest)
 * `-sort:<Field Name>` → sort descending (Z→A or newest→oldest)
-
-**Examples**
-
-* `sort:Next Action Date` → show contacts with oldest dates first
-* `-sort:Next Action Date` → show contacts with newest dates first
-* `sort:Company` → alphabetical sort by company name
-* `-sort:Lead Status` → reverse alphabetical sort by lead status
-
-**Notes**
-
+* Example: `crml @won sort:company`
 * Works with any defined field in your contacts
 * Dates are sorted using most date formats
 * Non-date fields are sorted as plain text (case-insensitive)

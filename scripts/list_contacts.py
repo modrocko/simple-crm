@@ -97,6 +97,14 @@ else:  # folder found
                                 "next_action_date": next_action_date,
                                 "action": "set_reminder"
                             }
+                        },
+                        "ctrl": {
+                            # set reminder function if 'next actiondate' is non null
+                            "subtitle": "⌃ Clear reminder" if next_action_date else "",
+                            "arg": name,
+                            "variables": {
+                                "action": "clear_reminder"
+                            }
                         }
                     }
                 })

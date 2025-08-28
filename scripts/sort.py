@@ -19,19 +19,17 @@ def extract_sort(query: str):
     Supports:
       "search terms sort:<Field Name>"   → ascending
       "search terms -sort:<Field Name>"  → descending
-
-    Returns:
-      query       → terms without the sort token
-      sort_field  → field name to sort on
-      descending  → True if "-sort:" was used
+      "search terms !sort:<Field Name>"  → descending
     """
     sort_field, descending = "", False
     lower = query.lower()
 
-    # find sort token once
-    if "sort:" in lower or "-sort:" in lower:
-        if "-sort:" in lower:
-            head, tail = query.split("-sort:", 1)
+    # define optional prefix for descending
+    prefix = "-" if "-sort:" in lower else "!" if "!sort:" in lower else ""
+
+    if "sort:" in lower or f"{prefix}sort:" in lower:
+        if prefix:
+            head, tail = query.split(f"{prefix}sort:", 1)
             descending = True
         else:
             head, tail = query.split("sort:", 1)

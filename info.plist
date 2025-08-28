@@ -54,6 +54,31 @@
 				<false/>
 			</dict>
 		</array>
+		<key>1A97E5E8-631A-43F2-85D4-B7E981350F58</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>699B8F4B-7655-4D39-ABF5-83EA08C24CFE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>EA1AF04F-39D3-4555-A673-EB3E056FCA5C</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>853D9928-072D-43D8-8EBF-EBE2CC0316E1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>2D2BDA87-90F7-4FC4-886F-D61E51808AB1</key>
 		<array>
 			<dict>
@@ -85,18 +110,7 @@
 		<key>447BA2A6-AAE1-4EF5-9AB6-38BD69FB81F3</key>
 		<array/>
 		<key>555C94EC-EFC7-4403-9945-900594BA2FE1</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>83A8A9DE-E41C-451C-BB44-99E564615683</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>6935725D-264B-4DCD-A931-E646101195E3</key>
 		<array>
 			<dict>
@@ -352,7 +366,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>853D9928-072D-43D8-8EBF-EBE2CC0316E1</string>
+				<string>1A97E5E8-631A-43F2-85D4-B7E981350F58</string>
 				<key>modifiers</key>
 				<integer>262144</integer>
 				<key>modifiersubtext</key>
@@ -831,6 +845,30 @@ python3 scripts/list_contacts.py "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/clear_reminder.py "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>699B8F4B-7655-4D39-ABF5-83EA08C24CFE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>action</key>
 				<integer>0</integer>
 				<key>argument</key>
@@ -886,6 +924,38 @@ python3 scripts/remove_saved_search.py "$1"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:action}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>clear_reminder</string>
+						<key>outputlabel</key>
+						<string>clear reminder</string>
+						<key>uid</key>
+						<string>EA1AF04F-39D3-4555-A673-EB3E056FCA5C</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>export contacts</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>1A97E5E8-631A-43F2-85D4-B7E981350F58</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -906,21 +976,6 @@ python3 scripts/export_contacts.py "$1"</string>
 			<string>853D9928-072D-43D8-8EBF-EBE2CC0316E1</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>soundname</key>
-				<string>Hero</string>
-				<key>systemsound</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.playsound</string>
-			<key>uid</key>
-			<string>83A8A9DE-E41C-451C-BB44-99E564615683</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1411,7 +1466,7 @@ python3 scripts/show_icons.py "$1"
 
 **More...**
 
-**Simple CRM is a (super) lightweight, workflow built around files**. You open &amp; edit these files with your favorite editor. This workflow makes it easy &amp; fast to define, add, tag, find &amp;  view contacts. And has tools to import, export &amp; backup all your contacts. 
+**Simple CRM is a (super) lightweight, CRM built around files**. You open &amp; edit these files with your favorite editor. This workflow makes it easy &amp; fast to define, add, tag, find &amp;  view contacts. And has tools to import, export &amp; backup all your contacts. 
 
 Simple CRM is built for power users, freelancers &amp; anyone wanting less — to do more.
 
@@ -1421,7 +1476,7 @@ Give it a shot. Tell me what ya like. And what sucks. I'll make it un-suck.
 
 ## Usage
 
-### Set up
+### Setup
 
 Got existing contacts in your current CRM? Cool. Import them into Simple CRM.
 
@@ -1441,7 +1496,7 @@ Voila. A new file created for each contact.
 
 ### Tags for `Lead Status`
 
-**Tags provide mucho power to categorize your leads.** They save you from having to create &amp; complete too many fields too. And making search *real* easy. And fast! [See more about tags &amp; icons](#tags-and-icons-for-lead-status).
+**Tags provide mucho power to categorize your leads.** They save you from having to create &amp; complete too many fields too. And makes search *real* easy. And fast! [See more about tags &amp; icons](#tags-and-icons-for-lead-status).
 
 ## Main workflows
 
@@ -1552,6 +1607,8 @@ Use this command to quickly show all upcoming reminders you may have set
 
 &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↵&lt;/kbd&gt; To set reminder for highlighted contact in Reminders app or as a Calendar event*
 
+&lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;⌃&lt;/kbd&gt; To clear reminder date for highlighted contact from the contact file only
+
 \* You must set the calendar to use in `Configure Workflow`.
 
 **Supported Date Formats**
@@ -1600,22 +1657,11 @@ All searches are case-insensitive.
 
 ### Sorting Contacts
 
-You can sort any list of contacts by a field while searching or listing.
-
-**Basic usage**
+Make any list smarter by sorting it on the fly.
 
 * `sort:&lt;Field Name&gt;` → sort ascending (A→Z or oldest→newest)
 * `-sort:&lt;Field Name&gt;` → sort descending (Z→A or newest→oldest)
-
-**Examples**
-
-* `sort:Next Action Date` → show contacts with oldest dates first
-* `-sort:Next Action Date` → show contacts with newest dates first
-* `sort:Company` → alphabetical sort by company name
-* `-sort:Lead Status` → reverse alphabetical sort by lead status
-
-**Notes**
-
+* Example: `crml @won sort:company`
 * Works with any defined field in your contacts
 * Dates are sorted using most date formats
 * Non-date fields are sorted as plain text (case-insensitive)
@@ -1664,6 +1710,13 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>ypos</key>
 			<real>1010</real>
 		</dict>
+		<key>1A97E5E8-631A-43F2-85D4-B7E981350F58</key>
+		<dict>
+			<key>xpos</key>
+			<real>570</real>
+			<key>ypos</key>
+			<real>935</real>
+		</dict>
 		<key>2D2BDA87-90F7-4FC4-886F-D61E51808AB1</key>
 		<dict>
 			<key>xpos</key>
@@ -1708,9 +1761,9 @@ Some useful tools to manage your contact files. And to peek into your data and w
 		<key>555C94EC-EFC7-4403-9945-900594BA2FE1</key>
 		<dict>
 			<key>xpos</key>
-			<real>760</real>
+			<real>975</real>
 			<key>ypos</key>
-			<real>905</real>
+			<real>1000</real>
 		</dict>
 		<key>6935725D-264B-4DCD-A931-E646101195E3</key>
 		<dict>
@@ -1730,12 +1783,14 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>ypos</key>
 			<real>1745</real>
 		</dict>
-		<key>83A8A9DE-E41C-451C-BB44-99E564615683</key>
+		<key>699B8F4B-7655-4D39-ABF5-83EA08C24CFE</key>
 		<dict>
+			<key>note</key>
+			<string>clear reminder</string>
 			<key>xpos</key>
-			<real>965</real>
+			<real>780</real>
 			<key>ypos</key>
-			<real>905</real>
+			<real>820</real>
 		</dict>
 		<key>83D4CD86-AFCE-4379-8CD7-03C43D128678</key>
 		<dict>
@@ -1753,9 +1808,9 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>note</key>
 			<string>export contacts</string>
 			<key>xpos</key>
-			<real>565</real>
+			<real>780</real>
 			<key>ypos</key>
-			<real>905</real>
+			<real>1000</real>
 		</dict>
 		<key>870A3E9B-B096-4ABA-8D1C-6976F6B7D2AB</key>
 		<dict>
@@ -2444,7 +2499,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>5.3.1</string>
+	<string>5.3.2</string>
 	<key>webaddress</key>
 	<string>toddsgotapen.com</string>
 </dict>
