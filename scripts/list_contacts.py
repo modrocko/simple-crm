@@ -60,9 +60,10 @@ else:  # folder found
             name = get_field("Name", content)
             fields = {field: get_field(field, content) for field in field_names}
 
-            # build the subtitle like: "Company ∙ Email ∙ Phone"
-            subtitle_parts = [fields[f] if fields[f] else "—" for f in field_names]
+            # build subtitle only from non-empty fields
+            subtitle_parts = [fields[f] for f in field_names if fields[f]]
             subtitle = " ∙ ".join(subtitle_parts)
+
 
             # get next action date field from configuration
             next_action_date = fields.get(os.environ.get("reminder_query_field", ""), "")
