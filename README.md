@@ -37,7 +37,7 @@ Give it a shot. Tell me what ya like. And what sucks. I'll make it un-suck.
 Got existing contacts in your current CRM? Cool. Import them into Simple CRM.
 
 - Export contacts to a .csv file
-- Define your fields in Simple CRM via `Configure Workflow`❗
+- Define your fields via `Configure Workflow` (or use the defaults ones)❗
 - Set  `CRM path` for all contact files
 - Set the `import` & `export` paths & `export` fields
 - Select `Import contacts` from Simple CRM `utilities` 
@@ -48,7 +48,7 @@ Voila. A new file created for each contact.
 
 (1) `Name` consists of full name & and must be in the 1st position
 
-(2) `Lead Status` is used to show all the icons for this field
+(2) `Lead Status` is used to show all the icons for this field. This field must exist in all views you define!
 
 ### Tags for `Lead Status`
 

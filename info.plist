@@ -1481,7 +1481,7 @@ Give it a shot. Tell me what ya like. And what sucks. I'll make it un-suck.
 Got existing contacts in your current CRM? Cool. Import them into Simple CRM.
 
 - Export contacts to a .csv file
-- Define your fields in Simple CRM via `Configure Workflow`❗
+- Define your fields via `Configure Workflow` (or use the defaults ones)❗
 - Set  `CRM path` for all contact files
 - Set the `import` &amp; `export` paths &amp; `export` fields
 - Select `Import contacts` from Simple CRM `utilities` 
@@ -1492,7 +1492,7 @@ Voila. A new file created for each contact.
 
 (1) `Name` consists of full name &amp; and must be in the 1st position
 
-(2) `Lead Status` is used to show all the icons for this field
+(2) `Lead Status` is used to show all the icons for this field. This field must exist in all views you define!
 
 ### Tags for `Lead Status`
 
@@ -2095,7 +2095,7 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>config</key>
 			<dict>
 				<key>default</key>
-				<string>Next Action Date, Next Action</string>
+				<string>Next Action Date, Next Action, Lead Status</string>
 				<key>required</key>
 				<false/>
 				<key>trim</key>
@@ -2495,11 +2495,45 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>variable</key>
 			<string>recent</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>2</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>1</string>
+						<string>1</string>
+					</array>
+					<array>
+						<string>2</string>
+						<string>2</string>
+					</array>
+					<array>
+						<string>3</string>
+						<string>3</string>
+					</array>
+					<array>
+						<string>4</string>
+						<string>4</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Number of tags to show in each row for 'Lead Status" field</string>
+			<key>label</key>
+			<string>Tag count</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>tag_count</string>
+		</dict>
 	</array>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>5.3.3</string>
+	<string>5.3.4</string>
 	<key>webaddress</key>
 	<string>toddsgotapen.com</string>
 </dict>

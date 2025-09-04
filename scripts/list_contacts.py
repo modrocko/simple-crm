@@ -60,6 +60,13 @@ else:  # folder found
             name = get_field("Name", content)
             fields = {field: get_field(field, content) for field in field_names}
 
+            # show only first two tags for 'Lead Status'
+            lead = fields["Lead Status"].strip()
+            if lead:
+                words = lead.split()
+                count = int(os.environ["tag_count"])
+                fields["Lead Status"] = " ".join(words[:count])
+
             # build subtitle only from non-empty fields
             subtitle_parts = [fields[f] for f in field_names if fields[f]]
             subtitle = " ∙ ".join(subtitle_parts)
