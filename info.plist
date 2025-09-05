@@ -111,6 +111,19 @@
 		<array/>
 		<key>555C94EC-EFC7-4403-9945-900594BA2FE1</key>
 		<array/>
+		<key>5A3A0E73-E8CA-4A7E-B6AC-F987D858EAED</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E987AC9A-6628-4741-BB33-034A1F58E789</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>6935725D-264B-4DCD-A931-E646101195E3</key>
 		<array>
 			<dict>
@@ -1286,7 +1299,7 @@ items = [
         "subtitle": "View the readme file for this workflow",
         "arg": "view_readme",
 		"icon": {"path": "icons2/viewdocumentation.png"}
-    }
+    }    
 ]
 
 filtered = [item for item in items if query in item["title"].lower()]
@@ -1352,46 +1365,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>"{query}" copied to clipboard</string>
-				<key>title</key>
-				<string>Simple CRM</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>90CE1D2B-AEA3-4F16-9F59-BC1F03A616D8</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>E987AC9A-6628-4741-BB33-034A1F58E789</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1437,6 +1410,97 @@ python3 scripts/show_icons.py "$1"
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>69453C75-DF71-4A33-9935-61E09BC733AA</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>"{query}" copied to clipboard</string>
+				<key>title</key>
+				<string>Simple CRM</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>90CE1D2B-AEA3-4F16-9F59-BC1F03A616D8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>E987AC9A-6628-4741-BB33-034A1F58E789</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:show_emojis}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>cd "$alfred_workflow_directory"
+python3 scripts/show_emojis.py "$1"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Pick an emoji to use when editing your contacts</string>
+				<key>title</key>
+				<string>Show supported emojis</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5A3A0E73-E8CA-4A7E-B6AC-F987D858EAED</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -1765,6 +1829,17 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>ypos</key>
 			<real>1000</real>
 		</dict>
+		<key>5A3A0E73-E8CA-4A7E-B6AC-F987D858EAED</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>show supported icons</string>
+			<key>xpos</key>
+			<real>320</real>
+			<key>ypos</key>
+			<real>1915</real>
+		</dict>
 		<key>6935725D-264B-4DCD-A931-E646101195E3</key>
 		<dict>
 			<key>xpos</key>
@@ -1833,9 +1908,9 @@ Some useful tools to manage your contact files. And to peek into your data and w
 		<key>90CE1D2B-AEA3-4F16-9F59-BC1F03A616D8</key>
 		<dict>
 			<key>xpos</key>
-			<real>760</real>
+			<real>765</real>
 			<key>ypos</key>
-			<real>1745</real>
+			<real>1820</real>
 		</dict>
 		<key>92A65387-14B5-4B1F-B1A5-CF7D727A750C</key>
 		<dict>
@@ -1932,9 +2007,9 @@ Some useful tools to manage your contact files. And to peek into your data and w
 		<key>E987AC9A-6628-4741-BB33-034A1F58E789</key>
 		<dict>
 			<key>xpos</key>
-			<real>565</real>
+			<real>560</real>
 			<key>ypos</key>
-			<real>1745</real>
+			<real>1820</real>
 		</dict>
 		<key>EBB889E3-1B73-4406-8155-7874DB8F37D9</key>
 		<dict>
@@ -2457,6 +2532,27 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>config</key>
 			<dict>
 				<key>default</key>
+				<string>:crmue</string>
+				<key>placeholder</key>
+				<string>:crmue</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Copy (&amp; paste) an emjoi while editing your contacts</string>
+			<key>label</key>
+			<string>Show emojis</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>show_emojis</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
 				<string>7</string>
 				<key>placeholder</key>
 				<string>7</string>
@@ -2529,11 +2625,44 @@ Some useful tools to manage your contact files. And to peek into your data and w
 			<key>variable</key>
 			<string>tag_count</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>✅ check
+❗ important
+⌛ waiting
+⚠️ warning
+❓ question
+🛑 pause
+🏆 win
+📌 pin
+❌ not
+🟢 green
+🔴 red
+🟡 yellow
+🌶️ pepper</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+				<key>verticalsize</key>
+				<integer>6</integer>
+			</dict>
+			<key>description</key>
+			<string>Pick an emoji to use when editing contacts (customize this anytime too)</string>
+			<key>label</key>
+			<string>Emoji List</string>
+			<key>type</key>
+			<string>textarea</string>
+			<key>variable</key>
+			<string>emoji_list</string>
+		</dict>
 	</array>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>5.3.4</string>
+	<string>5.3.5</string>
 	<key>webaddress</key>
 	<string>toddsgotapen.com</string>
 </dict>
