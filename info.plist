@@ -465,7 +465,7 @@ python3 scripts/set_reminder.py "$1"</string>
 				<integer>102</integer>
 				<key>script</key>
 				<string>cd "$alfred_workflow_directory"
-python3 scripts/open_contacts.py "$1"</string>
+python3 scripts/open_contact_files.py "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>

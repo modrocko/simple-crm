@@ -9,8 +9,6 @@ import shlex
 # cache the icon map
 _icon_map = None
 
-import os
-
 def get_icon_for_tag(*strings):
     icons_dir = os.path.join(os.path.dirname(__file__), "..", "icons")
 
