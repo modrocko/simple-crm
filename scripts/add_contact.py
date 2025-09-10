@@ -73,6 +73,6 @@ subprocess.run([
 if open_file == "true":
     subprocess.run(["open", path])
 
-# === RETURN FI LE PATH TO ALFRED ===
+# === RETURN FILE PATH TO ALFRED ===
 print(path)
 
