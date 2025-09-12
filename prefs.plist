@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>backup_folder</key>
+	<string>~/Documents/01 archive/my backups/crm backups</string>
+	<key>contact_folder</key>
+	<string>~/Documents/00 now/my crm</string>
+	<key>display_fields</key>
+	<string>Company, Lead Status, Next Action, Next Action Date, Note, Lead Source</string>
+	<key>file_extension</key>
+	<string>.md</string>
+	<key>reminder_calendar</key>
+	<string>work</string>
+	<key>saved_search</key>
+	<string>crms</string>
+</dict>
+</plist>
