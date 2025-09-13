@@ -7,7 +7,7 @@
 	<key>contact_folder</key>
 	<string>~/Documents/00 now/my crm</string>
 	<key>display_fields</key>
-	<string>Company, Lead Status, Next Action, Next Action Date, Note, Lead Source</string>
+	<string>Company, Next Action, Next Action Date, Note, Lead Status, Lead Source</string>
 	<key>file_extension</key>
 	<string>.md</string>
 	<key>reminder_calendar</key>
