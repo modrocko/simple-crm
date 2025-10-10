@@ -8,8 +8,12 @@
 	<string>~/Documents/00 now/my crm</string>
 	<key>display_fields</key>
 	<string>Company, Next Action, Next Action Date, Note, Lead Status, Lead Source</string>
+	<key>export_fields</key>
+	<string>Name, Company, Email, Phone, Website, Location, Lead Status, Lead Source, Lead Thread, Referred by, Next Action, Next Action Date, Note, Questionnaire, Products</string>
 	<key>file_extension</key>
 	<string>.md</string>
+	<key>file_template</key>
+	<string>Name, Company, Email, Phone, Website, Location, Lead Status, Lead Source, Lead Thread, Referred by, Note, Next Action, Next Action Date, Questionnaire, Products, Log</string>
 	<key>reminder_calendar</key>
 	<string>work</string>
 	<key>saved_search</key>

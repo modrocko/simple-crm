@@ -691,7 +691,7 @@ python3 scripts/update_contacts.py "$1"</string>
 				<key>argument</key>
 				<integer>3</integer>
 				<key>argumenttext</key>
-				<string>@active</string>
+				<string>@active sort:lead status</string>
 				<key>focusedappvariable</key>
 				<false/>
 				<key>focusedappvariablename</key>
